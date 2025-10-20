@@ -1,165 +1,478 @@
+
+
+```html
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ana Karina | Do Consultório à Nuvem</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --marsala: #7B2C3B;
-      --branco: #ffffff;
-      --cinza-claro: #f5f5f5;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Consultório à Nuvem | Blog de Transição de Carreira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
+        :root {
+            --cor-marsala-principal: #953748; /* Marsala/Vinho escuro para botões e títulos */
+            --cor-marsala-claro: #AA6C78;    /* Marsala mais suave para tags e hover */
+            --cor-fundo: #f8f9fa;            /* Fundo levemente cinza (como na imagem) */
+            --cor-texto-principal: #343a40;  /* Preto/Cinza Escuro */
+            --cor-fundo-card: #ffffff;       /* Fundo dos cards e topo */
+            --cor-borda: #dee2e6;
+            --cor-secundaria: #6c757d; /* Cinza para texto secundário */
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* ==================== 2. RESET E TIPOGRAFIA ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: var(--branco);
-      color: #333;
-      line-height: 1.6;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto-principal);
+            background-color: var(--cor-fundo);
+        }
 
-    header {
-      background-color: var(--marsala);
-      color: var(--branco);
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        /* Títulos */
+        h1 { font-weight: 700; font-size: 2.5rem; }
+        h2 { font-weight: 600; font-size: 1.5rem; }
+        h3 { font-weight: 600; font-size: 1.2rem; }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-    }
 
-    nav {
-      margin-top: 1rem;
-    }
+        /* ==================== 3. CABEÇALHO (NAVBAR) ==================== */
+        .header {
+            background: var(--cor-fundo-card);
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky; /* Mantém o menu no topo ao rolar */
+            top: 0;
+            z-index: 100;
+        }
 
-    nav a {
-      color: var(--branco);
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-    }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        .perfil {
+            display: flex;
+            align-items: center;
+        }
+        
+        .perfil-avatar {
+            background-color: var(--cor-marsala-principal);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-right: 15px;
+        }
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
+        .perfil-texto h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .perfil-texto p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--cor-secundaria);
+        }
 
-    section h2 {
-      color: var(--marsala);
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+        .nav-links li a {
+            color: var(--cor-texto-principal);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: color 0.2s;
+        }
 
-    .card {
-      background-color: var(--cinza-claro);
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        .nav-links li a:hover {
+            color: var(--cor-marsala-principal);
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        /* ==================== 4. LAYOUT PRINCIPAL (GRID) ==================== */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Conteúdo principal (2/3) e Sidebar (1/3) */
+            gap: 40px;
+            padding: 40px 0;
+        }
+        
+        /* ==================== 5. SEÇÃO PRINCIPAL (LEFT) ==================== */
+        .secao-hero {
+            padding-right: 30px;
+        }
 
-    .card h3 {
-      color: var(--marsala);
-      margin-bottom: 1rem;
-    }
+        .secao-hero h1 {
+            margin-bottom: 1rem;
+        }
 
-    .card p {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
+        .secao-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        /* Botão Principal */
+        .btn-principal {
+            display: inline-block;
+            background-color: var(--cor-marsala-principal);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-principal:hover {
+            background-color: var(--cor-marsala-claro);
+        }
+        
+        /* Tags/Pilares */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
 
-    .card a {
-      color: var(--marsala);
-      font-weight: 600;
-      text-decoration: none;
-    }
+        .tag {
+            background-color: var(--cor-marsala-claro);
+            color: var(--cor-fundo-card);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        /* Card de Postagem Simples */
+        .post-card-simples {
+            background-color: var(--cor-fundo-card);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
 
-    footer {
-      background-color: var(--marsala);
-      color: var(--branco);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
+        .post-card-simples:hover {
+             transform: translateX(5px);
+        }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
+        .post-card-simples .detalhes h3 {
+            margin-bottom: 5px;
+            color: var(--cor-texto-principal);
+            font-size: 1.1rem;
+        }
+        
+        .post-card-simples .detalhes p {
+            font-size: 0.9rem;
+            color: var(--cor-secundaria);
+        }
+
+        .post-card-simples .ler-mais {
+            color: var(--cor-marsala-principal);
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap; 
+        }
+        
+        .post-card-simples .ler-mais:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==================== 6. SIDEBAR (RIGHT) ==================== */
+        .sidebar {
+            background-color: var(--cor-fundo-card);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar h3 {
+            border-bottom: 2px solid var(--cor-fundo);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--cor-texto-principal);
+        }
+        
+        .sidebar p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Formulário */
+        .input-email {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .btn-sidebar {
+            width: 100%;
+            display: block;
+            background-color: var(--cor-marsala-principal);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-sidebar:hover {
+            background-color: var(--cor-marsala-claro);
+        }
+        
+        /* Estilo do Evento e Saiba Mais */
+        .evento-detalhe {
+            font-size: 0.9rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 5px;
+        }
+
+        .saiba-mais {
+            color: var(--cor-marsala-principal);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .saiba-mais:hover {
+            text-decoration: underline;
+        }
+        
+        /* ==================== 7. ESTILO PLATAFORMAS DE APOIO ==================== */
+        .plataformas-apoio {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--cor-borda);
+        }
+
+        .plataformas-apoio h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .plataforma-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--cor-fundo-card);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--cor-texto-principal);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .plataforma-card:hover {
+            transform: translateX(3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .plataforma-logo {
+            width: 50px; 
+            height: 50px;
+            object-fit: cover; 
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .plataforma-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--cor-marsala-principal);
+        }
+
+        .plataforma-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--cor-secundaria);
+        }
+
+        /* ==================== 8. RESPONSIVIDADE ==================== */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr; /* Coluna única em telas menores */
+            }
+            
+            .secao-hero {
+                padding-right: 0;
+            }
+            
+            .sidebar {
+                margin-top: 20px;
+            }
+            
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .perfil {
+                margin-bottom: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="perfil">
+                    <div class="perfil-avatar">AK</div>
+                    <div class="perfil-texto">
+                        <h3>Do Consultório à Nuvem</h3>
+                        <p>Ana Karina — transição de carreira para mulheres</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#trilhas">Trilhas</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <h1>Do Consultório à Nuvem</h1>
-    <p>Por Ana Karina — Inspirando mulheres na transição de carreira</p>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#pilares">Pilares da Transição</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+    <div class="container main-content">
+        
+        <div class="secao-hero" id="inicio">
+            <h1>Do consultório à nuvem: sua transição começa aqui</h1>
+            
+            <p>Sou Ana Karina — cirurgiã dentista em transição para tecnologia e cloud. Neste blog compartilho escolas, projetos, eventos e passos práticos para mulheres que querem mudar de carreira sem perder sua identidade.</p>
+            
+            <a href="#trilhas" class="btn-principal">Comece sua trilha</a>
+            
+            <div class="tags-container" id="trilhas">
+                <span class="tag">Iniciação</span>
+                <span class="tag">Python</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Portfólio</span>
+                <span class="tag">Mentoria</span>
+            </div>
+            
+            <div class="plataformas-apoio">
+                <h2>Plataformas que me Acompanharam</h2>
+                
+                <a href="https://escoladanuvem.org/" target="_blank" class="plataforma-card">
+                    <img src="https://via.placeholder.com/50/953748/FFFFFF?text=EN" alt="Logo Escola da Nuvem" class="plataforma-logo">
+                    <div class="plataforma-info">
+                        <h3>Escola da Nuvem</h3>
+                        <p>Formação completa em Cloud Computing com foco em inclusão.</p>
+                    </div>
+                </a>
 
-  <section id="pilares">
-    <h2>Pilares da Transição</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Escola da Nuvem</h3>
-        <p>Organização que forma talentos em computação em nuvem e conecta estudantes a oportunidades reais de emprego no setor de tecnologia.</p>
-        <a href="https://escoladanuvem.org/" target="_blank">Visitar site</a>
-      </div>
+                <a href="https://www.daredeacademy.com.br/pages/new-pagina-inicial" target="_blank" class="plataforma-card">
+                    <img src="https://via.placeholder.com/50/AA6C78/FFFFFF?text=CD" alt="Logo Clouddelas Darede Academy" class="plataforma-logo">
+                    <div class="plataforma-info">
+                        <h3>Clouddelas - Darede Academy</h3>
+                        <p>Programa de capacitação e empoderamento feminino em Cloud.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <h2 style="margin-top: 3rem; margin-bottom: 20px;">Últimas Postagens</h2>
+            <div class="lista-posts">
+                <a href="link-post-1.html" class="post-card-simples">
+                    <div class="detalhes">
+                        <h3>Minha transição: do consultório à nuvem</h3>
+                        <p>Publicada em 10 de outubro de 2025 • 6 min</p>
+                    </div>
+                    <span class="ler-mais">Ler →</span>
+                </a>
+                
+                <a href="link-post-2.html" class="post-card-simples">
+                    <div class="detalhes">
+                        <h3>5 cursos que me ajudaram a dar o primeiro passo</h3>
+                        <p>Publicada em 5 de outubro de 2025 • 4 min</p>
+                    </div>
+                    <span class="ler-mais">Ler →</span>
+                </a>
+                
+                </div>
+            
+        </div>
+        
+        <aside class="sidebar" id="contato">
+            
+            <div class="widget-novidades">
+                <h3>Receba as novidades</h3>
+                <p>Dicas semanais, eventos e projetos direto no seu e-mail.</p>
+                <form>
+                    <input type="email" placeholder="Seu melhor e-mail" class="input-email">
+                    <button type="submit" class="btn-sidebar">Quero receber</button>
+                </form>
+            </div>
+            
+            <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--cor-fundo);">
+            
+            <div class="widget-evento">
+                <h3>Próximo evento</h3>
+                <p>Hackathon Mulheres na Tecnologia — 02 nov 2025 (online)</p>
+                <a href="#" class="saiba-mais">Saiba mais →</a>
+            </div>
+            
+            <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--cor-fundo);">
 
-      <div class="card">
-        <h3>Clouddelas — Darede Academy</h3>
-        <p>Programa de capacitação e empoderamento feminino na área de Cloud Computing, voltado para mulheres que desejam entrar no mundo da tecnologia.</p>
-        <a href="https://www.daredeacademy.com.br/bundles/cloudelas" target="_blank">Visitar site</a>
-      </div>
+            <div class="widget-checklist">
+                <h3>Baixe meu checklist</h3>
+                <p>Checklist: 10 passos para montar seu primeiro projeto e enviar para vagas.</p>
+                <a href="link-para-pdf.pdf" class="btn-sidebar btn-checklist">Baixar (PDF)</a>
+            </div>
 
-      <div class="card">
-        <h3>Women in Cloud — AWS</h3>
-        <p>Iniciativa global da AWS que apoia mulheres na construção de carreiras e negócios em nuvem, promovendo inclusão e liderança no setor tecnológico.</p>
-        <a href="https://www.womenincloud.com/" target="_blank">Visitar site</a>
-      </div>
+        </aside>
+
     </div>
-  </section>
-
-  <footer>
-    © 2025 Ana Karina — Inspirando mulheres na transição de carreira
-  </footer>
-
 </body>
 </html>
+```
+
