@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do Consultório à Nuvem | Blog por Ana Karina</title>
+  <title>Ana Karina | Do Consultório à Nuvem</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --marsala: #7B2C3B;
       --branco: #ffffff;
-      --cinza-claro: #f7f7f7;
-      --cinza-texto: #444;
+      --cinza-claro: #f5f5f5;
     }
 
     * {
@@ -22,41 +21,30 @@
     body {
       font-family: 'Open Sans', sans-serif;
       background-color: var(--branco);
-      color: var(--cinza-texto);
-      line-height: 1.7;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
       background-color: var(--marsala);
       color: var(--branco);
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1rem;
-      opacity: 0.9;
     }
 
     nav {
-      background-color: var(--marsala);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0.5rem 0;
-      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 1rem;
     }
 
     nav a {
       color: var(--branco);
       text-decoration: none;
-      margin: 0.8rem 1rem;
+      margin: 0 1rem;
       font-weight: 600;
     }
 
@@ -64,53 +52,60 @@
       text-decoration: underline;
     }
 
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    article {
-      margin-bottom: 3rem;
+    section h2 {
+      color: var(--marsala);
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
       background-color: var(--cinza-claro);
       border-radius: 10px;
       padding: 2rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
       transition: transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    article:hover {
+    .card:hover {
       transform: translateY(-5px);
     }
 
-    article h2 {
+    .card h3 {
       color: var(--marsala);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
 
-    article p {
+    .card p {
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
-    article a {
+    .card a {
       color: var(--marsala);
-      text-decoration: none;
       font-weight: 600;
-    }
-
-    article a:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     footer {
       background-color: var(--marsala);
       color: var(--branco);
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
+      padding: 1.5rem;
       font-size: 0.9rem;
     }
 
@@ -118,8 +113,9 @@
       header h1 {
         font-size: 2rem;
       }
-      article {
-        padding: 1.5rem;
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
       }
     }
   </style>
@@ -129,60 +125,41 @@
   <header>
     <h1>Do Consultório à Nuvem</h1>
     <p>Por Ana Karina — Inspirando mulheres na transição de carreira</p>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#pilares">Pilares da Transição</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#pilares">Pilares da Transição</a>
-    <a href="#eventos">Eventos</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <section id="pilares">
+    <h2>Pilares da Transição</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Escola da Nuvem</h3>
+        <p>Organização que forma talentos em computação em nuvem e conecta estudantes a oportunidades reais de emprego no setor de tecnologia.</p>
+        <a href="https://escoladanuvem.org/" target="_blank">Visitar site</a>
+      </div>
 
-  <main>
-    <article id="pilares">
-      <h2>Pilares da Transição</h2>
-      <p>Esses são alguns dos programas e comunidades que foram fundamentais na minha jornada de transição de carreira. Cada um deles representa aprendizado, empoderamento e novas oportunidades para mulheres que desejam ingressar na tecnologia.</p>
+      <div class="card">
+        <h3>Clouddelas — Darede Academy</h3>
+        <p>Programa de capacitação e empoderamento feminino na área de Cloud Computing, voltado para mulheres que desejam entrar no mundo da tecnologia.</p>
+        <a href="https://www.daredeacademy.com.br/bundles/cloudelas" target="_blank">Visitar site</a>
+      </div>
 
-      <ul>
-        <li>
-          <strong>Escola da Nuvem</strong> — Formação em computação em nuvem e conexão com o mercado de trabalho.
-          <br><a href="https://escoladanuvem.org/" target="_blank">Visitar site</a>
-        </li>
-        <br>
-        <li>
-          <strong>Clouddelas — Darede Academy</strong> — Capacitação e empoderamento feminino na área de Cloud Computing.
-          <br><a href="https://www.daredeacademy.com.br/bundles/cloudelas" target="_blank">Visitar site</a>
-        </li>
-        <br>
-        <li>
-          <strong>Women in Cloud — AWS</strong> — Iniciativa global que apoia mulheres em tecnologia e liderança na nuvem.
-          <br><a href="https://www.womenincloud.com/" target="_blank">Visitar site</a>
-        </li>
-      </ul>
-    </article>
-
-    <article id="eventos">
-      <h2>Eventos & Comunidades</h2>
-      <p>Em breve, você encontrará aqui uma curadoria de eventos, hackathons, webinars e comunidades voltadas para mulheres na tecnologia.</p>
-    </article>
-
-    <article id="projetos">
-      <h2>Projetos & Inspirações</h2>
-      <p>Espaço para compartilhar meus projetos, estudos e conquistas na área de computação em nuvem e segurança da informação.</p>
-    </article>
-
-    <article id="contato">
-      <h2>Sobre mim & Contato</h2>
-      <p>Sou Ana Karina, cirurgiã-dentista em transição de carreira para tecnologia, com foco em computação em nuvem e segurança da informação. Criei este espaço para inspirar outras mulheres a acreditarem no poder da mudança e da educação.</p>
-      <p>📧 <a href="mailto:karinacarvalhocloud@gmail.com">karinacarvalhocloud@gmail.com</a></p>
-    </article>
-  </main>
+      <div class="card">
+        <h3>Women in Cloud — AWS</h3>
+        <p>Iniciativa global da AWS que apoia mulheres na construção de carreiras e negócios em nuvem, promovendo inclusão e liderança no setor tecnológico.</p>
+        <a href="https://www.womenincloud.com/" target="_blank">Visitar site</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    © 2025 Ana Karina — Do Consultório à Nuvem | Inspirando mulheres na transição de carreira
+    © 2025 Ana Karina — Inspirando mulheres na transição de carreira
   </footer>
 
 </body>
 </html>
-
