@@ -1,184 +1,165 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Do Consultório à Nuvem — Ana Karina</title>
-  <meta name="description" content="Blog de Ana Karina: transição de carreira para mulheres que querem entrar em tecnologia e computação em nuvem." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E☁️%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Karina | Do Consultório à Nuvem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Minimal, modern styling - customize colors below */
-    :root{--bg:#ffffff;--muted:#6b7280;--accent:#7c3aed;--accent-2:#60a5fa;--card:#f8fafc}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a; line-height:1.5}
-    header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid #e6edf3}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
-    .container{max-width:980px;margin:28px auto;padding:0 20px}
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
-    .hero-card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.05)}
-    h1{margin:6px 0 8px;font-size:28px}
-    p.lead{color:var(--muted);margin:0 0 14px}
-    .cta{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
-    .topics{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .topic{background:#eef2ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600}
-    .post-list{display:grid;gap:14px;margin-top:16px}
-    .post{padding:14px;border-radius:10px;border:1px solid #eef2ff;background:white}
-    .meta{color:var(--muted);font-size:13px}
-    aside .subscribe{display:flex;flex-direction:column;gap:10px}
-    input[type='email']{padding:10px;border-radius:8px;border:1px solid #dbeafe}
-    footer{margin-top:36px;padding:18px 24px;border-top:1px solid #e6edf3;color:var(--muted)}
-    .grid-3{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media(max-width:880px){.hero{grid-template-columns:1fr;}.logo{width:44px;height:44px}}
+    :root {
+      --vinho: #800020;
+      --branco: #ffffff;
+      --cinza-claro: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--branco);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--vinho);
+      color: var(--branco);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--vinho);
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--cinza-claro);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--vinho);
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .card a {
+      color: var(--vinho);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: var(--vinho);
+      color: var(--branco);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="brand">
-      <div class="logo">AK</div>
-      <div>
-        <div style="font-weight:800">Do Consultório à Nuvem</div>
-        <div style="font-size:12px;color:var(--muted)">Ana Karina — transição de carreira para mulheres</div>
-      </div>
-    </div>
+    <h1>Do Consultório à Nuvem</h1>
+    <p>Por Ana Karina — Inspirando mulheres na transição de carreira</p>
     <nav>
-      <a href="#home">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#trilhas">Trilhas</a>
+      <a href="#inicio">Início</a>
+      <a href="#pilares">Pilares da Transição</a>
+      <a href="#eventos">Eventos</a>
       <a href="#projetos">Projetos</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <main class="container" id="home">
-    <section class="hero">
-      <div>
-        <div class="hero-card">
-          <h1>Do consultório à nuvem: sua transição começa aqui</h1>
-          <p class="lead">Sou Ana Karina — cirurgiã dentista em transição para tecnologia e cloud. Neste blog compartilho escolas, projetos, eventos e passos práticos para mulheres que querem mudar de carreira sem perder sua identidade.</p>
-          <a class="cta" href="#trilhas">Comece sua trilha</a>
-
-          <div class="topics" aria-hidden="true">
-            <div class="topic">Iniciação</div>
-            <div class="topic">Python</div>
-            <div class="topic">AWS</div>
-            <div class="topic">Portfólio</div>
-            <div class="topic">Mentoria</div>
-          </div>
-
-          <div class="post-list">
-            <!-- Sample posts: replace with real posts -->
-            <article class="post">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
-                  <strong>Minha transição: do consultório à nuvem</strong>
-                  <div class="meta">Publicada em 10 de outubro de 2025 • 6 min</div>
-                </div>
-                <a href="#" style="text-decoration:none;color:var(--accent);font-weight:700">Ler →</a>
-              </div>
-            </article>
-
-            <article class="post">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
-                  <strong>5 cursos que me ajudaram a dar o primeiro passo</strong>
-                  <div class="meta">Publicada em 5 de outubro de 2025 • 4 min</div>
-                </div>
-                <a href="#" style="text-decoration:none;color:var(--accent);font-weight:700">Ler →</a>
-              </div>
-            </article>
-
-          </div>
-        </div>
+  <section id="pilares">
+    <h2>Pilares da Transição</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Escola da Nuvem</h3>
+        <p>Organização que forma talentos em computação em nuvem e conecta estudantes a oportunidades reais de emprego no setor de tecnologia.</p>
+        <a href="https://escoladanuvem.org/" target="_blank">Visitar site</a>
       </div>
 
-      <aside>
-        <div class="hero-card subscribe">
-          <div style="font-weight:800">Receba as novidades</div>
-          <div class="meta">Dicas semanais, eventos e projetos direto no seu e-mail.</div>
-          <form onsubmit="event.preventDefault();alert('Cadastre seu e-mail no back-end ou configure um serviço de newsletter (Mailerlite/ConvertKit).');">
-            <input type="email" placeholder="Seu melhor e-mail" required />
-            <button class="cta" style="width:100%;margin-top:8px">Quero receber</button>
-          </form>
-
-          <div style="margin-top:12px">
-            <div style="font-weight:700;margin-bottom:6px">Próximo evento</div>
-            <div class="meta">Hackathon Mulheres na Tecnologia — 02 nov 2025 (online)</div>
-            <a href="#" style="display:inline-block;margin-top:8px;text-decoration:none;font-weight:700">Saiba mais →</a>
-          </div>
-        </div>
-
-        <div class="hero-card" style="margin-top:14px">
-          <div style="font-weight:700">Baixe meu checklist</div>
-          <p class="meta">Checklist: 10 passos para montar seu primeiro projeto e enviar para vagas.</p>
-          <button class="cta" style="width:100%">Baixar (PDF)</button>
-        </div>
-      </aside>
-    </section>
-
-    <section id="sobre" style="margin-top:28px">
-      <div class="hero-card">
-        <h2>Sobre mim</h2>
-        <p class="meta">Sou Ana Karina, 32 anos, cirurgiã dentista em transição para cloud e segurança. Acredito que a mudança é possível quando temos recursos certos e companhia. Aqui compartilho o que funcionou para mim — cursos, projetos, dicas de networking e reposicionamento profissional.</p>
-        <div style="display:flex;gap:12px;margin-top:12px">
-          <div style="flex:1">
-            <div style="font-weight:700">Serviços</div>
-            <div class="meta">Mentoria individual • Revisão de CV • Preparação para entrevistas</div>
-          </div>
-          <div style="flex:1">
-            <div style="font-weight:700">Contato</div>
-            <div class="meta">email: contato@seudominio.com.br</div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Clouddelas — Darede Academy</h3>
+        <p>Programa de capacitação e empoderamento feminino na área de Cloud Computing, voltado para mulheres que desejam entrar no mundo da tecnologia.</p>
+        <a href="https://www.daredeacademy.com.br/bundles/cloudelas" target="_blank">Visitar site</a>
       </div>
-    </section>
 
-    <section id="trilhas" style="margin-top:22px">
-      <h3>Trilhas recomendadas</h3>
-      <div class="grid-3" style="margin-top:10px">
-        <div class="hero-card">
-          <strong>Iniciante</strong>
-          <p class="meta">Fundamentos: lógica, Git, Python básico. 1–2 meses de estudo consistente.</p>
-        </div>
-        <div class="hero-card">
-          <strong>Intermediário</strong>
-          <p class="meta">Projetos práticos: APIs, deployment simples, AWS Cloud Practitioner.</p>
-        </div>
+      <div class="card">
+        <h3>Women in Cloud — AWS</h3>
+        <p>Iniciativa global da AWS que apoia mulheres na construção de carreiras e negócios em nuvem, promovendo inclusão e liderança no setor tecnológico.</p>
+        <a href="https://www.womenincloud.com/" target="_blank">Visitar site</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projetos" style="margin-top:22px">
-      <h3>Projetos para portfolio</h3>
-      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px">
-        <div class="post">
-          <strong>Sistema de lembrete de medicamentos (Python)</strong>
-          <div class="meta">Descrição breve e link para tutorial/README</div>
-        </div>
-        <div class="post">
-          <strong>Landing page pessoal + GitHub Pages</strong>
-          <div class="meta">Mostrar domínio, CV e projetos.</div>
-        </div>
-      </div>
-    </section>
+  <footer>
+    © 2025 Ana Karina — Inspirando mulheres na transição de carreira
+  </footer>
 
-    <section id="contato" style="margin-top:22px">
-      <div class="hero-card">
-        <h3>Fale comigo</h3>
-        <p class="meta">Se você quer mentoria ou parcerias, me mande um e-mail ou mensagem no LinkedIn.</p>
-        <p class="meta">LinkedIn: <a href="#" style="color:var(--accent);font-weight:700">linkedin.com/in/ana-karina</a></p>
-      </div>
-    </section>
-
-    <footer>
-      © Ana Karina — Do Consultório à Nuvem • Desenvolvido por você (modelo inicial)
-    </footer>
-  </main>
-
-  <script>
-    // Pequenos comportamentos: mobile menu, futuras integrações
-    // Instruções: salve este arquivo como index.html e faça deploy no GitHub Pages, Netlify ou Vercel.
-    // Para WordPress: use os textos como base e importe imagens e o logo.
-  </script>
 </body>
 </html>
