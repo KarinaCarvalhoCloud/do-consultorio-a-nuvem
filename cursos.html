@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Essenciais para Início | Do Consultório à Nuvem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Dois cursos gratuitos e essenciais para começar sua base em tecnologia e programação antes de Cloud Computing.">
+    <meta name="author" content="Ana Karina">
+    <meta property="og:title" content="2 Cursos Gratuitos para Transição de Carreira Tech">
+    <meta property="og:description" content="Introdução à Tecnologia (EV.G) e Python (Santander) - os primeiros passos para a Nuvem.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/cursos.html">
+    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
+    <meta property="og:locale" content="pt_BR">
+    <style>
+        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
+        :root {
+            --cor-marsala-principal: #953748;
+            --cor-marsala-claro: #AA6C78;
+            --cor-fundo: #f8f9fa;
+            --cor-texto-principal: #343a40;
+            --cor-fundo-card: #ffffff;
+            --cor-borda: #dee2e6;
+            --cor-secundaria: #6c757d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        h1 { font-weight: 700; font-size: 2.5rem; }
+        h2 { font-weight: 600; font-size: 1.8rem; margin-bottom: 20px; }
+        h3 { font-weight: 600; font-size: 1.2rem; }
+
+        /* CABEÇALHO/NAVBAR (CÓDIGO REPETIDO PARA CONSISTÊNCIA) */
+        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .perfil { display: flex; align-items: center; }
+        .perfil-avatar { background-color: var(--cor-marsala-principal); color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-weight: 600; font-size: 1rem; margin-right: 15px; }
+        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
+        .nav-links li a:hover { color: var(--cor-marsala-principal); }
+
+        /* LAYOUT ESPECÍFICO DA PÁGINA DE POSTAGEM */
+        .post-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--cor-fundo-card);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .post-container p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        .curso-card {
+            display: block;
+            background-color: #fafafa;
+            padding: 20px;
+            border: 1px solid var(--cor-borda);
+            border-left: 5px solid var(--cor-marsala-principal);
+            border-radius: 5px;
+            margin-bottom: 25px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .curso-card:hover {
+            background-color: #f0f0f0;
+        }
+        .curso-card h3 {
+            margin-top: 0;
+            color: var(--cor-marsala-principal);
+            font-size: 1.4rem;
+        }
+        .curso-card .plataforma {
+            font-size: 0.9rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .curso-card .descricao {
+            font-size: 1rem;
+            color: var(--cor-texto-principal);
+            margin-bottom: 10px;
+        }
+        .curso-card .saiba-mais {
+            font-weight: 600;
+            color: var(--cor-marsala-claro);
+        }
+        
+        /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
+        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
+        .footer-cta h3 { color: white; margin-bottom: 10px; }
+        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
+        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cor-marsala-principal); }
+        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
+        
+        /* RESPONSIVIDADE (mínima) */
+        @media (max-width: 768px) {
+            .post-container { padding: 20px; margin: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="perfil">
+                    <div class="perfil-avatar">AK</div>
+                    <div class="perfil-texto">
+                        <h3>Do Consultório à Nuvem</h3>
+                        <p>Ana Karina — transição de carreira para mulheres</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html#trilhas">Trilhas</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="post-container">
+            
+            <h1>2 Cursos Essenciais e Gratuitos para Iniciar em Tecnologia</h1>
+            <p style="font-size: 0.9rem; color: var(--cor-secundaria);">Publicado em 20 de outubro de 2025 • 5 min de leitura</p>
+            
+            <p>Se você está vindo de uma área completamente diferente, como eu, saber por onde começar a estudar pode ser esmagador. Estes dois cursos foram fundamentais para me dar a base necessária em lógica de programação e entender o vocabulário da TI antes de mergulhar em Cloud Computing.</p>
+
+            <h2>1. Fundamentos de Tecnologia</h2>
+
+            <a href="https://www.ev.org.br/trilhas-de-conhecimento/primeiros-passos-em-tecnologia" target="_blank" class="curso-card">
+                <h3>Primeiros Passos em Tecnologia</h3>
+                <span class="plataforma">EV.G - Escola Virtual Fundação Bradesco (Gratuito)</span>
+                <p class="descricao">Este curso é perfeito para quem está no zero. Ele cobre a história, as áreas de atuação, hardware, software, e noções de rede e segurança. É o ponto de partida ideal para alinhar sua mente com a lógica da tecnologia.</p>
+                <span class="saiba-mais">Acessar Curso →</span>
+            </a>
+
+            <h2>2. Lógica e Automação</h2>
+            
+            <a href="https://www.santanderopenacademy.com/pt_br/courses/introduction_to_python_programming.html?utm_content=0b4755d2-dfb0-47d7-8714-9d91bc2733ae%7CSoaTop10RankingPlacement%7Cdps%3Aoffer-placement%3A19df2f21fe0b5c09%7CSoaTop10RankingHeroBanner%7Cdps%3Apersonalized-offer%3A1b79e4f557d39cda" target="_blank" class="curso-card">
+                <h3>Introduction to Python Programming</h3>
+                <span class="plataforma">Santander Open Academy (Gratuito)</span>
+                <p class="descricao">Aprender Python é a "chave" para automação em Cloud. Este curso te dá a introdução necessária à sintaxe e aos conceitos de programação (variáveis, loops, funções). Ter essa base faz toda a diferença nos estudos de Cloud e DevOps.</p>
+                <span class="saiba-mais">Acessar Curso →</span>
+            </a>
+            
+            <h2>Próximos Passos (Recomendações)</h2>
+            <p>Após dominar esses fundamentos, eu sugiro focar em:</p>
+            <ul>
+                <li>**Certificação AWS Cloud Practitioner:** Para entender os serviços da Nuvem.</li>
+                <li>**GIT e GitHub:** Essencial para controle de versão e portfólio.</li>
+                <li>**Linux Essentials:** Para ter fluência no sistema operacional mais usado em servidores Cloud.</li>
+            </ul>
+
+            <a href="index.html#trilhas" class="curso-card" style="border-left: 5px solid var(--cor-marsala-claro);">
+                <h3>Quer saber mais sobre minha trilha completa?</h3>
+                <p class="descricao">Volte à página inicial para ver as plataformas de apoio e os pilares de estudo que me levaram à minha primeira oportunidade em Cloud.</p>
+                <span class="saiba-mais">Voltar ao Início →</span>
+            </a>
+
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Pronta para a Nuvem?</h3>
+                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
+                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
+                <a href="sobre.html">Sobre Mim</a>
+                <a href="index.html#contato">Newsletter</a>
+            </div>
+
+            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
