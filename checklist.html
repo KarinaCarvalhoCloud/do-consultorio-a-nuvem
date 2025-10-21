@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist de Carreira Cloud | Do Consultório à Nuvem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Baixe o checklist de 10 passos para montar seu primeiro projeto Cloud e impressionar recrutadores.">
+    <meta name="author" content="Ana Karina">
+    <meta property="og:title" content="Download: 10 Passos para o Primeiro Projeto Cloud">
+    <meta property="og:description" content="Guia prático para transformar teoria em experiência real no portfólio.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/checklist.html">
+    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
+    <meta property="og:locale" content="pt_BR">
+    <style>
+        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
+        :root {
+            --cor-marsala-principal: #953748;
+            --cor-marsala-claro: #AA6C78;
+            --cor-fundo: #f8f9fa;
+            --cor-texto-principal: #343a40;
+            --cor-fundo-card: #ffffff;
+            --cor-borda: #dee2e6;
+            --cor-secundaria: #6c757d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        h1 { font-weight: 700; font-size: 2.5rem; }
+        h2 { font-weight: 600; font-size: 1.8rem; margin-bottom: 20px; }
+        h3 { font-weight: 600; font-size: 1.2rem; }
+
+        /* CABEÇALHO/NAVBAR (CÓDIGO REPETIDO PARA CONSISTÊNCIA) */
+        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .perfil { display: flex; align-items: center; }
+        .perfil-avatar { background-color: var(--cor-marsala-principal); color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-weight: 600; font-size: 1rem; margin-right: 15px; }
+        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
+        .nav-links li a:hover { color: var(--cor-marsala-principal); }
+
+        /* LAYOUT ESPECÍFICO DA PÁGINA CHECKLIST */
+        .checklist-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--cor-fundo-card);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .checklist-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 5px solid var(--cor-marsala-claro);
+            background-color: #fafafa;
+            border-radius: 4px;
+        }
+        .checklist-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--cor-marsala-principal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .checklist-text h3 {
+            margin-top: 0;
+            color: var(--cor-marsala-principal);
+        }
+        .btn-download-grande {
+            display: block;
+            width: 100%;
+            background-color: var(--cor-marsala-principal);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: background-color 0.2s;
+        }
+        .btn-download-grande:hover {
+            background-color: var(--cor-marsala-claro);
+        }
+
+        /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
+        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
+        .footer-cta h3 { color: white; margin-bottom: 10px; }
+        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
+        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cor-marsala-principal); }
+        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
+        
+        /* RESPONSIVIDADE (mínima para esta página) */
+        @media (max-width: 768px) {
+            .checklist-content { padding: 20px; margin: 20px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="perfil">
+                    <div class="perfil-avatar">AK</div>
+                    <div class="perfil-texto">
+                        <h3>Do Consultório à Nuvem</h3>
+                        <p>Ana Karina — transição de carreira para mulheres</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html#trilhas">Trilhas</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="checklist-content">
+            
+            <h1>Seu Roadmap para o Primeiro Projeto Cloud</h1>
+            
+            <p>O Checklist "10 Passos para Montar Seu Primeiro Projeto e Enviar para Vagas" é o guia prático que eu usei para estruturar meu portfólio. Ele transforma a teoria em ação.</p>
+            
+            <p>Veja um resumo dos passos que você vai encontrar no PDF:</p>
+            
+            <div class="checklist-item">
+                <div class="checklist-icon">1</div>
+                <div class="checklist-text">
+                    <h3>Definição do Nicho</h3>
+                    <p>Como escolher um problema real para resolver, alinhando com sua experiência e a demanda do mercado (Ex: DevOps, Segurança, Serverless).</p>
+                </div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checklist-icon">2</div>
+                <div class="checklist-text">
+                    <h3>Estrutura Mínima Viável (MVP)</h3>
+                    <p>Planejamento das 3 tecnologias essenciais (ex: AWS, Linux, Terraform) para focar no que é vital para o projeto.</p>
+                </div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checklist-icon">3</div>
+                <div class="checklist-text">
+                    <h3>Documentação e Repositório</h3>
+                    <p>Como transformar seu código em uma apresentação profissional no GitHub, com um README que chama a atenção dos recrutadores.</p>
+                </div>
+            </div>
+            
+            <div class="checklist-item">
+                <div class="checklist-icon">4</div>
+                <div class="checklist-text">
+                    <h3>"Onde Enviar"</h3>
+                    <p>Lista de plataformas e métodos estratégicos para enviar seu projeto e candidaturas, fugindo do 'enviar para todo lado'.</p>
+                </div>
+            </div>
+
+            <a href="link-para-o-seu-pdf-hospedado.pdf" class="btn-download-grande" target="_blank">BAIXE O CHECKLIST COMPLETO (PDF)</a>
+
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Pronta para a Nuvem?</h3>
+                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
+                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
+                <a href="sobre.html">Sobre Mim</a>
+                <a href="index.html#contato">Newsletter</a>
+            </div>
+
+            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
