@@ -1,5 +1,3 @@
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do Consultório à Nuvem | Blog de Transição de Carreira</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Guia e caminho para mulheres que buscam a transição de carreira para Cloud Computing e tecnologia, por Ana Karina.">
+    <meta name="author" content="Ana Karina">
+    <meta property="og:title" content="Do Consultório à Nuvem | Sua Jornada de Sucesso em Cloud">
+    <meta property="og:description" content="Compartilho aqui o caminho exato, as ferramentas e as estratégias que me levaram a uma carreira de sucesso em TI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/">
+    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
+    <meta property="og:locale" content="pt_BR">
     <style>
         /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
         :root {
@@ -120,6 +127,15 @@
         /* ==================== 5. SEÇÃO PRINCIPAL (LEFT) ==================== */
         .secao-hero {
             padding-right: 30px;
+        }
+
+        .hero-imagem {
+            width: 100%;
+            height: 350px; /* Altura fixa para o banner */
+            background-color: #eee;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            object-fit: cover; 
         }
 
         .secao-hero h1 {
@@ -326,6 +342,47 @@
             font-size: 0.85rem;
             color: var(--cor-secundaria);
         }
+        
+        /* ==================== 9. RODAPÉ (FOOTER) COM REDES ==================== */
+        .footer {
+            background-color: var(--cor-texto-principal); /* Fundo escuro */
+            color: white;
+            padding: 40px 0 20px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-cta h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer-cta p {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a {
+            color: var(--cor-marsala-claro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--cor-marsala-principal); /* Cor Marsala */
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
 
         /* ==================== 8. RESPONSIVIDADE ==================== */
         @media (max-width: 992px) {
@@ -372,10 +429,9 @@
                     </div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="#trilhas">Trilhas</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -385,17 +441,22 @@
     <div class="container main-content">
         
         <div class="secao-hero" id="inicio">
-            <h1>Do consultório à nuvem: sua transição começa aqui</h1>
             
-            <p>Sou Ana Karina — cirurgiã dentista em transição para tecnologia e cloud. Neste blog compartilho escolas, projetos, eventos e passos práticos para mulheres que querem mudar de carreira sem perder sua identidade.</p>
+            <img src="https://via.placeholder.com/1200x350/953748/FFFFFF?text=IMAGEM+DE+DESTAQUE+%7C+DO+CONSULT%C3%93RIO+%C3%80+NUVEM" 
+                 alt="Banner de destaque: transição de carreira para Cloud Computing" 
+                 class="hero-imagem">
+
+            <h1>Do consultório à nuvem: sua jornada de sucesso em Cloud.</h1>
+            
+            <p>Sou Ana Karina, uma profissional de Cloud Computing que fez a transição do consultório à tecnologia. Compartilho aqui o caminho exato, as ferramentas e as estratégias que me levaram a uma carreira de sucesso em TI. Meu objetivo é guiar mulheres que buscam essa mudança, valorizando sua experiência profissional anterior.</p>
             
             <a href="#trilhas" class="btn-principal">Comece sua trilha</a>
             
             <div class="tags-container" id="trilhas">
                 <span class="tag">Iniciação</span>
-                <span class="tag">Python</span>
+                <span class="tag">Fundamentos</span>
                 <span class="tag">AWS</span>
-                <span class="tag">Portfólio</span>
+                <span class="tag">Networking</span>
                 <span class="tag">Mentoria</span>
             </div>
             
@@ -403,7 +464,7 @@
                 <h2>Plataformas que me Acompanharam</h2>
                 
                 <a href="https://escoladanuvem.org/" target="_blank" class="plataforma-card">
-                    <img src="https://via.placeholder.com/50/953748/FFFFFF?text=EN" alt="Logo Escola da Nuvem" class="plataforma-logo">
+                    <img src="https://via.placeholder.com/50/953748/FFFFFF?text=EN" alt="Logo da Escola da Nuvem - Formação Cloud" class="plataforma-logo">
                     <div class="plataforma-info">
                         <h3>Escola da Nuvem</h3>
                         <p>Formação completa em Cloud Computing com foco em inclusão.</p>
@@ -411,33 +472,37 @@
                 </a>
 
                 <a href="https://www.daredeacademy.com.br/pages/new-pagina-inicial" target="_blank" class="plataforma-card">
-                    <img src="https://via.placeholder.com/50/AA6C78/FFFFFF?text=CD" alt="Logo Clouddelas Darede Academy" class="plataforma-logo">
+                    <img src="https://via.placeholder.com/50/AA6C78/FFFFFF?text=CD" alt="Logo Cloudelas Darede Academy - Empoderamento Feminino" class="plataforma-logo">
                     <div class="plataforma-info">
-                        <h3>Clouddelas - Darede Academy</h3>
+                        <h3>Cloudelas - Darede Academy</h3>
                         <p>Programa de capacitação e empoderamento feminino em Cloud.</p>
                     </div>
                 </a>
             </div>
             
             <h2 style="margin-top: 3rem; margin-bottom: 20px;">Últimas Postagens</h2>
-            <div class="lista-posts">
-                <a href="link-post-1.html" class="post-card-simples">
-                    <div class="detalhes">
-                        <h3>Minha transição: do consultório à nuvem</h3>
-                        <p>Publicada em 10 de outubro de 2025 • 6 min</p>
-                    </div>
-                    <span class="ler-mais">Ler →</span>
-                </a>
-                
-                <a href="link-post-2.html" class="post-card-simples">
-                    <div class="detalhes">
-                        <h3>5 cursos que me ajudaram a dar o primeiro passo</h3>
-                        <p>Publicada em 5 de outubro de 2025 • 4 min</p>
-                    </div>
-                    <span class="ler-mais">Ler →</span>
-                </a>
-                
+            
+            <div class="post-card-simples" style="flex-direction: column; align-items: flex-start; padding: 25px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Assuntos e Tecnologias Essenciais da Minha Trilha de Estudos</h3>
+                <p style="font-size: 0.95rem; color: var(--cor-texto-principal); margin-bottom: 15px;">Estes são os pilares do meu conhecimento em Cloud e a base para a minha transição:</p>
+                <ul style="font-size: 0.9rem; color: var(--cor-secundaria); list-style: disc; margin-left: 20px;">
+                    <li style="margin-bottom: 5px;">**Iniciação Tech:** Fundamentos de TI e Lógica de Programação.</li>
+                    <li style="margin-bottom: 5px;">**AWS (Amazon Web Services):** Fundamentos, EC2, S3, IAM e VPC.</li>
+                    <li style="margin-bottom: 5px;">**Infraestrutura como Código (IaC):** Terraform e CloudFormation.</li>
+                    <li style="margin-bottom: 5px;">**Linux e Shell Scripting:** Gerenciamento básico de sistemas operacionais.</li>
+                </ul>
+                <div style="width: 100%; text-align: right; margin-top: 15px; border-top: 1px solid #f0f0f0; padding-top: 10px;">
+                    <a href="cursos.html" class="ler-mais">Leia mais sobre minha trilha de cursos →</a>
                 </div>
+            </div>
+            
+            <a href="link-post-1.html" class="post-card-simples">
+                <div class="detalhes">
+                    <h3>Minha transição: do consultório à nuvem</h3>
+                    <p>Publicada em 10 de outubro de 2025 • 6 min</p>
+                </div>
+                <span class="ler-mais">Ler →</span>
+            </a>
             
         </div>
         
@@ -465,14 +530,30 @@
             <div class="widget-checklist">
                 <h3>Baixe meu checklist</h3>
                 <p>Checklist: 10 passos para montar seu primeiro projeto e enviar para vagas.</p>
-                <a href="link-para-pdf.pdf" class="btn-sidebar btn-checklist">Baixar (PDF)</a>
+                <a href="checklist.html" class="btn-sidebar btn-checklist">Baixar (PDF)</a>
             </div>
 
         </aside>
 
     </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Pronta para a Nuvem?</h3>
+                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
+                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
+                <a href="sobre.html">Sobre Mim</a>
+                <a href="index.html#contato">Newsletter</a>
+            </div>
+
+            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-```
-
-
