@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Essenciais: Cloud e LinkedIn | Do Consultório à Nuvem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Guia completo sobre as plataformas AWS, Azure e GCP, links para cursos e a importância estratégica do LinkedIn na carreira de Cloud.">
+    <meta name="author" content="Ana Karina">
+    <meta property="og:title" content="Recursos Cloud: AWS, Azure, GCP e LinkedIn">
+    <meta property="og:description" content="Tudo o que você precisa saber sobre as 3 grandes Nuvens e como usar o LinkedIn para a transição.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/recursos-cloud.html">
+    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
+    <meta property="og:locale" content="pt_BR">
+    <style>
+        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
+        :root {
+            --cor-marsala-principal: #953748;
+            --cor-marsala-claro: #AA6C78;
+            --cor-fundo: #f8f9fa;
+            --cor-texto-principal: #343a40;
+            --cor-fundo-card: #ffffff;
+            --cor-borda: #dee2e6;
+            --cor-secundaria: #6c757d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        h1 { font-weight: 700; font-size: 2.5rem; }
+        h2 { font-weight: 600; font-size: 1.8rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid var(--cor-marsala-claro); padding-bottom: 5px; }
+        h3 { font-weight: 600; font-size: 1.4rem; margin-top: 25px; margin-bottom: 10px;}
+
+        /* CABEÇALHO/NAVBAR (CÓDIGO REPETIDO PARA CONSISTÊNCIA) */
+        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .perfil { display: flex; align-items: center; }
+        .perfil-avatar { background-color: var(--cor-marsala-principal); color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-weight: 600; font-size: 1rem; margin-right: 15px; }
+        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
+        .nav-links li a:hover { color: var(--cor-marsala-principal); }
+
+        /* LAYOUT ESPECÍFICO DA POSTAGEM/RECURSOS */
+        .post-article {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--cor-fundo-card);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .post-article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #555;
+            text-align: justify;
+        }
+        .plataforma-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .cloud-card {
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .cloud-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .cloud-card img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .cloud-card h3 {
+            color: var(--cor-marsala-principal);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .cloud-card a {
+            color: var(--cor-marsala-claro);
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
+        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
+        .footer-cta h3 { color: white; margin-bottom: 10px; }
+        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
+        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cor-marsala-principal); }
+        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
+        
+        /* RESPONSIVIDADE (mínima) */
+        @media (max-width: 768px) {
+            .post-article { padding: 20px; margin: 20px 10px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="perfil">
+                    <div class="perfil-avatar">AK</div>
+                    <div class="perfil-texto">
+                        <h3>Do Consultório à Nuvem</h3>
+                        <p>Ana Karina — transição de carreira para mulheres</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html#trilhas">Trilhas</a></li>
+                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="post-article">
+            
+            <h1>Seu Guia de Plataformas: AWS, Azure, GCP e o Poder do LinkedIn</h1>
+            
+            <p>Nesta seção, reunimos os recursos mais importantes para quem está construindo uma carreira em Cloud. Entenda a diferença entre as principais Nuvens e use o LinkedIn de forma estratégica para acelerar sua transição.</p>
+
+            <h2>1. O LinkedIn como Ferramenta de Carreira</h2>
+            
+            <p>Em áreas tradicionais, o LinkedIn é um currículo digital. Na tecnologia, ele é sua **Rede de Aprendizado e Prova Social**. Seus projetos, seus comentários em artigos técnicos e suas certificações devem ser visíveis e estratégicos.</p>
+            
+            <p><strong>Diferente de outras áreas:</strong> No mundo tech, o networking ativo e a criação de conteúdo técnico valem mais que títulos. Mantenha seu perfil focado em Cloud, Segurança e Arquitetura.</p>
+
+            <h2 style="margin-top: 50px;">2. As 3 Grandes Nuvens: Comparação e Aprendizado</h2>
+            
+            <p>Não precisa dominar todas, mas conhecer as três te dá uma visão de mercado completa. Clique para acessar os recursos de aprendizado de cada plataforma e veja as certificações iniciais que recomendo:</p>
+
+            <div class="plataforma-grid">
+                
+                <div class="cloud-card">
+                    <img src="assets/logo-aws.png" alt="Logo da Amazon Web Services" > 
+                    <h3>Amazon Web Services (AWS)</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px;">Líder de mercado e pioneira em serviços Cloud. Foco em escalabilidade e segurança.</p>
+                    <a href="https://aws.amazon.com/pt/education/awseducate/" target="_blank">Cursos e Programas (AWS Educate)</a>
+                    <img src="assets/cert-aws-cpf.png" alt="Certificação AWS Cloud Practitioner" style="max-width: 80px; margin-top: 10px;"> 
+                </div>
+
+                <div class="cloud-card">
+                    <img src="assets/logo-azure.png" alt="Logo do Microsoft Azure" >
+                    <h3>Microsoft Azure</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px;">Forte integração com ambientes corporativos (Microsoft/Windows). Excelente para IA.</p>
+                    <a href="https://learn.microsoft.com/pt-br/" target="_blank">Microsoft Learn (Cursos Gratuitos)</a>
+                    <img src="assets/cert-azure-az900.png" alt="Certificação Azure Fundamentals (AZ-900)" style="max-width: 80px; margin-top: 10px;"> 
+                </div>
+
+                <div class="cloud-card">
+                    <img src="assets/logo-gcp.png" alt="Logo do Google Cloud Platform" >
+                    <h3>Google Cloud Platform (GCP)</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px;">Foco em Data Science, Machine Learning e Kubernetes. Crescimento rápido.</p>
+                    <a href="https://grow.google/intl/pt/courses-and-tools/" target="_blank">Cursos e Ferramentas (Grow with Google)</a>
+                    <img src="assets/cert-gcp-cdl.png" alt="Certificação Google Cloud Digital Leader" style="max-width: 80px; margin-top: 10px;"> 
+                </div>
+
+            </div>
+            
+            <p>Lembre-se: comece por uma (geralmente AWS) e use esta página como seu ponto de partida para explorar os demais recursos. O conhecimento das bases é a sua maior vantagem competitiva.</p>
+
+        </article>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Pronta para a Nuvem?</h3>
+                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
+                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
+                <a href="sobre.html">Sobre Mim</a>
+                <a href="index.html#contato">Newsletter</a>
+            </div>
+
+            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
