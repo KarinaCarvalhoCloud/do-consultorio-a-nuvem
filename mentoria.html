@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria Cloud e Carreira | Do Consultório à Nuvem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Mentoria personalizada com Ana Karina para planejar sua transição de carreira para Cloud Computing, focando em AWS, Segurança e Estratégia.">
+    <meta name="author" content="Ana Karina">
+    <meta property="og:title" content="Mentoria Individual: Transição de Carreira para Cloud">
+    <meta property="og:description" content="Planeje sua jornada, organize seus estudos e conquiste sua vaga com acompanhamento focado e prático.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/mentoria.html">
+    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
+    <meta property="og:locale" content="pt_BR">
+    <style>
+        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
+        :root {
+            --cor-marsala-principal: #953748;
+            --cor-marsala-claro: #AA6C78;
+            --cor-fundo: #f8f9fa;
+            --cor-texto-principal: #343a40;
+            --cor-fundo-card: #ffffff;
+            --cor-borda: #dee2e6;
+            --cor-secundaria: #6c757d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        h1 { font-weight: 700; font-size: 2.5rem; }
+        h2 { font-weight: 600; font-size: 1.8rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid var(--cor-marsala-claro); padding-bottom: 5px; }
+        h3 { font-weight: 600; font-size: 1.4rem; margin-top: 25px; margin-bottom: 10px;}
+
+        /* CABEÇALHO/NAVBAR (CÓDIGO REPETIDO PARA CONSISTÊNCIA) */
+        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .perfil { display: flex; align-items: center; }
+        .perfil-avatar { /* Define o círculo */
+            background-color: var(--cor-marsala-principal);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            overflow: hidden; 
+            margin-right: 15px; 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        .perfil-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
+        .nav-links li a:hover { color: var(--cor-marsala-principal); }
+
+        /* LAYOUT DA MENTORIA */
+        .mentoria-content { max-width: 800px; margin: 40px auto; padding: 40px; background-color: var(--cor-fundo-card); border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+        .mentoria-content p { margin-bottom: 1.5rem; font-size: 1.05rem; color: #555; }
+        
+        .cta-mentoria {
+            background-color: var(--cor-marsala-principal);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .cta-mentoria h3 { color: white; font-size: 1.8rem; margin: 0 0 10px 0; }
+        .cta-mentoria a {
+            display: inline-block;
+            background-color: white;
+            color: var(--cor-marsala-principal);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: background-color 0.2s;
+        }
+        .cta-mentoria a:hover { background-color: #f0f0f0; }
+
+        .lista-beneficios {
+            list-style: none;
+            padding: 0;
+        }
+        .lista-beneficios li {
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--cor-borda);
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        .lista-beneficios li:last-child { border-bottom: none; }
+        .lista-beneficios li::before {
+            content: '→';
+            color: var(--cor-marsala-principal);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
+        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
+        .footer-cta h3 { color: white; margin-bottom: 10px; }
+        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
+        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cor-marsala-principal); }
+        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
+        
+        /* RESPONSIVIDADE (mínima) */
+        @media (max-width: 768px) { .mentoria-content { padding: 20px; margin: 20px 10px; } }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="perfil">
+                    <div class="perfil-avatar">
+                        <img src="assets/avatar-ana-karina.jpg" alt="Foto de perfil de Ana Karina" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <div class="perfil-texto">
+                        <h3>Do Consultório à Nuvem</h3>
+                        <p>Ana Karina — transição de carreira para mulheres</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html#trilhas">Trilhas</a></li>
+                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li>
+                    <li><a href="mentoria.html">Mentoria</a></li> 
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="mentoria-content">
+            
+            <h1>Mentoria Individual: Planeje Sua Transição para a Nuvem</h1>
+            
+            <p>Se você se sente perdida sobre por onde começar, qual certificação tirar primeiro ou como organizar seu currículo, a mentoria individual é o caminho mais rápido para o sucesso. Vamos transformar sua bagagem em um plano de carreira em Cloud prático e focado.</p>
+            
+            <h2>Como a Mentoria Funciona?</h2>
+            
+            <p>Minhas sessões são 100% personalizadas e focadas em resultados. Utilizo minha experiência de transição de uma área tradicional para o mundo técnico (Segurança, Arquitetura e IaC) para cortar o caminho e evitar os erros mais comuns.</p>
+            
+            <ul class="lista-beneficios">
+                <li>**Roadmap Personalizado:** Criamos um plano de estudos e aquisição de habilidades sob medida para seu tempo e seu objetivo em Cloud.</li>
+                <li>**Revisão Curricular:** Análise do seu currículo, focando em como transferir suas soft skills anteriores para o vocabulário Tech.</li>
+                <li>**Foco em Certificações:** Orientação sobre qual certificação começar (AWS, Azure ou GCP) e como estudar de forma eficaz.</li>
+                <li>**Estratégia de Networking:** Dicas para usar o LinkedIn de forma estratégica e encontrar suas primeiras oportunidades.</li>
+                <li>**Segurança e Arquitetura:** Discussões técnicas e direcionamento prático para seus primeiros projetos.</li>
+            </ul>
+
+            <div class="cta-mentoria">
+                <h3>Pronta para Acelerar a Sua Transição?</h3>
+                <p>O número de vagas para mentoria é limitado para garantir a qualidade do acompanhamento.</p>
+                <a href="URL_DO_SEU_LINK_DE_AGENDAMENTO_AQUI" target="_blank">AGENDE SUA PRIMEIRA SESSÃO</a>
+            </div>
+
+        </article>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Pronta para a Nuvem?</h3>
+                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
+                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
+                <a href="sobre.html">Sobre Mim</a>
+                <a href="index.html#contato">Newsletter</a>
+            </div>
+
+            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
