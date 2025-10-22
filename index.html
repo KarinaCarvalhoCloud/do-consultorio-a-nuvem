@@ -17,402 +17,117 @@
     <style>
         /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
         :root {
-            --cor-marsala-principal: #953748; /* Marsala/Vinho escuro para botões e títulos */
-            --cor-marsala-claro: #AA6C78;    /* Marsala mais suave para tags e hover */
-            --cor-fundo: #f8f9fa;            /* Fundo levemente cinza (como na imagem) */
-            --cor-texto-principal: #343a40;  /* Preto/Cinza Escuro */
-            --cor-fundo-card: #ffffff;       /* Fundo dos cards e topo */
+            --cor-marsala-principal: #953748;
+            --cor-marsala-claro: #AA6C78;
+            --cor-fundo: #f8f9fa;
+            --cor-texto-principal: #343a40;
+            --cor-fundo-card: #ffffff;
             --cor-borda: #dee2e6;
-            --cor-secundaria: #6c757d; /* Cinza para texto secundário */
+            --cor-secundaria: #6c757d;
         }
 
         /* ==================== 2. RESET E TIPOGRAFIA ==================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--cor-texto-principal);
-            background-color: var(--cor-fundo);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-        
-        /* Títulos */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         h1 { font-weight: 700; font-size: 2.5rem; }
         h2 { font-weight: 600; font-size: 1.5rem; }
         h3 { font-weight: 600; font-size: 1.2rem; }
 
-
         /* ==================== 3. CABEÇALHO (NAVBAR) ==================== */
-        .header {
-            background: var(--cor-fundo-card);
-            padding: 1rem 0;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: sticky; /* Mantém o menu no topo ao rolar */
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .perfil {
-            display: flex;
-            align-items: center;
-        }
+        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
         
-        .perfil-avatar {
+        .perfil { display: flex; align-items: center; }
+        .perfil-avatar { /* Define o círculo */
             background-color: var(--cor-marsala-principal);
-            color: white;
             border-radius: 50%;
             width: 40px;
             height: 40px;
-            display: flex;
+            overflow: hidden; /* Corta a imagem no formato circular */
+            margin-right: 15px; 
+            display: flex; /* Para centralizar o conteúdo, se for texto */
             justify-content: center;
             align-items: center;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-right: 15px;
         }
-
-        .perfil-texto h3 {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 600;
+        .perfil-avatar img { /* Garante que a imagem preencha o círculo */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .perfil-texto p {
-            margin: 0;
-            font-size: 0.85rem;
-            color: var(--cor-secundaria);
-        }
+        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li a {
-            color: var(--cor-texto-principal);
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 25px;
-            transition: color 0.2s;
-        }
-
-        .nav-links li a:hover {
-            color: var(--cor-marsala-principal);
-        }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
+        .nav-links li a:hover { color: var(--cor-marsala-principal); }
 
         /* ==================== 4. LAYOUT PRINCIPAL (GRID) ==================== */
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr; /* Conteúdo principal (2/3) e Sidebar (1/3) */
-            gap: 40px;
-            padding: 40px 0;
-        }
+        .main-content { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 40px 0; }
         
         /* ==================== 5. SEÇÃO PRINCIPAL (LEFT) ==================== */
-        .secao-hero {
-            padding-right: 30px;
-        }
-
-        .hero-imagem {
-            width: 100%;
-            height: 350px; /* Altura fixa para o banner */
-            background-color: #eee;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            object-fit: cover; 
-        }
-
-        .secao-hero h1 {
-            margin-bottom: 1rem;
-        }
-
-        .secao-hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #555;
-        }
+        .secao-hero { padding-right: 30px; }
+        .hero-imagem { width: 100%; height: 350px; background-color: #eee; border-radius: 10px; margin-bottom: 30px; object-fit: cover; }
+        .secao-hero h1 { margin-bottom: 1rem; }
+        .secao-hero p { font-size: 1.1rem; margin-bottom: 2rem; color: #555; }
         
         /* Botão Principal */
-        .btn-principal {
-            display: inline-block;
-            background-color: var(--cor-marsala-principal);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: background-color 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-principal:hover {
-            background-color: var(--cor-marsala-claro);
-        }
+        .btn-principal { display: inline-block; background-color: var(--cor-marsala-principal); color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: background-color 0.2s; border: none; cursor: pointer; }
+        .btn-principal:hover { background-color: var(--cor-marsala-claro); }
         
         /* Tags/Pilares */
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .tag {
-            background-color: var(--cor-marsala-claro);
-            color: var(--cor-fundo-card);
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin-right: 10px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
+        .tags-container { display: flex; flex-wrap: wrap; margin-bottom: 3rem; }
+        .tag { background-color: var(--cor-marsala-claro); color: var(--cor-fundo-card); padding: 8px 15px; border-radius: 20px; margin-right: 10px; font-size: 0.9rem; font-weight: 500; margin-bottom: 10px; }
         
         /* Card de Postagem Simples */
-        .post-card-simples {
-            background-color: var(--cor-fundo-card);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.2s;
-        }
+        .post-card-simples { background-color: var(--cor-fundo-card); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; transition: transform 0.2s; }
+        .post-card-simples:hover { transform: translateX(5px); }
+        .post-card-simples .detalhes h3 { margin-bottom: 5px; color: var(--cor-texto-principal); font-size: 1.1rem; }
+        .post-card-simples .detalhes p { font-size: 0.9rem; color: var(--cor-secundaria); }
+        .post-card-simples .ler-mais { color: var(--cor-marsala-principal); text-decoration: none; font-weight: 600; white-space: nowrap; }
+        .post-card-simples .ler-mais:hover { text-decoration: underline; }
 
-        .post-card-simples:hover {
-             transform: translateX(5px);
-        }
+        /* ==================== 6. SIDEBAR (RIGHT) e PLATAFORMAS ==================== */
+        .sidebar { background-color: var(--cor-fundo-card); padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+        .sidebar h3 { border-bottom: 2px solid var(--cor-fundo); padding-bottom: 10px; margin-bottom: 20px; color: var(--cor-texto-principal); }
+        .sidebar p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
 
-        .post-card-simples .detalhes h3 {
-            margin-bottom: 5px;
-            color: var(--cor-texto-principal);
-            font-size: 1.1rem;
-        }
+        .btn-sidebar { width: 100%; display: block; background-color: var(--cor-marsala-principal); color: white; padding: 10px; border-radius: 5px; text-decoration: none; text-align: center; font-weight: 600; transition: background-color 0.2s; border: none; cursor: pointer; }
+        .btn-sidebar:hover { background-color: var(--cor-marsala-claro); }
         
-        .post-card-simples .detalhes p {
-            font-size: 0.9rem;
-            color: var(--cor-secundaria);
-        }
-
-        .post-card-simples .ler-mais {
-            color: var(--cor-marsala-principal);
-            text-decoration: none;
-            font-weight: 600;
-            white-space: nowrap; 
-        }
+        /* Eventos */
+        .evento-detalhe { font-size: 0.9rem; color: var(--cor-secundaria); margin-bottom: 5px; display: block; }
+        .saiba-mais { color: var(--cor-marsala-principal); text-decoration: none; font-weight: 600; display: block; margin-top: 10px; }
+        .saiba-mais:hover { text-decoration: underline; }
         
-        .post-card-simples .ler-mais:hover {
-            text-decoration: underline;
-        }
+        /* Plataformas de Apoio */
+        .plataformas-apoio { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--cor-borda); }
+        .plataformas-apoio h2 { font-size: 1.5rem; margin-bottom: 20px; }
+        .plataforma-card { display: flex; align-items: center; background-color: var(--cor-fundo-card); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); margin-bottom: 15px; text-decoration: none; color: var(--cor-texto-principal); transition: transform 0.2s, box-shadow 0.2s; }
+        .plataforma-card:hover { transform: translateX(3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .plataforma-logo { width: 50px; height: 50px; object-fit: cover; border-radius: 5px; margin-right: 15px; }
+        .plataforma-info h3 { margin: 0; font-size: 1.1rem; color: var(--cor-marsala-principal); }
+        .plataforma-info p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
 
-
-        /* ==================== 6. SIDEBAR (RIGHT) ==================== */
-        .sidebar {
-            background-color: var(--cor-fundo-card);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .sidebar h3 {
-            border-bottom: 2px solid var(--cor-fundo);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: var(--cor-texto-principal);
-        }
-        
-        .sidebar p {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        /* Formulário */
-        .input-email {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--cor-borda);
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .btn-sidebar {
-            width: 100%;
-            display: block;
-            background-color: var(--cor-marsala-principal);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            font-weight: 600;
-            transition: background-color 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-sidebar:hover {
-            background-color: var(--cor-marsala-claro);
-        }
-        
-        /* Estilo do Evento e Saiba Mais */
-        .evento-detalhe {
-            font-size: 0.9rem;
-            color: var(--cor-secundaria);
-            margin-bottom: 5px;
-        }
-
-        .saiba-mais {
-            color: var(--cor-marsala-principal);
-            text-decoration: none;
-            font-weight: 600;
-            display: block;
-            margin-top: 10px;
-        }
-        
-        .saiba-mais:hover {
-            text-decoration: underline;
-        }
-        
-        /* ==================== 7. ESTILO PLATAFORMAS DE APOIO ==================== */
-        .plataformas-apoio {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--cor-borda);
-        }
-
-        .plataformas-apoio h2 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .plataforma-card {
-            display: flex;
-            align-items: center;
-            background-color: var(--cor-fundo-card);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: var(--cor-texto-principal);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .plataforma-card:hover {
-            transform: translateX(3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .plataforma-logo {
-            width: 50px; 
-            height: 50px;
-            object-fit: cover; 
-            border-radius: 5px;
-            margin-right: 15px;
-        }
-
-        .plataforma-info h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--cor-marsala-principal);
-        }
-
-        .plataforma-info p {
-            margin: 0;
-            font-size: 0.85rem;
-            color: var(--cor-secundaria);
-        }
-        
-        /* ==================== 9. RODAPÉ (FOOTER) COM REDES ==================== */
-        .footer {
-            background-color: var(--cor-texto-principal); /* Fundo escuro */
-            color: white;
-            padding: 40px 0 20px 0;
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .footer-cta h3 {
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .footer-cta p {
-            color: #ccc;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-        
-        .footer-links a {
-            color: var(--cor-marsala-claro);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--cor-marsala-principal); /* Cor Marsala */
-        }
-
-        .copyright {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #444;
-            font-size: 0.85rem;
-            color: #888;
-        }
+        /* ==================== 7. RODAPÉ (FOOTER) ==================== */
+        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
+        .footer-cta h3 { color: white; margin-bottom: 10px; }
+        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
+        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cor-marsala-principal); }
+        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
 
 
         /* ==================== 8. RESPONSIVIDADE ==================== */
         @media (max-width: 992px) {
-            .main-content {
-                grid-template-columns: 1fr; /* Coluna única em telas menores */
-            }
-            
-            .secao-hero {
-                padding-right: 0;
-            }
-            
-            .sidebar {
-                margin-top: 20px;
-            }
-            
-            .navbar {
-                flex-direction: column;
-            }
-            
-            .perfil {
-                margin-bottom: 15px;
-            }
-            
-            .nav-links {
-                justify-content: center;
-            }
-            
-            .nav-links li a {
-                margin: 0 10px;
-            }
+            .main-content { grid-template-columns: 1fr; }
+            .secao-hero { padding-right: 0; }
+            .sidebar { margin-top: 20px; }
+            .navbar { flex-direction: column; }
+            .perfil { margin-bottom: 15px; }
+            .nav-links { justify-content: center; }
+            .nav-links li a { margin: 0 10px; }
         }
     </style>
 </head>
@@ -422,7 +137,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="perfil">
-                    <div class="perfil-avatar">AK</div>
+                    <div class="perfil-avatar">
+                        <img src="assets/avatar-ana-karina.jpg" alt="Foto de perfil de Ana Karina" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
                     <div class="perfil-texto">
                         <h3>Do Consultório à Nuvem</h3>
                         <p>Ana Karina — transição de carreira para mulheres</p>
@@ -432,7 +149,7 @@
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="#trilhas">Trilhas</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li> <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -442,7 +159,7 @@
         
         <div class="secao-hero" id="inicio">
             
-            <img src="assets/banner-principal.jpeg" 
+            <img src="assets/banner-principal.jpg" 
                  alt="Banner de destaque: transição de carreira para Cloud Computing" 
                  class="hero-imagem">
 
@@ -464,7 +181,7 @@
                 <h2>Plataformas que me Acompanharam</h2>
                 
                 <a href="https://escoladanuvem.org/" target="_blank" class="plataforma-card">
-                    <img src="assets/Logo-Escola-da-nuvem.png" alt="Logo da Escola da Nuvem - Formação Cloud" class="plataforma-logo">
+                    <img src="assets/logo-escoladanuvem.png" alt="Logo da Escola da Nuvem - Formação Cloud" class="plataforma-logo">
                     <div class="plataforma-info">
                         <h3>Escola da Nuvem</h3>
                         <p>Formação completa em Cloud Computing com foco em inclusão.</p>
@@ -475,7 +192,7 @@
                     <img src="assets/logo-cloudelas.png" alt="Logo Cloudelas Darede Academy - Empoderamento Feminino" class="plataforma-logo">
                     <div class="plataforma-info">
                         <h3>Cloudelas - Darede Academy</h3>
-                        <p>Programa de capacitação e empoderamento feminino em Cloud da DAREDE.</p>
+                        <p>Programa de capacitação e empoderamento feminino em Cloud.</p>
                     </div>
                 </a>
             </div>
@@ -496,12 +213,13 @@
                 </div>
             </div>
             
-            <a href="post-minha-transicao.html" class="post-card-simples">  <div class="detalhes">
-        <h3>Minha transição: do consultório à nuvem</h3>
-        <p>Publicada em 22 de outubro de 2025 • 6 min</p>
-    </div>
-    <span class="ler-mais">Ler →</span>
-</a>
+            <a href="post-minha-transicao.html" class="post-card-simples">
+                <div class="detalhes">
+                    <h3>Minha transição: do consultório à nuvem</h3>
+                    <p>Publicada em 10 de outubro de 2025 • 6 min</p>
+                </div>
+                <span class="ler-mais">Ler →</span>
+            </a>
             
         </div>
         
@@ -510,15 +228,12 @@
             <div class="widget-novidades">
                 <h3>Receba as novidades</h3>
                 <p>Dicas semanais, eventos e projetos direto no seu e-mail.</p>
-                <form>
-                    <input type="email" placeholder="Seu melhor e-mail" class="input-email">
-                    <button type="submit" class="btn-sidebar">Quero receber</button>
-                </form>
+                <a href="URL_DA_SUA_NEWSLETTER_DE_INSCRICAO" target="_blank" class="btn-sidebar">Quero receber</a>
             </div>
             
             <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--cor-fundo);">
             
-          <div class="widget-evento">
+            <div class="widget-evento">
                 <h3>Comunidade & Eventos</h3>
                 
                 <p style="margin-bottom: 10px; font-weight: 600; color: var(--cor-texto-principal);">Conferências e Encontros Essenciais:</p>
@@ -526,32 +241,36 @@
                 <div style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0;">
                     <strong style="color: var(--cor-marsala-principal);">MVP Conf 2025/2026 (Microsoft)</strong>
                     <span class="evento-detalhe"> • São Paulo e Online</span>
-                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">O maior encontro de especialistas Microsoft do Brasil, com foco em Azure, IA e Inovação.</p>
+                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">O maior encontro de especialistas Microsoft do Brasil.</p>
                     <a href="https://www.mvpconf.com.br/" target="_blank" class="saiba-mais">Ver detalhes →</a>
                 </div>
                 
                 <div style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0;">
                     <strong style="color: var(--cor-marsala-principal);">5º Evento Mulheres em IA (MIA)</strong>
                     <span class="evento-detalhe"> • Formato Híbrido (SP e Online)</span>
-                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">Foco em IA Generativa, Ciência de Dados e protagonismo feminino em tecnologia.</p>
+                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">Foco em IA Generativa, Ciência de Dados e protagonismo feminino.</p>
                     <a href="https://www.sympla.com.br/evento/5-evento-mulheres-em-ia-mia/3163260" target="_blank" class="saiba-mais">Ver detalhes →</a>
                 </div>
                 
                 <div style="margin-bottom: 0;">
                     <strong style="color: var(--cor-marsala-principal);">Esquenta DevOpsDays São Paulo</strong>
                     <span class="evento-detalhe"> • Evento presencial (SP)</span>
-                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">Encontro da comunidade com trocas de experiências em cultura DevOps e tecnologias Cloud.</p>
+                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">Encontro da comunidade com trocas de experiências em cultura DevOps.</p>
                     <a href="https://www.sympla.com.br/evento/esquenta-devopsdays-sao-paulo-oracle/3174025" target="_blank" class="saiba-mais">Ver detalhes →</a>
                 </div>
             </div>
             
             <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--cor-fundo);">
-            
+
             <div class="widget-checklist">
                 <h3>Baixe meu checklist</h3>
                 <p>Checklist: 10 passos para montar seu primeiro projeto e enviar para vagas.</p>
                 <a href="checklist.html" class="btn-sidebar btn-checklist">Baixar (PDF)</a>
             </div>
+
+        </aside>
+
+    </div>
     
     <footer class="footer">
         <div class="container">
@@ -567,15 +286,9 @@
                 <a href="index.html#contato">Newsletter</a>
             </div>
 
-            <p class="copyright">&copy; 2025 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
         </div>
     </footer>
 
 </body>
 </html>
-
-
-
-
-
-
