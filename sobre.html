@@ -15,8 +15,6 @@
     <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
     <meta property="og:locale" content="pt_BR">
     <style>
-        /* Cole TODO o CSS do index.html aqui para garantir consistência. (Cortei para manter a resposta mais concisa, mas é essencial!) */
-        
         /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
         :root {
             --cor-marsala-principal: #953748;
@@ -39,7 +37,23 @@
         .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .perfil { display: flex; align-items: center; }
-        .perfil-avatar { background-color: var(--cor-marsala-principal); color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-weight: 600; font-size: 1rem; margin-right: 15px; }
+        .perfil-avatar { /* Define o círculo */
+            background-color: var(--cor-marsala-principal);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            overflow: hidden; /* Corta a imagem no formato circular */
+            margin-right: 15px; 
+            display: flex; /* Para centralizar o conteúdo, se for texto */
+            justify-content: center;
+            align-items: center;
+        }
+        .perfil-avatar img { /* Garante que a imagem preencha o círculo */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
         .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
         .nav-links { list-style: none; display: flex; }
@@ -47,47 +61,13 @@
         .nav-links li a:hover { color: var(--cor-marsala-principal); }
         
         /* LAYOUT ESPECÍFICO DA PÁGINA SOBRE */
-        .page-content {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 40px;
-            background-color: var(--cor-fundo-card);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-        .page-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-        .page-content ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 1.5rem;
-        }
-        .page-content li {
-            padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: 10px;
-        }
-        .page-content li::before {
-            content: '✓';
-            color: var(--cor-marsala-principal);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid var(--cor-marsala-claro);
-        }
-        .text-highlight {
-            font-weight: 600;
-            color: var(--cor-marsala-principal);
-        }
+        .page-content { max-width: 800px; margin: 40px auto; padding: 40px; background-color: var(--cor-fundo-card); border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+        .page-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .page-content ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .page-content li { padding-left: 1.5rem; position: relative; margin-bottom: 10px; }
+        .page-content li::before { content: '✓'; color: var(--cor-marsala-principal); font-weight: bold; position: absolute; left: 0; }
+        .profile-image { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 5px solid var(--cor-marsala-claro); }
+        .text-highlight { font-weight: 600; color: var(--cor-marsala-principal); }
         
         /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
         .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
@@ -98,9 +78,7 @@
         .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
         
         /* RESPONSIVIDADE (mínima para esta página) */
-        @media (max-width: 768px) {
-            .page-content { padding: 20px; margin: 20px; }
-        }
+        @media (max-width: 768px) { .page-content { padding: 20px; margin: 20px; } }
     </style>
 </head>
 <body>
@@ -109,7 +87,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="perfil">
-                    <div class="perfil-avatar">AK</div>
+                    <div class="perfil-avatar">
+                        <img src="assets/avatar-ana-karina.jpg" alt="Foto de perfil de Ana Karina" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
                     <div class="perfil-texto">
                         <h3>Do Consultório à Nuvem</h3>
                         <p>Ana Karina — transição de carreira para mulheres</p>
@@ -119,7 +99,7 @@
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="index.html#trilhas">Trilhas</a></li>
-                    <li><a href="index.html#contato">Contato</a></li>
+                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li> <li><a href="index.html#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -128,25 +108,25 @@
     <div class="container">
         <div class="page-content">
             
-            <img src="assets/minha-foto.jpg"  alt="Foto de Perfil Profissional - Ana Karina"  class="profile-image">
+            <img src="assets/minha-foto.jpg" alt="Foto de Perfil Profissional - Ana Karina" class="profile-image">
             
             <h1>Minha Jornada: De Cirurgiã-Dentista a Cloud</h1>
             
-            <p>Olá! Eu sou Ana Karina, e esta página é um convite para você conhecer a história por trás da "Do Consultório à Nuvem". Após anos dedicada à odontologia, fiz minha transição e hoje atuo como profissional de Cloud Computing.</p>
+            <p>Olá! Eu sou Ana Karina, uma profissional de Cloud Computing que fez a transição do consultório à tecnologia. Por anos, minha dedicação foi à **cirurgia-dentista**, uma carreira que exige precisão e foco. No entanto, o desejo por algo mais, com desafios em escala global e a inovação constante da tecnologia, me fez buscar o universo da Nuvem.</p>
             
-            <h2>O Ponto de Virada</h2>
+            <h2>O Ponto de Virada: Escola e Certificação</h2>
             
-            <p>O desejo de mudança foi motivado pela busca por <span class="text-highlight">desafios tecnológicos e a vontade de inovar em larga escala</span>. A tecnologia não é apenas código e servidores; é sobre resolver problemas, criar soluções e gerenciar a infraestrutura do futuro. Percebi que minhas habilidades anteriores—organização, foco em processos e resolução de problemas complexos—eram perfeitamente transferíveis e valiosas na área de TI.</p>
+            <p>Minha transição começou de forma estratégica e focada: entrei na **Escola da Nuvem** para adquirir o conhecimento fundamental e, rapidamente, dediquei-me à primeira certificação da AWS. Essa conquista foi o divisor de águas, me dando a confiança e o vocabulário técnico para avançar. A partir daí, conheci e me aprofundei em outros cursos, me aperfeiçoando em arquitetura, segurança e nas ferramentas que uso hoje.</p>
 
             <h2>Minhas Paixões e Foco Técnico na Nuvem</h2>
-
+            
             <p>Como profissional de Cloud Computing, minhas paixões se concentram em construir infraestruturas que não são apenas robustas, mas também eficientes e seguras. Minha expertise me permite criar soluções que aliam performance e custo-benefício, com um olhar atento para a segurança desde a arquitetura inicial.</p>
+            
             <ul>
-                <li>**Segurança Cloud:** Minha paixão principal é garantir que cada solução seja protegida contra ameaças, construindo ambientes resilientes e em conformidade com as melhores práticas.</li>
-                <li>**Arquitetura de Soluções:** Adoro desenhar e implementar arquiteturas de nuvem que são ao mesmo tempo escaláveis, eficientes e de baixo custo, pensando sempre no melhor para o cliente e para o negócio.</li>
-                <li>**Infraestrutura como Código (IaC):** Utilizo ferramentas como Terraform para automatizar e padronizar o provisionamento de recursos, garantindo consistência e agilidade nos projetos.</li>
+                <li>**Amazon Web Services (AWS):** Construindo e gerenciando infraestrutura resiliente e escalável.</li>
+                <li>**Infraestrutura como Código (IaC):** Utilizando Terraform para automatizar a criação de ambientes.</li>
+                <li>**Segurança Cloud:** Garantindo que os ambientes estejam sempre em conformidade e protegidos.</li>
             </ul>
-
 
             <h2>Minha Missão</h2>
 
