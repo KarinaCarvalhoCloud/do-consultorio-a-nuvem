@@ -1,297 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do Consultório à Nuvem | Blog de Transição de Carreira</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <meta name="description" content="Guia e caminho para mulheres que buscam a transição de carreira para Cloud Computing e tecnologia, por Ana Karina.">
-    <meta name="author" content="Ana Karina">
-    <meta property="og:title" content="Do Consultório à Nuvem | Sua Jornada de Sucesso em Cloud">
-    <meta property="og:description" content="Compartilho aqui o caminho exato, as ferramentas e as estratégias que me levaram a uma carreira de sucesso em TI.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/">
-    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
-    <meta property="og:locale" content="pt_BR">
-    <style>
-        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
-        :root {
-            --cor-marsala-principal: #953748;
-            --cor-marsala-claro: #AA6C78;
-            --cor-fundo: #f8f9fa;
-            --cor-texto-principal: #343a40;
-            --cor-fundo-card: #ffffff;
-            --cor-borda: #dee2e6;
-            --cor-secundaria: #6c757d;
-        }
-
-        /* ==================== 2. RESET E TIPOGRAFIA ==================== */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        h1 { font-weight: 700; font-size: 2.5rem; }
-        h2 { font-weight: 600; font-size: 1.5rem; }
-        h3 { font-weight: 600; font-size: 1.2rem; }
-
-        /* ==================== 3. CABEÇALHO (NAVBAR) ==================== */
-        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        
-        .perfil { display: flex; align-items: center; }
-        .perfil-avatar { /* Define o círculo */
-            background-color: var(--cor-marsala-principal);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            overflow: hidden; /* Corta a imagem no formato circular */
-            margin-right: 15px; 
-            display: flex; /* Para centralizar o conteúdo, se for texto */
-            justify-content: center;
-            align-items: center;
-        }
-        .perfil-avatar img { /* Garante que a imagem preencha o círculo */
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
-        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
-
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
-        .nav-links li a:hover { color: var(--cor-marsala-principal); }
-
-        /* ==================== 4. LAYOUT PRINCIPAL (GRID) ==================== */
-        .main-content { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 40px 0; }
-        
-        /* ==================== 5. SEÇÃO PRINCIPAL (LEFT) ==================== */
-        .secao-hero { padding-right: 30px; }
-        .hero-imagem { width: 100%; height: 350px; background-color: #eee; border-radius: 10px; margin-bottom: 30px; object-fit: cover; }
-        .secao-hero h1 { margin-bottom: 1rem; }
-        .secao-hero p { font-size: 1.1rem; margin-bottom: 2rem; color: #555; }
-        
-        /* Botão Principal */
-        .btn-principal { display: inline-block; background-color: var(--cor-marsala-principal); color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: background-color 0.2s; border: none; cursor: pointer; }
-        .btn-principal:hover { background-color: var(--cor-marsala-claro); }
-        
-        /* Tags/Pilares */
-        .tags-container { display: flex; flex-wrap: wrap; margin-bottom: 3rem; }
-        .tag { background-color: var(--cor-marsala-claro); color: var(--cor-fundo-card); padding: 8px 15px; border-radius: 20px; margin-right: 10px; font-size: 0.9rem; font-weight: 500; margin-bottom: 10px; }
-        
-        /* Card de Postagem Simples */
-        .post-card-simples { background-color: var(--cor-fundo-card); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; transition: transform 0.2s; }
-        .post-card-simples:hover { transform: translateX(5px); }
-        .post-card-simples .detalhes h3 { margin-bottom: 5px; color: var(--cor-texto-principal); font-size: 1.1rem; }
-        .post-card-simples .detalhes p { font-size: 0.9rem; color: var(--cor-secundaria); }
-        .post-card-simples .ler-mais { color: var(--cor-marsala-principal); text-decoration: none; font-weight: 600; white-space: nowrap; }
-        .post-card-simples .ler-mais:hover { text-decoration: underline; }
-
-        /* ==================== 6. SIDEBAR (RIGHT) e PLATAFORMAS ==================== */
-        .sidebar { background-color: var(--cor-fundo-card); padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
-        .sidebar h3 { border-bottom: 2px solid var(--cor-fundo); padding-bottom: 10px; margin-bottom: 20px; color: var(--cor-texto-principal); }
-        .sidebar p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
-
-        .btn-sidebar { width: 100%; display: block; background-color: var(--cor-marsala-principal); color: white; padding: 10px; border-radius: 5px; text-decoration: none; text-align: center; font-weight: 600; transition: background-color 0.2s; border: none; cursor: pointer; }
-        .btn-sidebar:hover { background-color: var(--cor-marsala-claro); }
-        
-        /* Eventos */
-        .evento-detalhe { font-size: 0.9rem; color: var(--cor-secundaria); margin-bottom: 5px; display: block; }
-        .saiba-mais { color: var(--cor-marsala-principal); text-decoration: none; font-weight: 600; display: block; margin-top: 10px; }
-        .saiba-mais:hover { text-decoration: underline; }
-        
-        /* Plataformas de Apoio */
-        .plataformas-apoio { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--cor-borda); }
-        .plataformas-apoio h2 { font-size: 1.5rem; margin-bottom: 20px; }
-        .plataforma-card { display: flex; align-items: center; background-color: var(--cor-fundo-card); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); margin-bottom: 15px; text-decoration: none; color: var(--cor-texto-principal); transition: transform 0.2s, box-shadow 0.2s; }
-        .plataforma-card:hover { transform: translateX(3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
-        .plataforma-logo { width: 50px; height: 50px; object-fit: cover; border-radius: 5px; margin-right: 15px; }
-        .plataforma-info h3 { margin: 0; font-size: 1.1rem; color: var(--cor-marsala-principal); }
-        .plataforma-info p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
-
-        /* ==================== 7. RODAPÉ (FOOTER) ==================== */
-        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
-        .footer-cta h3 { color: white; margin-bottom: 10px; }
-        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
-        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
-        .footer-links a:hover { color: var(--cor-marsala-principal); }
-        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
-
-
-        /* ==================== 8. RESPONSIVIDADE ==================== */
-        @media (max-width: 992px) {
-            .main-content { grid-template-columns: 1fr; }
-            .secao-hero { padding-right: 0; }
-            .sidebar { margin-top: 20px; }
-            .navbar { flex-direction: column; }
-            .perfil { margin-bottom: 15px; }
-            .nav-links { justify-content: center; }
-            .nav-links li a { margin: 0 10px; }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do Consultório à Nuvem | Pilares da Transição</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="perfil">
-                    <div class="perfil-avatar">
-                        <img src="assets/avatar-ana-karina.jpeg" alt="Foto de perfil de Ana Karina" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-                    </div>
-                    <div class="perfil-texto">
-                        <h3>Do Consultório à Nuvem</h3>
-                        <p>Ana Karina — transição de carreira para mulheres</p>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#trilhas">Trilhas</a></li>
-                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li> <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+
+    <!-- Navegação -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Do Consultório à Nuvem</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#pilares">Pilares da Transição</a></li>
+                <li><a href="#recursos">Trilhas & Recursos</a></li>
+                <li><a href="#projetos">Projetos Inspiradores</a></li>
+                <li><a href="#eventos">Eventos & Comunidade</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container main-content">
-        
-        <div class="secao-hero" id="inicio">
-            
-            <img src="assets/banner-principal.jpeg" 
-                 alt="Banner de destaque: transição de carreira para Cloud Computing" 
-                 class="hero-imagem">
-
-            <h1>Do consultório à nuvem: sua jornada de sucesso em Cloud.</h1>
-            
-            <p>Sou Ana Karina, uma profissional de Cloud Computing que fez a transição do consultório à tecnologia. Compartilho aqui o caminho exato, as ferramentas e as estratégias que me levaram a uma carreira de sucesso em TI. Meu objetivo é guiar mulheres que buscam essa mudança, valorizando sua experiência profissional anterior.</p>
-            
-            <a href="#trilhas" class="btn-principal">Comece sua trilha</a>
-            
-            <div class="tags-container" id="trilhas">
-                <span class="tag">Iniciação</span>
-                <span class="tag">Fundamentos</span>
-                <span class="tag">AWS</span>
-                <span class="tag">Networking</span>
-               <a href="mentoria.html" class="tag" style="text-decoration: none; color: var(--cor-fundo-card);">Mentoria</a>
-            </div>
-            
-            <div class="plataformas-apoio">
-                <h2>Plataformas que me Acompanharam</h2>
-                
-                <a href="https://escoladanuvem.org/" target="_blank" class="plataforma-card">
-                    <img src="assets/Logo-Escola-da-nuvem.png" alt="Logo da Escola da Nuvem - Formação Cloud" class="plataforma-logo">
-                    <div class="plataforma-info">
-                        <h3>Escola da Nuvem</h3>
-                        <p>Formação completa em Cloud Computing com foco em inclusão.</p>
-                    </div>
-                </a>
-
-                <a href="https://www.daredeacademy.com.br/pages/new-pagina-inicial" target="_blank" class="plataforma-card">
-                    <img src="assets/logo-cloudelas.png" alt="Logo Cloudelas Darede Academy - Empoderamento Feminino" class="plataforma-logo">
-                    <div class="plataforma-info">
-                        <h3>Cloudelas - Darede Academy</h3>
-                        <p>Programa de capacitação e empoderamento feminino em Cloud da DAREDE.</p>
-                    </div>
-                </a>
-            </div>
-            
-            <h2 style="margin-top: 3rem; margin-bottom: 20px;">Últimas Postagens</h2>
-            
-            <div class="post-card-simples" style="flex-direction: column; align-items: flex-start; padding: 25px;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Assuntos e Tecnologias Essenciais da Minha Trilha de Estudos</h3>
-                <p style="font-size: 0.95rem; color: var(--cor-texto-principal); margin-bottom: 15px;">Estes são os pilares do meu conhecimento em Cloud e a base para a minha transição:</p>
-                <ul style="font-size: 0.9rem; color: var(--cor-secundaria); list-style: disc; margin-left: 20px;">
-                    <li style="margin-bottom: 5px;">**Iniciação Tech:** Fundamentos de TI e Lógica de Programação.</li>
-                    <li style="margin-bottom: 5px;">**AWS (Amazon Web Services):** Fundamentos, EC2, S3, IAM e VPC.</li>
-                    <li style="margin-bottom: 5px;">**Infraestrutura como Código (IaC):** Terraform e CloudFormation.</li>
-                    <li style="margin-bottom: 5px;">**Linux e Shell Scripting:** Gerenciamento básico de sistemas operacionais.</li>
-                </ul>
-                <div style="width: 100%; text-align: right; margin-top: 15px; border-top: 1px solid #f0f0f0; padding-top: 10px;">
-                    <a href="cursos.html" class="ler-mais">Leia mais sobre minha trilha de cursos →</a>
-                </div>
-            </div>
-            
-            <a href="post-minha-transicao.html" class="post-card-simples">
-                <div class="detalhes">
-                    <h3>Minha transição: do consultório à nuvem</h3>
-                    <p>Publicada em 21 de outubro de 2025 • 6 min</p>
-                </div>
-                <span class="ler-mais">Ler →</span>
-            </a>
-            
+    <!-- Banner Principal -->
+    <section id="inicio" class="banner">
+        <div class="banner-content">
+            <h1>Do Consultório à Nuvem</h1>
+            <p>Um espaço para inspirar e apoiar mulheres em transição para a tecnologia.</p>
+            <a href="#pilares" class="btn">Comece sua jornada</a>
         </div>
-        
-        <aside class="sidebar" id="contato">
-            
-            <div class="widget-novidades">
-                <h3>Receba as novidades</h3>
-                <p>Dicas semanais, eventos e projetos direto no seu e-mail.</p>
-                <a href="URL_DA_SUA_NEWSLETTER_DE_INSCRICAO" target="_blank" class="btn-sidebar">Quero receber</a>
-            </div>
-            
-            <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--cor-fundo);">
-            
-            <div class="widget-evento">
-                <h3>Comunidade & Eventos</h3>
-                
-                <p style="margin-bottom: 10px; font-weight: 600; color: var(--cor-texto-principal);">Conferências e Encontros Essenciais:</p>
-                
-                <div style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0;">
-                    <strong style="color: var(--cor-marsala-principal);">MVP Conf 2025/2026 (Microsoft)</strong>
-                    <span class="evento-detalhe"> • São Paulo e Online</span>
-                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">O maior encontro de especialistas Microsoft do Brasil.</p>
-                    <a href="https://www.mvpconf.com.br/" target="_blank" class="saiba-mais">Ver detalhes →</a>
-                </div>
-                
-                <div style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0;">
-                    <strong style="color: var(--cor-marsala-principal);">5º Evento Mulheres em IA (MIA)</strong>
-                    <span class="evento-detalhe"> • Formato Híbrido (SP e Online)</span>
-                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">Foco em IA Generativa, Ciência de Dados e protagonismo feminino.</p>
-                    <a href="https://www.sympla.com.br/evento/5-evento-mulheres-em-ia-mia/3163260" target="_blank" class="saiba-mais">Ver detalhes →</a>
-                </div>
-                
-                <div style="margin-bottom: 0;">
-                    <strong style="color: var(--cor-marsala-principal);">Esquenta DevOpsDays São Paulo</strong>
-                    <span class="evento-detalhe"> • Evento presencial (SP)</span>
-                    <p style="font-size: 0.9rem; color: #555; margin: 5px 0 5px 0;">Encontro da comunidade com trocas de experiências em cultura DevOps.</p>
-                    <a href="https://www.sympla.com.br/evento/esquenta-devopsdays-sao-paulo-oracle/3174025" target="_blank" class="saiba-mais">Ver detalhes →</a>
-                </div>
-            </div>
-            
-            <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--cor-fundo);">
+    </section>
 
-            <div class="widget-checklist">
-                <h3>Baixe meu checklist</h3>
-                <p>Checklist: 10 passos para montar seu primeiro projeto e enviar para vagas.</p>
-                <a href="checklist.html" class="btn-sidebar btn-checklist">Baixar (PDF)</a>
+    <!-- Pilares da Transição -->
+    <section id="pilares" class="section">
+        <h2>Pilares da Transição</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Autoconhecimento e Valor</h3>
+                <p>Entenda suas motivações, reconheça suas habilidades e descubra como sua experiência anterior pode impulsionar sua carreira em tecnologia.</p>
             </div>
-
-        </aside>
-
-    </div>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-cta">
-                <h3>Pronta para a Nuvem?</h3>
-                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
-                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
+            <div class="card">
+                <h3>Construção da Base</h3>
+                <p>Domine fundamentos essenciais de TI, lógica e nuvem. Esse é o alicerce para entender o novo universo profissional.</p>
             </div>
-
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
-                <a href="sobre.html">Sobre Mim</a>
-                <a href="index.html#contato">Newsletter</a>
+            <div class="card">
+                <h3>Habilidades Essenciais</h3>
+                <p>Aprenda Linux, Git e outras ferramentas que formam a base do ambiente Cloud e DevOps moderno.</p>
             </div>
-
-            <p class="copyright">&copy; 2025 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+            <div class="card">
+                <h3>Posicionamento e Networking</h3>
+                <p>Desenvolva sua presença digital, mostre seus projetos e conecte-se com pessoas e comunidades que abrem portas.</p>
+            </div>
         </div>
+    </section>
+
+    <!-- Trilhas e Recursos -->
+    <section id="recursos" class="section">
+        <h2>Trilhas & Recursos</h2>
+        <p>Explore conteúdos e cursos que ajudam mulheres a ingressar e crescer em tecnologia:</p>
+        <ul class="link-list">
+            <li><a href="https://escoladanuvem.org/" target="_blank">🌩️ Escola da Nuvem</a> — Formação gratuita para carreiras em Cloud.</li>
+            <li><a href="https://www.daredeacademy.com.br/bundles/cloudelas" target="_blank">☁️ Cloudelas - Darede Academy</a> — Programa focado em mulheres na Cloud.</li>
+            <li><a href="https://www.womenincloud.com/" target="_blank">🌎 Women in Cloud (AWS)</a> — Comunidade global de mulheres na tecnologia.</li>
+        </ul>
+    </section>
+
+    <!-- Projetos Inspiradores -->
+    <section id="projetos" class="section">
+        <h2>Projetos Inspiradores</h2>
+        <p>Conheça iniciativas que estão transformando a jornada de mulheres para a tecnologia. Em breve, novos destaques e entrevistas!</p>
+    </section>
+
+    <!-- Eventos e Comunidade -->
+    <section id="eventos" class="section">
+        <h2>Eventos & Comunidade</h2>
+        <p>Participe de eventos e programas de capacitação que fortalecem a presença feminina na tecnologia.</p>
+        <ul class="link-list">
+            <li>AWS Women in Tech | Outubro 2025</li>
+            <li>Cloudelas Summit | Novembro 2025</li>
+            <li>Semana da Nuvem | Dezembro 2025</li>
+        </ul>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section about">
+        <h2>Sobre</h2>
+        <p>Este blog nasceu do desejo de compartilhar aprendizados, erros e conquistas da transição de carreira para a tecnologia. 
+        Aqui você encontrará recursos, projetos, histórias e caminhos que podem inspirar a sua trajetória profissional — seja qual for sua área de origem.</p>
+        <p><strong>Ana Karina Carvalho</strong> é profissional em transição para a área de Cloud e Segurança da Informação, com foco em inspirar outras mulheres a seguirem esse mesmo caminho.</p>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section contato">
+        <h2>Contato</h2>
+        <p>Quer colaborar, enviar um projeto ou participar de futuras iniciativas? Entre em contato!</p>
+        <a href="mailto:contato@karinacarvalhocloud.com" class="btn">Enviar e-mail</a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 Do Consultório à Nuvem | Criado por Ana Karina Carvalho</p>
+        <p><a href="https://www.linkedin.com/in/anakarinacarvalho/" target="_blank">LinkedIn</a> • <a href="https://github.com/karinacarvalhocloud" target="_blank">GitHub</a></p>
     </footer>
 
 </body>
 </html>
-
-
-
