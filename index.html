@@ -42,6 +42,11 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(100% - 32px, var(--container));
       margin-inline: auto;
@@ -96,10 +101,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       list-style: none;
       font-family: Arial, sans-serif;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .nav-links a {
@@ -255,17 +260,20 @@
       text-align: center;
     }
 
-    .profile-circle {
-      width: 112px;
-      height: 112px;
-      margin: 0 auto 24px;
-      display: grid;
-      place-items: center;
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
       border-radius: 50%;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--marsala), #A84A5F);
-      font-size: 2rem;
-      font-weight: 700;
+      display: block;
+      margin: 0 auto 25px;
+      border: 4px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px rgba(123, 44, 59, 0.25);
+      transition: transform 0.35s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.04);
     }
 
     .section {
@@ -303,7 +311,7 @@
 
     .card:hover,
     .feature-card:hover,
-    .event-card:hover {
+    .resource-card:hover {
       transform: translateY(-6px);
       border-color: rgba(123, 44, 59, 0.35);
       box-shadow: var(--shadow);
@@ -311,7 +319,7 @@
 
     .card p,
     .feature-card p,
-    .event-card p {
+    .resource-card p {
       color: var(--muted);
     }
 
@@ -345,7 +353,7 @@
     }
 
     .project-card a,
-    .event-card a {
+    .resource-card a {
       display: inline-block;
       margin-top: 18px;
       color: var(--marsala);
@@ -353,21 +361,48 @@
       font-weight: 700;
     }
 
-    .events-list {
+    .resources-grid {
       display: grid;
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .event-card {
+    .resource-card {
+      min-height: 285px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 24px 28px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--white);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 10px 28px rgba(123, 44, 59, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .resource-logo {
+      height: 58px;
+      max-width: 150px;
+      object-fit: contain;
+      margin-bottom: 22px;
+    }
+
+    .resource-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 18px;
+      color: var(--white);
+      background: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .resource-card a {
+      margin-top: auto;
     }
 
     .about-grid {
@@ -375,6 +410,10 @@
       grid-template-columns: 1fr 0.8fr;
       gap: 46px;
       align-items: center;
+    }
+
+    .about-section p + p {
+      margin-top: 14px;
     }
 
     .quote-card {
@@ -477,7 +516,8 @@
       }
 
       .cards-grid,
-      .cards-grid.three {
+      .cards-grid.three,
+      .resources-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -501,21 +541,17 @@
       }
 
       .cards-grid,
-      .cards-grid.three {
+      .cards-grid.three,
+      .resources-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-card,
       .card,
       .feature-card,
-      .event-card,
+      .resource-card,
       .cta-card {
         padding: 24px;
-      }
-
-      .event-card {
-        align-items: flex-start;
-        flex-direction: column;
       }
 
       .btn {
@@ -548,7 +584,7 @@
       </a>
 
       <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" />
-      <label for="menu-toggle" class="menu-button">
+      <label for="menu-toggle" class="menu-button" aria-label="Abrir menu de navegação">
         <span></span>
         <span></span>
         <span></span>
@@ -556,10 +592,10 @@
 
       <ul class="nav-links">
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#pilares">Pilares da Transição</a></li>
-        <li><a href="#trilhas">Trilhas & Recursos</a></li>
-        <li><a href="#projetos">Projetos Inspiradores</a></li>
-        <li><a href="#eventos">Eventos & Comunidade</a></li>
+        <li><a href="#pilares">Pilares</a></li>
+        <li><a href="#trilhas">Trilhas</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#recursos">Recursos</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato" class="nav-cta">Contato</a></li>
       </ul>
@@ -571,7 +607,9 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <span class="eyebrow">Transição de carreira • Cloud Computing • Mulheres na tecnologia</span>
+
           <h1>Do consultório à nuvem: sua jornada de sucesso em Cloud.</h1>
+
           <p>
             Um espaço acolhedor e profissional para mulheres que desejam transformar
             sua experiência anterior em força para construir uma nova carreira em tecnologia.
@@ -582,17 +620,23 @@
             <a href="#sobre" class="btn btn-secondary">Conheça minha história</a>
           </div>
 
-          <div class="hero-tags">
+          <div class="hero-tags" aria-label="Temas principais">
             <span>Iniciação Tech</span>
             <span>AWS</span>
-            <span>Networking</span>
-            <span>Mentoria</span>
+            <span>Linux</span>
+            <span>Cloud</span>
           </div>
         </div>
 
-        <aside class="hero-card">
-          <div class="profile-circle">AK</div>
+        <aside class="hero-card" aria-label="Mensagem de destaque">
+          <img
+            src="ativos/avatar-ana-karina.jpeg"
+            alt="Foto de Ana Karina"
+            class="profile-photo"
+          />
+
           <h2>Ana Karina</h2>
+
           <p>
             Compartilhando caminhos, ferramentas e aprendizados reais para quem está
             migrando para tecnologia com coragem, método e propósito.
@@ -627,7 +671,7 @@
 
           <article class="card">
             <h3>Comunidade</h3>
-            <p>Aprenda com outras mulheres, participe de eventos e fortaleça sua rede profissional.</p>
+            <p>Aprenda com outras mulheres, participe de comunidades e fortaleça sua rede profissional.</p>
           </article>
         </div>
       </div>
@@ -646,7 +690,7 @@
             <span>01</span>
             <div>
               <h3>Iniciação Tech</h3>
-              <p>Fundamentos de TI, lógica de programação e primeiros passos na área.</p>
+              <p>Fundamentos de TI, lógica de programação, carreira em tecnologia e primeiros passos.</p>
             </div>
           </article>
 
@@ -654,7 +698,7 @@
             <span>02</span>
             <div>
               <h3>AWS Cloud</h3>
-              <p>Conceitos de EC2, S3, IAM, VPC e boas práticas para ambientes em nuvem.</p>
+              <p>Conceitos de EC2, S3, IAM, redes, segurança e boas práticas para ambientes em nuvem.</p>
             </div>
           </article>
 
@@ -662,15 +706,15 @@
             <span>03</span>
             <div>
               <h3>Linux & Shell</h3>
-              <p>Comandos essenciais, terminal e administração básica para rotinas técnicas.</p>
+              <p>Comandos essenciais, terminal, permissões, arquivos e administração básica para rotina técnica.</p>
             </div>
           </article>
 
           <article class="feature-card">
             <span>04</span>
             <div>
-              <h3>Infraestrutura como Código</h3>
-              <p>Introdução a Terraform, CloudFormation e automação de infraestrutura.</p>
+              <h3>Cloud & DevOps</h3>
+              <p>Introdução a automação, containers, infraestrutura como código e cultura DevOps.</p>
             </div>
           </article>
         </div>
@@ -689,55 +733,76 @@
           <article class="card project-card">
             <h3>Site estático na nuvem</h3>
             <p>Publique uma página pessoal usando GitHub Pages e documente sua evolução.</p>
-            <a href="#contato">Ver ideia →</a>
+            <a href="post-minha-transicao.html">Ver ideia →</a>
           </article>
 
           <article class="card project-card">
             <h3>Checklist de estudos</h3>
             <p>Monte um guia visual com etapas para iniciar em cloud e compartilhar com outras mulheres.</p>
-            <a href="#contato">Ver ideia →</a>
+            <a href="checklist.html">Ver checklist →</a>
           </article>
 
           <article class="card project-card">
-            <h3>Laboratório AWS</h3>
-            <p>Crie um pequeno laboratório com S3, IAM e boas práticas de segurança inicial.</p>
-            <a href="#contato">Ver ideia →</a>
+            <h3>Trilha de cursos</h3>
+            <p>Organize cursos, laboratórios e materiais gratuitos para estudar com foco.</p>
+            <a href="cursos.html">Ver cursos →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="eventos" class="section section-soft">
+    <section id="recursos" class="section section-soft">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Networking e pertencimento</span>
-          <h2>Eventos & Comunidade</h2>
-          <p>Encontros, conferências e iniciativas para aprender, conectar e crescer.</p>
+          <span class="eyebrow">Recursos recomendados</span>
+          <h2>Plataformas para acelerar sua transição</h2>
+          <p>
+            Links úteis para estudar cloud, Linux, DevOps e participar de comunidades
+            que fortalecem a presença feminina na tecnologia.
+          </p>
         </div>
 
-        <div class="events-list">
-          <article class="event-card">
-            <div>
-              <strong>MVP Conf</strong>
-              <p>Comunidade Microsoft, cloud, carreira e tecnologia.</p>
-            </div>
-            <a href="#">Detalhes →</a>
+        <div class="resources-grid">
+          <article class="resource-card">
+            <img src="ativos/logotipo-aws.png" alt="Logo AWS" class="resource-logo" />
+            <h3>AWS Educate</h3>
+            <p>Programa gratuito da AWS para iniciantes em Cloud Computing, com conteúdos, badges e trilhas de aprendizagem.</p>
+            <a href="https://aws.amazon.com/education/awseducate/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
           </article>
 
-          <article class="event-card">
-            <div>
-              <strong>Mulheres em IA</strong>
-              <p>Protagonismo feminino, dados, IA generativa e inovação.</p>
-            </div>
-            <a href="#">Detalhes →</a>
+          <article class="resource-card">
+            <img src="ativos/Logo-Escola-da-nuvem.png" alt="Logo Escola da Nuvem" class="resource-logo" />
+            <h3>Escola da Nuvem</h3>
+            <p>Capacitação gratuita em computação em nuvem, preparação para certificações e apoio à empregabilidade.</p>
+            <a href="https://escoladanuvem.org" target="_blank" rel="noopener noreferrer">Conhecer →</a>
           </article>
 
-          <article class="event-card">
-            <div>
-              <strong>DevOpsDays</strong>
-              <p>Cultura DevOps, colaboração, automação e práticas modernas.</p>
-            </div>
-            <a href="#">Detalhes →</a>
+          <article class="resource-card">
+            <img src="ativos/logo-cloudelas.png" alt="Logo Cloudelas" class="resource-logo" />
+            <h3>Cloudelas</h3>
+            <p>Comunidade voltada para mulheres em cloud computing, troca de experiências, apoio e networking.</p>
+            <a href="https://www.linkedin.com/company/cloudelas/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <div class="resource-icon">LT</div>
+            <h3>Linux Tips</h3>
+            <p>Conteúdos sobre Linux, DevOps, containers, cloud, Kubernetes e práticas modernas de infraestrutura.</p>
+            <a href="https://linuxtips.io" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <img src="ativos/logo-azure.jpeg" alt="Logo Microsoft Azure" class="resource-logo" />
+            <h3>Microsoft Learn</h3>
+            <p>Trilhas oficiais para aprender Azure, fundamentos de nuvem, segurança, dados e inteligência artificial.</p>
+            <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <img src="ativos/logo-gcp.jpeg" alt="Logo Google Cloud" class="resource-logo" />
+            <h3>Google Cloud Skills Boost</h3>
+            <p>Laboratórios práticos, trilhas guiadas e conteúdos para aprender Google Cloud com prática real.</p>
+            <a href="https://www.cloudskillsboost.google/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
           </article>
         </div>
       </div>
@@ -748,11 +813,13 @@
         <div>
           <span class="eyebrow">Sobre</span>
           <h2>Uma jornada real, humana e possível.</h2>
+
           <p>
             Sou Ana Karina e criei o Do Consultório à Nuvem para compartilhar minha
             transição de carreira para Cloud Computing. Aqui você encontra orientação,
             inspiração e recursos práticos para dar seus primeiros passos.
           </p>
+
           <p>
             A proposta é mostrar que uma carreira em tecnologia pode ser construída
             com estratégia, consistência e acolhimento.
@@ -775,8 +842,8 @@
         <p>Comece com passos simples, objetivos e possíveis para sua realidade.</p>
 
         <div class="hero-actions center">
-          <a href="#" class="btn btn-primary">Baixar checklist</a>
-          <a href="https://www.linkedin.com" class="btn btn-secondary">Conectar no LinkedIn</a>
+          <a href="checklist.html" class="btn btn-primary">Acessar checklist</a>
+          <a href="mentoria.html" class="btn btn-secondary">Ver mentoria</a>
         </div>
       </div>
     </section>
@@ -792,16 +859,18 @@
       <div>
         <h3>Navegação</h3>
         <a href="#inicio">Início</a>
-        <a href="#trilhas">Trilhas & Recursos</a>
-        <a href="#eventos">Eventos & Comunidade</a>
-        <a href="#contato">Contato</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#trilhas">Trilhas</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#sobre">Sobre</a>
       </div>
 
       <div>
-        <h3>Conecte-se</h3>
-        <a href="https://www.linkedin.com">LinkedIn</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Checklist</a>
+        <h3>Conteúdos</h3>
+        <a href="checklist.html">Checklist</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="recursos-cloud.html">Recursos Cloud</a>
+        <a href="sobre.html">Sobre</a>
       </div>
     </div>
 
