@@ -1,170 +1,733 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos Essenciais para Início | Do Consultório à Nuvem</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <meta name="description" content="Dois cursos gratuitos e essenciais para começar sua base em tecnologia e programação antes de Cloud Computing.">
-    <meta name="author" content="Ana Karina">
-    <meta property="og:title" content="2 Cursos Gratuitos para Transição de Carreira Tech">
-    <meta property="og:description" content="Introdução à Tecnologia (EV.G) e Python (Santander) - os primeiros passos para a Nuvem.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/cursos.html">
-    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
-    <meta property="og:locale" content="pt_BR">
-    <style>
-        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
-        :root {
-            --cor-marsala-principal: #953748;
-            --cor-marsala-claro: #AA6C78;
-            --cor-fundo: #f8f9fa;
-            --cor-texto-principal: #343a40;
-            --cor-fundo-card: #ffffff;
-            --cor-borda: #dee2e6;
-            --cor-secundaria: #6c757d;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilha de Cursos | Do Consultório à Nuvem</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        h1 { font-weight: 700; font-size: 2.5rem; }
-        h2 { font-weight: 600; font-size: 1.8rem; margin-bottom: 20px; }
-        h3 { font-weight: 600; font-size: 1.2rem; }
+  <style>
+    :root {
+      --marsala: #7B2C3B;
+      --marsala-dark: #5F1F2D;
+      --marsala-soft: #F8EEF1;
+      --white: #FFFFFF;
+      --text: #2D2225;
+      --muted: #6F5D62;
+      --border: #E9D8DD;
+      --shadow: 0 18px 45px rgba(123, 44, 59, 0.12);
+      --radius: 24px;
+      --container: 1120px;
+    }
 
-        /* CABEÇALHO/NAVBAR (CÓDIGO REPETIDO PARA CONSISTÊNCIA) */
-        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .perfil { display: flex; align-items: center; }
-        .perfil-avatar { /* Define o círculo */
-            background-color: var(--cor-marsala-principal);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            overflow: hidden; /* Corta a imagem no formato circular */
-            margin-right: 15px; 
-            display: flex; /* Para centralizar o conteúdo, se for texto */
-            justify-content: center;
-            align-items: center;
-        }
-        .perfil-avatar img { /* Garante que a imagem preencha o círculo */
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
-        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
-        .nav-links li a:hover { color: var(--cor-marsala-principal); }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* LAYOUT ESPECÍFICO DA PÁGINA DE POSTAGEM */
-        .post-container { max-width: 800px; margin: 40px auto; padding: 40px; background-color: var(--cor-fundo-card); border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
-        .post-container p { margin-bottom: 1.5rem; font-size: 1.05rem; color: #555; }
-        .curso-card { display: block; background-color: #fafafa; padding: 20px; border: 1px solid var(--cor-borda); border-left: 5px solid var(--cor-marsala-principal); border-radius: 5px; margin-bottom: 25px; text-decoration: none; transition: background-color 0.2s; }
-        .curso-card:hover { background-color: #f0f0f0; }
-        .curso-card h3 { margin-top: 0; color: var(--cor-marsala-principal); font-size: 1.4rem; }
-        .curso-card .plataforma { font-size: 0.9rem; color: var(--cor-secundaria); margin-bottom: 10px; display: block; }
-        .curso-card .descricao { font-size: 1rem; color: var(--cor-texto-principal); margin-bottom: 10px; }
-        .curso-card .saiba-mais { font-weight: 600; color: var(--cor-marsala-claro); }
-        
-        /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
-        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
-        .footer-cta h3 { color: white; margin-bottom: 10px; }
-        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
-        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
-        .footer-links a:hover { color: var(--cor-marsala-principal); }
-        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
-        
-        /* RESPONSIVIDADE (mínima) */
-        @media (max-width: 768px) { .post-container { padding: 20px; margin: 20px 10px; } }
-    </style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: var(--marsala);
+      box-shadow: var(--shadow);
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--marsala);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      list-style: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--marsala);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      color: var(--white) !important;
+      background: var(--marsala);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background:
+        radial-gradient(circle at top right, #f7e2e8 0, transparent 34%),
+        linear-gradient(135deg, #fff 0%, #fff7f9 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--marsala-dark);
+      line-height: 1.15;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-card {
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card ul {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      list-style: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-card li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      color: var(--marsala-dark);
+      background: var(--marsala-soft);
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--marsala);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: var(--marsala-dark);
+    }
+
+    .btn-secondary {
+      color: var(--marsala);
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-soft {
+      background: var(--marsala-soft);
+    }
+
+    .section-heading {
+      max-width: 740px;
+      margin-bottom: 42px;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .course-card {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(123, 44, 59, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(123, 44, 59, 0.35);
+      box-shadow: var(--shadow);
+    }
+
+    .course-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .course-meta span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--marsala);
+      background: var(--marsala-soft);
+    }
+
+    .course-card a {
+      margin-top: auto;
+      color: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+    }
+
+    .path-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .path-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .path-number {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .cta-section {
+      padding: 88px 0;
+      background: linear-gradient(135deg, var(--marsala), var(--marsala-dark));
+    }
+
+    .cta-card {
+      max-width: 860px;
+      margin-inline: auto;
+      padding: 54px;
+      text-align: center;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card .hero-actions {
+      justify-content: center;
+    }
+
+    .site-footer {
+      padding-top: 60px;
+      background: #321018;
+      color: #F9EEF1;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 36px;
+      padding-bottom: 42px;
+    }
+
+    .site-footer h2,
+    .site-footer h3 {
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .site-footer p,
+    .site-footer a {
+      color: #E7C9D0;
+    }
+
+    .site-footer a {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .site-footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      padding: 22px 16px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.84rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 24px, var(--container));
+      }
+
+      .hero,
+      .section,
+      .cta-section {
+        padding: 60px 0;
+      }
+
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .path-item {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .course-card,
+      .cta-card {
+        padding: 24px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="perfil">
-                    <div class="perfil-avatar">
-                        <img src="assets/avatar-ana-karina.jpg" alt="Foto de perfil de Ana Karina" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-                    </div>
-                    <div class="perfil-texto">
-                        <h3>Do Consultório à Nuvem</h3>
-                        <p>Ana Karina — transição de carreira para mulheres</p>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="index.html#trilhas">Trilhas</a></li>
-                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li> <li><a href="index.html#contato">Contato</a></li>
-                </ul>
-            </nav>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Menu principal">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">☁</span>
+        <span>
+          <strong>Do Consultório à Nuvem</strong>
+          <small>Trilha de cursos gratuitos</small>
+        </span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#trilha">Trilha</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="checklist.html">Checklist</a></li>
+        <li><a href="index.html#recursos" class="nav-cta">Recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Cursos gratuitos e curados</span>
+          <h1>Trilha inicial para começar em tecnologia e cloud</h1>
+          <p>
+            Uma seleção organizada de cursos e plataformas para quem está começando
+            do zero, quer entender os fundamentos da tecnologia e avançar para Cloud Computing.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cursos" class="btn btn-primary">Ver cursos</a>
+            <a href="checklist.html" class="btn btn-secondary">Usar checklist</a>
+          </div>
         </div>
-    </header>
 
-    <div class="container">
-        <div class="post-container">
-            
-            <h1>2 Cursos Essenciais e Gratuitos para Iniciar em Tecnologia</h1>
-            <p style="font-size: 0.9rem; color: var(--cor-secundaria);">Publicado em 20 de outubro de 2025 • 5 min de leitura</p>
-            
-            <p>Se você está vindo de uma área completamente diferente, como eu, saber por onde começar a estudar pode ser esmagador. Estes dois cursos foram fundamentais para me dar a base necessária em lógica de programação e entender o vocabulário da TI antes de mergulhar em Cloud Computing.</p>
+        <aside class="hero-card">
+          <span class="eyebrow">Como estudar</span>
+          <h2>Menos ansiedade, mais direção.</h2>
+          <p>
+            Não tente fazer todos os cursos ao mesmo tempo. Siga a ordem sugerida,
+            pratique um pouco por semana e registre sua evolução.
+          </p>
 
-            <h2>1. Fundamentos de Tecnologia</h2>
+          <ul>
+            <li>Comece pelos fundamentos</li>
+            <li>Pratique com pequenos projetos</li>
+            <li>Documente no GitHub</li>
+            <li>Compartilhe aprendizados</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-            <a href="https://www.ev.org.br/trilhas-de-conhecimento/primeiros-passos-em-tecnologia" target="_blank" class="curso-card">
-                <h3>Primeiros Passos em Tecnologia</h3>
-                <span class="plataforma">EV.G - Escola Virtual Fundação Bradesco (Gratuito)</span>
-                <p class="descricao">Este curso é perfeito para quem está no zero. Ele cobre a história, as áreas de atuação, hardware, software, e noções de rede e segurança. É o ponto de partida ideal para alinhar sua mente com a lógica da tecnologia.</p>
-                <span class="saiba-mais">Acessar Curso →</span>
-            </a>
-
-            <h2>2. Lógica e Automação</h2>
-            
-            <a href="https://www.santanderopenacademy.com/pt_br/courses/introduction_to_python_programming.html?utm_content=0b4755d2-dfb0-47d7-8714-9d91bc2733ae%7CSoaTop10RankingPlacement%7Cdps%3Aoffer-placement%3A19df2f21fe0b5c09%7CSoaTop10RankingHeroBanner%7Cdps%3Apersonalized-offer%3A1b79e4f557d39cda" target="_blank" class="curso-card">
-                <h3>Introduction to Python Programming</h3>
-                <span class="plataforma">Santander Open Academy (Gratuito)</span>
-                <p class="descricao">Aprender Python é a "chave" para automação em Cloud. Este curso te dá a introdução necessária à sintaxe e aos conceitos de programação (variáveis, loops, funções). Ter essa base faz toda a diferença nos estudos de Cloud e DevOps.</p>
-                <span class="saiba-mais">Acessar Curso →</span>
-            </a>
-            
-            <h2>Próximos Passos (Recomendações)</h2>
-            <p>Após dominar esses fundamentos, eu sugiro focar em:</p>
-            <ul>
-                <li>**Certificação AWS Cloud Practitioner:** Para entender os serviços da Nuvem.</li>
-                <li>**GIT e GitHub:** Essencial para controle de versão e portfólio.</li>
-                <li>**Linux Essentials:** Para ter fluência no sistema operacional mais usado em servidores Cloud.</li>
-            </ul>
-
-            <a href="index.html#trilhas" class="curso-card" style="border-left: 5px solid var(--cor-marsala-claro);">
-                <h3>Quer saber mais sobre minha trilha completa?</h3>
-                <p class="descricao">Volte à página inicial para ver as plataformas de apoio e os pilares de estudo que me levaram à minha primeira oportunidade em Cloud.</p>
-                <span class="saiba-mais">Voltar ao Início →</span>
-            </a>
-
+    <section id="trilha" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Ordem recomendada</span>
+          <h2>Uma trilha simples para sair do zero</h2>
+          <p>
+            Esta sequência ajuda a construir base antes de mergulhar em cloud,
+            Linux, DevOps e certificações.
+          </p>
         </div>
+
+        <div class="path-list">
+          <article class="path-item">
+            <div class="path-number">01</div>
+            <div>
+              <h3>Fundamentos de tecnologia</h3>
+              <p>Entenda hardware, software, redes, internet, segurança e vocabulário básico de TI.</p>
+            </div>
+          </article>
+
+          <article class="path-item">
+            <div class="path-number">02</div>
+            <div>
+              <h3>Lógica de programação</h3>
+              <p>Aprenda pensamento lógico, variáveis, condições, repetições e automação simples.</p>
+            </div>
+          </article>
+
+          <article class="path-item">
+            <div class="path-number">03</div>
+            <div>
+              <h3>Git, GitHub e portfólio</h3>
+              <p>Comece a registrar sua evolução e publicar pequenos projetos.</p>
+            </div>
+          </article>
+
+          <article class="path-item">
+            <div class="path-number">04</div>
+            <div>
+              <h3>Linux & Shell</h3>
+              <p>Domine comandos básicos usados em servidores, cloud e ambientes DevOps.</p>
+            </div>
+          </article>
+
+          <article class="path-item">
+            <div class="path-number">05</div>
+            <div>
+              <h3>Cloud Computing</h3>
+              <p>Estude conceitos de nuvem, serviços principais, segurança, custos e boas práticas.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cursos" class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Cursos e plataformas</span>
+          <h2>Recursos gratuitos para sua transição</h2>
+          <p>
+            Aqui estão cursos e plataformas que combinam com uma jornada de entrada
+            em tecnologia, cloud, Linux e carreira.
+          </p>
+        </div>
+
+        <div class="courses-grid">
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Fundamentos</span>
+              <span>Iniciante</span>
+            </div>
+            <h3>Primeiros Passos em Tecnologia</h3>
+            <p>
+              Curso da Fundação Bradesco para quem precisa entender conceitos básicos
+              de tecnologia antes de escolher uma especialidade.
+            </p>
+            <a href="https://www.ev.org.br/cursos/primeiros-passos-em-tecnologia" target="_blank" rel="noopener noreferrer">Acessar curso →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Programação</span>
+              <span>Python</span>
+            </div>
+            <h3>Introduction to Python Programming</h3>
+            <p>
+              Curso do Santander Open Academy para iniciar em programação e desenvolver
+              lógica para automação e estudos futuros em cloud.
+            </p>
+            <a href="https://www.santanderopenacademy.com" target="_blank" rel="noopener noreferrer">Acessar plataforma →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Cloud</span>
+              <span>AWS</span>
+            </div>
+            <h3>AWS Educate</h3>
+            <p>
+              Plataforma da AWS para iniciantes, com conteúdos gratuitos, trilhas,
+              badges e introdução aos principais conceitos de computação em nuvem.
+            </p>
+            <a href="https://aws.amazon.com/education/awseducate/" target="_blank" rel="noopener noreferrer">Acessar plataforma →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Cloud</span>
+              <span>Empregabilidade</span>
+            </div>
+            <h3>Escola da Nuvem</h3>
+            <p>
+              Programa gratuito com foco em computação em nuvem, preparação para
+              certificações e desenvolvimento profissional.
+            </p>
+            <a href="https://escoladanuvem.org" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Linux</span>
+              <span>DevOps</span>
+            </div>
+            <h3>Linux Tips</h3>
+            <p>
+              Conteúdos sobre Linux, DevOps, containers, cloud e práticas modernas
+              para quem quer seguir em infraestrutura.
+            </p>
+            <a href="https://linuxtips.io" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Azure</span>
+              <span>Cloud</span>
+            </div>
+            <h3>Microsoft Learn</h3>
+            <p>
+              Trilhas oficiais da Microsoft para aprender Azure, fundamentos de nuvem,
+              segurança, dados e inteligência artificial.
+            </p>
+            <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">Acessar trilhas →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Google Cloud</span>
+              <span>Labs</span>
+            </div>
+            <h3>Google Cloud Skills Boost</h3>
+            <p>
+              Laboratórios guiados e trilhas práticas para aprender Google Cloud com
+              atividades hands-on.
+            </p>
+            <a href="https://www.cloudskillsboost.google/" target="_blank" rel="noopener noreferrer">Acessar labs →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Carreira</span>
+              <span>Comunidade</span>
+            </div>
+            <h3>Cloudelas</h3>
+            <p>
+              Comunidade para mulheres em cloud computing, com apoio, networking,
+              inspiração e troca de experiências.
+            </p>
+            <a href="https://www.linkedin.com/company/cloudelas/" target="_blank" rel="noopener noreferrer">Conhecer comunidade →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>Mulheres em Cloud</span>
+              <span>Networking</span>
+            </div>
+            <h3>Women in Cloud</h3>
+            <p>
+              Comunidade global com foco em liderança, tecnologia, nuvem,
+              desenvolvimento profissional e oportunidades para mulheres.
+            </p>
+            <a href="https://www.womenincloud.com" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <span class="eyebrow">Próximo passo</span>
+          <h2>Use esta página junto com o checklist</h2>
+          <p>
+            A trilha mostra onde estudar. O checklist ajuda você a acompanhar seu progresso
+            sem se perder no excesso de informação.
+          </p>
+
+          <div class="hero-actions">
+            <a href="checklist.html" class="btn btn-primary">Acessar checklist</a>
+            <a href="index.html#recursos" class="btn btn-secondary">Ver recursos no blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>Do Consultório à Nuvem</h2>
+        <p>Transição de carreira para mulheres que desejam chegar à tecnologia com confiança.</p>
+      </div>
+
+      <div>
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="#trilha">Trilha</a>
+        <a href="#cursos">Cursos</a>
+        <a href="checklist.html">Checklist</a>
+      </div>
+
+      <div>
+        <h3>Conteúdos</h3>
+        <a href="index.html#recursos">Recursos</a>
+        <a href="recursos-cloud.html">Recursos Cloud</a>
+        <a href="mentoria.html">Mentoria</a>
+        <a href="sobre.html">Sobre</a>
+      </div>
     </div>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-cta">
-                <h3>Pronta para a Nuvem?</h3>
-                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
-                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
-            </div>
 
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
-                <a href="sobre.html">Sobre Mim</a>
-                <a href="index.html#contato">Newsletter</a>
-            </div>
-
-            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+      <p>© 2026 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
