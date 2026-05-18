@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -6,795 +7,524 @@
   <meta name="description" content="Do Consultório à Nuvem: jornada guiada para mulheres em transição de carreira para tecnologia e cloud computing." />
   <title>Do Consultório à Nuvem | Transição de Carreira para Cloud</title>
 
- /* =========================
-   MELHORIAS VISUAIS PREMIUM
-   ========================= */
-
-/* BODY */
-body {
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.7;
-
-  /* NOVO */
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* SOMBRA */
-:root {
-  --shadow: 0 20px 60px rgba(123, 44, 59, 0.08);
-}
-
-/* SEÇÕES */
-.section {
-  padding: 120px 0;
-}
-
-/* TITULOS DAS SEÇÕES */
-.section-heading {
-  max-width: 760px;
-  margin-bottom: 64px;
-}
-
-/* HERO */
-.hero {
-  padding: 110px 0 90px;
-
-  background:
-    radial-gradient(circle at top right, #f7e2e8 0, transparent 34%),
-    linear-gradient(135deg, #fff 0%, #fff7f9 100%);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-
-  /* ALTERADO */
-  gap: 72px;
-
-  align-items: center;
-}
-
-/* TEXTO HERO */
-.hero p {
-  max-width: 680px;
-}
-
-/* TITULOS */
-h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  letter-spacing: -0.03em;
-
-  /* ALTERADO */
-  margin-bottom: 22px;
-}
-
-/* PARÁGRAFOS */
-p {
-  color: var(--muted);
-  font-size: 1.08rem;
-
-  /* NOVO */
-  line-height: 1.9;
-}
-
-/* BOTÕES */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  /* ALTERADO */
-  min-height: 52px;
-
-  padding: 13px 24px;
-  border-radius: 999px;
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-
-  /* NOVO */
-  letter-spacing: 0.02em;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-}
-
-/* HERO CARD */
-.hero-card,
-.quote-card,
-.cta-card {
-  border: 1px solid var(--border);
+  <style>
+    :root {
+      --marsala: #7B2C3B;
+      --marsala-dark: #5F1F2D;
+      --marsala-soft: #F8EEF1;
+      --white: #FFFFFF;
+      --text: #2D2225;
+      --muted: #6F5D62;
+      --border: #E9D8DD;
+      --shadow: 0 20px 60px rgba(123, 44, 59, 0.08);
+      --radius: 30px;
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.9;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--marsala);
+    }
+
+    .brand small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      list-style: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: var(--marsala);
+      transition: width 0.35s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--marsala);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      color: var(--white) !important;
+      background: var(--marsala);
+    }
+
+    .menu-toggle,
+    .menu-button {
+      display: none;
+    }
+
+    .hero {
+      padding: 110px 0 90px;
+      background:
+        radial-gradient(circle at top right, #f7e2e8 0, transparent 34%),
+        linear-gradient(135deg, #fff 0%, #fff7f9 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+      color: var(--marsala-dark);
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    .hero p {
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--marsala);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      color: var(--marsala);
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-tags span {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--marsala);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--border);
+      font-family: Arial, sans-serif;
+      font-size: 0.86rem;
+    }
+
+    .hero-card,
+    .quote-card,
+    .cta-card,
+    .narrative-card,
+    .reflection-card,
+    .skill-card,
+    .step-card,
+    .resource-card,
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow);
+      transition:
+        transform 0.45s cubic-bezier(.19,1,.22,1),
+        box-shadow 0.45s cubic-bezier(.19,1,.22,1),
+        border-color 0.45s ease;
+    }
+
+    .reflection-card:hover,
+    .skill-card:hover,
+    .step-card:hover,
+    .resource-card:hover,
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .hero-card {
+      padding: 44px;
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 30px;
+      border: 4px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px rgba(123, 44, 59, 0.18);
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    .section {
+      padding: 120px 0;
+    }
+
+    .section-soft {
+      background: var(--marsala-soft);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 64px;
+    }
+
+    .narrative-card,
+    .reflection-card,
+    .skill-card,
+    .step-card,
+    .resource-card,
+    .project-card {
+      padding: 34px;
+    }
+
+    .reflection-grid,
+    .skills-grid,
+    .resources-grid,
+    .projects-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .reflection-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid,
+    .resources-grid,
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .journey {
+      display: grid;
+      gap: 24px;
+    }
+
+    .step-card {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+    }
+
+    .step-number {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .about-grid,
+    .footer-grid {
+      display: grid;
+      gap: 46px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr 0.8fr;
+      align-items: center;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      padding-bottom: 64px;
+    }
+
+    .quote-card {
+      padding: 44px;
+      background: var(--marsala);
+    }
+
+    .quote-card p {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .cta-section {
+      padding: 120px 0;
+      background: linear-gradient(135deg, var(--marsala), var(--marsala-dark));
+    }
+
+    .cta-card {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px;
+      text-align: center;
+    }
+
+    .site-footer {
+      margin-top: 40px;
+      padding-top: 64px;
+      background: #321018;
+      color: #F9EEF1;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .about-grid,
+      .footer-grid,
+      .reflection-grid,
+      .skills-grid,
+      .resources-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 48px;
+      }
+
+      .section,
+      .cta-section {
+        padding: 90px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 72px 0 52px;
+      }
+
+      .section,
+      .cta-section {
+        padding: 72px 0;
+      }
+
+      .hero-card,
+      .reflection-card,
+      .skill-card,
+      .step-card,
+      .resource-card,
+      .project-card,
+      .cta-card,
+      .narrative-card {
+        padding: 26px;
+      }
+
+      .step-card {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .profile-photo {
+        width: 145px;
+        height: 145px;
+      }
+    }
+  </style>
 
-  /* ALTERADO */
-  border-radius: 30px;
-
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: var(--shadow);
-}
-
-/* FOTO */
-.profile-photo {
-  width: 170px;
-  height: 170px;
-
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-
-  margin: 0 auto 30px;
-
-  border: 4px solid rgba(255, 255, 255, 0.95);
-
-  box-shadow:
-    0 10px 30px rgba(123, 44, 59, 0.18),
-    0 0 0 10px rgba(255,255,255,0.45);
-
-  /* NOVO */
-  filter: saturate(1.02) contrast(1.02);
-
-  transition:
-    transform 0.45s cubic-bezier(.19,1,.22,1),
-    box-shadow 0.45s cubic-bezier(.19,1,.22,1);
-}
-
-.profile-photo:hover {
-  transform: scale(1.04);
-}
-
-/* CARDS */
-.reflection-card,
-.skill-card,
-.step-card,
-.resource-card,
-.project-card {
-  /* ALTERADO */
-  padding: 34px;
-
-  border: 1px solid var(--border);
-
-  /* ALTERADO */
-  border-radius: 30px;
-
-  background: var(--white);
-
-  box-shadow: 0 10px 28px rgba(123, 44, 59, 0.07);
-
-  /* ALTERADO */
-  transition:
-    transform 0.45s cubic-bezier(.19,1,.22,1),
-    box-shadow 0.45s cubic-bezier(.19,1,.22,1),
-    border-color 0.45s ease;
-}
-
-.reflection-card:hover,
-.skill-card:hover,
-.step-card:hover,
-.resource-card:hover,
-.project-card:hover {
-  transform: translateY(-8px);
-
-  border-color: rgba(123, 44, 59, 0.35);
-
-  box-shadow: var(--shadow);
-}
-
-/* NARRATIVE CARD */
-.narrative-card {
-  max-width: 920px;
-
-  /* ALTERADO */
-  padding: 46px;
-
-  border: 1px solid var(--border);
-
-  /* ALTERADO */
-  border-radius: 30px;
-
-  background: var(--white);
-  box-shadow: var(--shadow);
-}
-
-/* QUOTE CARD */
-.quote-card {
-  padding: 44px;
-}
-
-.quote-card p {
-  color: var(--white);
-  font-size: 1.55rem;
-  line-height: 1.6;
-}
-
-/* CTA */
-.cta-card {
-  max-width: 860px;
-
-  /* ALTERADO */
-  padding: 64px;
-
-  text-align: center;
-}
-
-/* FOOTER */
-.site-footer {
-  padding-top: 64px;
-
-  /* NOVO */
-  margin-top: 40px;
-
-  color: #F9EEF1;
-  background: #321018;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 36px;
-
-  /* ALTERADO */
-  padding-bottom: 64px;
-}
-
-/* LINKS MENU */
-.nav-links a {
-  color: var(--muted);
-
-  /* NOVO */
-  position: relative;
-
-  transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-
-  width: 0%;
-  height: 2px;
-
-  background: var(--marsala);
-
-  transition: width 0.35s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* HERO TAGS */
-.hero-tags span {
-  padding: 10px 16px;
-
-  border-radius: 999px;
-
-  color: var(--marsala);
-
-  background: rgba(255,255,255,0.88);
-
-  border: 1px solid var(--border);
-
-  font-family: Arial, sans-serif;
-  font-size: 0.86rem;
-
-  backdrop-filter: blur(10px);
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 920px) {
-
-  .hero-grid,
-  .about-grid,
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-grid {
-    gap: 48px;
-  }
-
-  .section {
-    padding: 90px 0;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .hero {
-    padding: 72px 0 52px;
-  }
-
-  .section,
-  .cta-section {
-    padding: 72px 0;
-  }
-
-  .hero-card,
-  .reflection-card,
-  .skill-card,
-  .step-card,
-  .resource-card,
-  .project-card,
-  .cta-card,
-  .narrative-card {
-    padding: 26px;
-  }
-
-  h1 {
-    line-height: 1.15;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .profile-photo {
-    width: 145px;
-    height: 145px;
-  }
-}
 </head>
-
 <body>
+
   <header class="site-header">
-    <nav class="navbar container" aria-label="Menu principal">
-      <a href="#inicio" class="brand" aria-label="Do Consultório à Nuvem">
-        <span class="brand-mark">☁</span>
+    <nav class="navbar container">
+      <a href="#inicio" class="brand">
+        <span>☁</span>
         <span>
           <strong>Do Consultório à Nuvem</strong>
           <small>Ana Karina</small>
         </span>
       </a>
 
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="menu-button" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+```
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#transicao">Transição</a></li>
+    <li><a href="#caminho">Caminho</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+  </ul>
+</nav>
+```
 
-      <ul class="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#transicao">Transição</a></li>
-        <li><a href="#reflexao">Checklist inicial</a></li>
-        <li><a href="#caminho">Caminho</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="checklist.html" class="nav-cta">Checklist</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
     <section id="inicio" class="hero">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Transição de carreira • Cloud Computing • Recomeço com direção</span>
 
-          <h1>Você não precisa apagar sua história para começar em tecnologia.</h1>
+```
+    <div>
+      <span class="eyebrow">Transição de carreira • Cloud Computing • Recomeço</span>
 
-          <p>
-            Este blog é um caminho guiado para mulheres que estão repensando a carreira,
-            querem entender a transição para tecnologia e desejam dar os primeiros passos
-            em cloud computing com acolhimento, clareza e prática.
-          </p>
+      <h1>Você não precisa apagar sua história para começar em tecnologia.</h1>
 
-          <div class="hero-actions">
-            <a href="#transicao" class="btn btn-primary">Começar minha transição</a>
-            <a href="checklist.html" class="btn btn-secondary">Responder checklist</a>
-          </div>
+      <p>
+        Este blog é um espaço para mulheres que estão repensando a carreira e querem entrar em tecnologia com clareza, acolhimento e direção.
+      </p>
 
-          <div class="hero-tags">
-            <span>Autoconhecimento</span>
-            <span>Fundamentos Tech</span>
-            <span>Linux</span>
-            <span>Cloud</span>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-        <img src="ativos/minha-foto.jpg" alt="Foto de Ana Karina" class="profile-photo">
-          />
-
-          <h2>Ana Karina</h2>
-
-          <p>
-            Um espaço para transformar dúvidas em passos possíveis,
-            estudos em portfólio e experiência anterior em diferencial.
-          </p>
-        </aside>
+      <div class="hero-actions">
+        <a href="#transicao" class="btn btn-primary">Começar minha transição</a>
+        <a href="#recursos" class="btn btn-secondary">Ver recursos</a>
       </div>
-    </section>
 
-    <section id="transicao" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Primeiro entendimento</span>
-          <h2>O que é uma transição de carreira?</h2>
-        </div>
-
-        <div class="narrative-card">
-          <p>
-            Transição de carreira não é simplesmente abandonar uma profissão e começar outra do zero.
-            É um processo de reorganizar sua história, identificar habilidades que você já tem,
-            aprender novos fundamentos e construir, aos poucos, uma nova identidade profissional.
-          </p>
-
-          <br />
-
-          <p>
-            Na tecnologia, especialmente em cloud computing, muitas mulheres chegam com medo de não
-            pertencer. Mas experiência com pessoas, organização, comunicação, cuidado, análise,
-            rotina, processos e responsabilidade também são competências valiosas.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#reflexao" class="btn btn-primary">Entender meu motivo</a>
-          </div>
-        </div>
+      <div class="hero-tags">
+        <span>Autoconhecimento</span>
+        <span>Linux</span>
+        <span>Cloud</span>
+        <span>AWS</span>
       </div>
-    </section>
+    </div>
 
-    <section id="reflexao" class="section section-soft">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Checklist inicial</span>
-          <h2>Antes de escolher cursos, pergunte: por que eu quero mudar?</h2>
-          <p>
-            A transição fica mais forte quando nasce de clareza, não apenas de pressa.
-            Reflita sobre estas perguntas antes de montar sua trilha.
-          </p>
-        </div>
+    <aside class="hero-card">
+      <img src="ativos/minha-foto.jpg" alt="Foto de Ana Karina" class="profile-photo" />
 
-        <div class="reflection-grid">
-          <article class="reflection-card">
-            <span>1</span>
-            <h3>O que me trouxe até aqui?</h3>
-            <p>Estou buscando crescimento, liberdade, realização, estabilidade, curiosidade ou uma nova identidade profissional?</p>
-          </article>
+      <h2>Ana Karina</h2>
 
-          <article class="reflection-card">
-            <span>2</span>
-            <h3>O que quero deixar para trás?</h3>
-            <p>Quais rotinas, ambientes ou limitações da carreira atual já não fazem sentido para mim?</p>
-          </article>
+      <p>
+        Transformando dúvidas em passos possíveis e mostrando que recomeçar também pode ser uma forma de coragem.
+      </p>
+    </aside>
 
-          <article class="reflection-card">
-            <span>3</span>
-            <h3>O que eu quero construir?</h3>
-            <p>Que tipo de vida, rotina, aprendizado e oportunidade eu imagino ao entrar em tecnologia?</p>
-          </article>
+  </div>
+</section>
+```
 
-          <article class="reflection-card">
-            <span>4</span>
-            <h3>Quanto tempo real eu tenho?</h3>
-            <p>Minha jornada precisa respeitar minha vida atual. Consistência pequena é melhor do que excesso impossível.</p>
-          </article>
-        </div>
-
-        <div class="hero-actions">
-          <a href="checklist.html" class="btn btn-primary">Abrir checklist completo</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="habilidades" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Você já traz valor</span>
-          <h2>O que sua carreira anterior pode te entregar?</h2>
-          <p>
-            A tecnologia não precisa apagar quem você foi. Ela pode ampliar o que você já sabe fazer bem.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <article class="skill-card">
-            <span>✓</span>
-            <h3>Comunicação</h3>
-            <p>Explicar, ouvir, orientar e traduzir problemas são habilidades importantes em times técnicos.</p>
-          </article>
-
-          <article class="skill-card">
-            <span>✓</span>
-            <h3>Organização</h3>
-            <p>Planejamento, rotina e atenção a detalhes ajudam muito em estudos, documentação e projetos.</p>
-          </article>
-
-          <article class="skill-card">
-            <span>✓</span>
-            <h3>Cuidado com pessoas</h3>
-            <p>Empatia e responsabilidade fortalecem suporte, atendimento, liderança e colaboração.</p>
-          </article>
-
-          <article class="skill-card">
-            <span>✓</span>
-            <h3>Resolução de problemas</h3>
-            <p>Observar sintomas, investigar causas e buscar soluções também faz parte do pensamento técnico.</p>
-          </article>
-
-          <article class="skill-card">
-            <span>✓</span>
-            <h3>Processos</h3>
-            <p>Quem entende rotina, fluxo e melhoria contínua consegue se adaptar bem a ambientes de tecnologia.</p>
-          </article>
-
-          <article class="skill-card">
-            <span>✓</span>
-            <h3>Aprendizado constante</h3>
-            <p>Transição exige curiosidade, paciência e disposição para praticar um pouco todos os dias.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="caminho" class="section section-soft">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Agora sim: o caminho</span>
-          <h2>Uma sequência possível para entrar em cloud</h2>
-          <p>
-            Em vez de estudar tudo ao mesmo tempo, siga uma ordem simples:
-            entender, praticar, documentar e se conectar.
-          </p>
-        </div>
-
-        <div class="journey">
-          <article class="step-card">
-            <div class="step-number">01</div>
-            <div>
-              <h3>Mentalidade e planejamento</h3>
-              <p>Organize sua rotina e entenda que transição é processo, não corrida.</p>
-              <ul>
-                <li>Defina seu motivo</li>
-                <li>Escolha horários reais de estudo</li>
-                <li>Monte um plano semanal simples</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">02</div>
-            <div>
-              <h3>Fundamentos de tecnologia</h3>
-              <p>Antes da nuvem, entenda o básico: redes, internet, sistemas, servidores e segurança.</p>
-              <ul>
-                <li>Conceitos de TI</li>
-                <li>Noções de redes</li>
-                <li>Vocabulário técnico essencial</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">03</div>
-            <div>
-              <h3>Linux & Shell</h3>
-              <p>O terminal é uma ponte importante para cloud, DevOps e infraestrutura.</p>
-              <ul>
-                <li>Comandos básicos</li>
-                <li>Arquivos e permissões</li>
-                <li>Prática com terminal</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">04</div>
-            <div>
-              <h3>Cloud Computing</h3>
-              <p>Aprenda os serviços principais e os conceitos que aparecem em AWS, Azure e Google Cloud.</p>
-              <ul>
-                <li>Compute, storage e redes</li>
-                <li>Identidade e segurança</li>
-                <li>Modelo de responsabilidade compartilhada</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">05</div>
-            <div>
-              <h3>Projetos e portfólio</h3>
-              <p>Mostre sua evolução com pequenos projetos documentados.</p>
-              <ul>
-                <li>GitHub organizado</li>
-                <li>README explicando aprendizados</li>
-                <li>Projetos simples publicados</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">06</div>
-            <div>
-              <h3>Comunidade e empregabilidade</h3>
-              <p>Aprender junto, compartilhar e se conectar também faz parte da transição.</p>
-              <ul>
-                <li>Comunidades de mulheres em tech</li>
-                <li>LinkedIn ativo</li>
-                <li>Currículo com habilidades transferíveis</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <div class="hero-actions">
-          <a href="cursos.html" class="btn btn-primary">Ver trilha de cursos</a>
-          <a href="checklist.html" class="btn btn-secondary">Acompanhar checklist</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="recursos" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Recursos recomendados</span>
-          <h2>Por onde começar a estudar?</h2>
-          <p>
-            Uma curadoria inicial para quem quer estudar com direção, sem se perder no excesso de informação.
-          </p>
-        </div>
-
-        <div class="resources-grid">
-          <article class="resource-card">
-            <img src="ativos/logotipo-aws.png" alt="Logo AWS" class="resource-logo" />
-            <h3>AWS Educate</h3>
-            <p>Programa gratuito da AWS para iniciantes em Cloud Computing.</p>
-            <a href="https://aws.amazon.com/education/awseducate/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
-          </article>
-
-          <article class="resource-card">
-            <img src="ativos/Logo-Escola-da-nuvem.png" alt="Logo Escola da Nuvem" class="resource-logo">
-            <h3>Escola da Nuvem</h3>
-            <p>Capacitação gratuita em nuvem, certificação e empregabilidade.</p>
-            <a href="https://escoladanuvem.org" target="_blank" rel="noopener noreferrer">Conhecer →</a>
-          </article>
-
-          <article class="resource-card">
-            <div class="resource-icon">LT</div>
-            <h3>Linux Tips</h3>
-            <p>Conteúdos sobre Linux, DevOps, containers e cloud.</p>
-            <a href="https://linuxtips.io" target="_blank" rel="noopener noreferrer">Conhecer →</a>
-          </article>
-
-          <article class="resource-card">
-           <img src="ativos/logo-cloudelas.png" alt="Logo Cloudelas" class="resource-logo">
-            <h3>Cloudelas</h3>
-            <p>Comunidade para mulheres em cloud computing.</p>
-            <a href="https://www.linkedin.com/company/cloudelas/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
-          </article>
-
-          <article class="resource-card">
-            <i<img src="ativos/logo-azul.jpeg" alt="Logo Microsoft Azure" class="resource-logo">
-
-            <h3>Microsoft Learn</h3>
-            <p>Trilhas oficiais para Azure, dados, segurança e IA.</p>
-            <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">Conhecer →</a>
-          </article>
-
-          <article class="resource-card">
-           <img src="ativos/logo-gcp.jpeg" alt="Logo Google Cloud" class="resource-logo">
-
-            <h3>Google Cloud Skills Boost</h3>
-            <p>Laboratórios práticos para aprender Google Cloud.</p>
-            <a href="https://www.cloudskillsboost.google/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projetos" class="section section-soft">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Transforme estudo em evidência</span>
-          <h2>Projetos simples para começar</h2>
-          <p>
-            Projetos pequenos e bem documentados valem mais do que esperar meses para mostrar algo perfeito.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Site no GitHub Pages</h3>
-            <p>Crie uma página simples sobre sua transição e publique online.</p>
-            <a href="cursos.html">Ver trilha →</a>
-          </article>
-
-          <article class="project-card">
-            <h3>README de estudos</h3>
-            <p>Documente comandos Linux, conceitos de cloud e aprendizados semanais.</p>
-            <a href="checklist.html">Ver checklist →</a>
-          </article>
-
-          <article class="project-card">
-            <h3>Laboratório Cloud</h3>
-            <p>Monte um laboratório simples com storage, identidade e boas práticas.</p>
-            <a href="index.html#recursos">Ver recursos →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre" class="section about-section">
-      <div class="container about-grid">
-        <div>
-          <span class="eyebrow">Sobre</span>
-          <h2>Uma jornada real, humana e possível.</h2>
-
-          <p>
-            Sou Ana Karina e criei o Do Consultório à Nuvem para compartilhar minha
-            transição de carreira para Cloud Computing.
-          </p>
-
-          <p>
-            Este espaço nasceu para apoiar mulheres que querem mudar de área, mas precisam
-            de clareza, acolhimento, recursos confiáveis e uma sequência possível para começar.
-          </p>
-        </div>
-
-        <div class="quote-card">
-          <p>
-            “Sua experiência anterior não te atrasa. Ela pode ser o diferencial que
-            torna sua jornada única.”
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato" class="cta-section">
-      <div class="container cta-card">
-        <span class="eyebrow">Comece pelo próximo passo</span>
-        <h2>A transição fica mais leve quando vira caminho.</h2>
-        <p>
-          Responda ao checklist, escolha uma trilha e avance com consistência.
-        </p>
-
-        <div class="hero-actions center">
-          <a href="checklist.html" class="btn btn-primary">Responder checklist</a>
-          <a href="cursos.html" class="btn btn-secondary">Ver cursos gratuitos</a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h2>Do Consultório à Nuvem</h2>
-        <p>Transição de carreira para mulheres que desejam chegar à tecnologia com confiança.</p>
-      </div>
-
-      <div>
-        <h3>Navegação</h3>
-        <a href="#inicio">Início</a>
-        <a href="#transicao">Transição</a>
-        <a href="#caminho">Caminho</a>
-        <a href="#recursos">Recursos</a>
-      </div>
-
-      <div>
-        <h3>Conteúdos</h3>
-        <a href="checklist.html">Checklist</a>
-        <a href="cursos.html">Cursos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
-    </div>
-  </footer>
 </body>
 </html>
