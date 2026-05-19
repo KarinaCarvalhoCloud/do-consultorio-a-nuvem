@@ -1,48 +1,48 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Do Consultório à Nuvem: jornada guiada para mulheres em transição de carreira para tecnologia e cloud computing." />
-  <title>Do Consultório à Nuvem | Transição de Carreira para Cloud</title>
+  <title>Do Consultório à Nuvem | Transição para Cloud e IA</title>
+
+  <meta
+    name="description"
+    content="Blog sobre transição de carreira da odontologia para Cloud Computing e Inteligência Artificial. AWS, OCI, Python, tecnologia e recomeços."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    :root {
-      --marsala: #7B2C3B;
-      --marsala-dark: #5F1F2D;
-      --marsala-soft: #F8EEF1;
-      --white: #FFFFFF;
-      --text: #2D2225;
-      --muted: #6F5D62;
-      --border: #E9D8DD;
-      --shadow: 0 20px 60px rgba(123, 44, 59, 0.08);
-      --radius: 30px;
-      --container: 1120px;
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.9;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
+    :root {
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --primary: #6d8fd6;
+      --secondary: #b79ced;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 24px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     img {
@@ -50,481 +50,681 @@
       display: block;
     }
 
-    .container {
-      width: min(100% - 32px, var(--container));
-      margin-inline: auto;
+    a {
+      text-decoration: none;
     }
 
-    .site-header {
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 1.05rem;
+    }
+
+    header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
     .navbar {
-      min-height: 82px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
       align-items: center;
-      gap: 12px;
+      padding: 20px 0;
     }
 
-    .brand strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--marsala);
-    }
-
-    .brand small {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 18px;
-      list-style: none;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      gap: 30px;
     }
 
     .nav-links a {
-      color: var(--muted);
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0%;
-      height: 2px;
-      background: var(--marsala);
-      transition: width 0.35s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
+      color: var(--text);
+      font-weight: 500;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--marsala);
-    }
-
-    .nav-cta {
-      padding: 10px 18px;
-      border-radius: 999px;
-      color: var(--white) !important;
-      background: var(--marsala);
-    }
-
-    .menu-toggle,
-    .menu-button {
-      display: none;
+      color: var(--primary);
     }
 
     .hero {
-      padding: 110px 0 90px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
       background:
-        radial-gradient(circle at top right, #f7e2e8 0, transparent 34%),
-        linear-gradient(135deg, #fff 0%, #fff7f9 100%);
+        radial-gradient(circle at top right, rgba(183,156,237,0.2), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(109,143,214,0.18), transparent 30%);
     }
 
-    .hero-grid {
+    .hero-content {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 72px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 60px;
       align-items: center;
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: var(--marsala);
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .hero-text h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
     }
 
-    h1,
-    h2,
-    h3 {
-      line-height: 1.15;
-      color: var(--marsala-dark);
+    .hero-text span {
+      color: var(--primary);
     }
 
-    h1 {
-      max-width: 760px;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 22px;
-    }
-
-    h3 {
-      font-size: 1.35rem;
-      margin-bottom: 12px;
-    }
-
-    p {
+    .hero-text p {
       color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.9;
+      margin-bottom: 35px;
+      font-size: 1.1rem;
+      max-width: 600px;
     }
 
-    .hero p {
-      max-width: 680px;
-    }
-
-    .hero-actions {
+    .buttons {
       display: flex;
+      gap: 18px;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 36px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 13px 24px;
+      padding: 14px 28px;
       border-radius: 999px;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
     }
 
     .btn-primary {
-      color: var(--white);
-      background: var(--marsala);
+      background: var(--primary);
+      color: white;
       box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
     }
 
     .btn-secondary {
-      color: var(--marsala);
-      background: var(--white);
-      border: 1px solid var(--border);
+      border: 2px solid var(--primary);
+      color: var(--primary);
     }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .hero-tags span {
-      padding: 10px 16px;
-      border-radius: 999px;
-      color: var(--marsala);
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--border);
-      font-family: Arial, sans-serif;
-      font-size: 0.86rem;
-    }
-
-    .hero-card,
-    .quote-card,
-    .cta-card,
-    .narrative-card,
-    .reflection-card,
-    .skill-card,
-    .step-card,
-    .resource-card,
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: var(--shadow);
-      transition:
-        transform 0.45s cubic-bezier(.19,1,.22,1),
-        box-shadow 0.45s cubic-bezier(.19,1,.22,1),
-        border-color 0.45s ease;
-    }
-
-    .reflection-card:hover,
-    .skill-card:hover,
-    .step-card:hover,
-    .resource-card:hover,
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .hero-card {
-      padding: 44px;
-      text-align: center;
-    }
-
-    .profile-photo {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 30px;
-      border: 4px solid rgba(255, 255, 255, 0.95);
-      box-shadow: 0 10px 30px rgba(123, 44, 59, 0.18);
-      filter: saturate(1.02) contrast(1.02);
-    }
-
-    .section {
-      padding: 120px 0;
-    }
-
-    .section-soft {
-      background: var(--marsala-soft);
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 64px;
-    }
-
-    .narrative-card,
-    .reflection-card,
-    .skill-card,
-    .step-card,
-    .resource-card,
-    .project-card {
-      padding: 34px;
-    }
-
-    .reflection-grid,
-    .skills-grid,
-    .resources-grid,
-    .projects-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .reflection-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skills-grid,
-    .resources-grid,
-    .projects-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .journey {
-      display: grid;
-      gap: 24px;
-    }
-
-    .step-card {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 22px;
-    }
-
-    .step-number {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
+    .btn-secondary:hover {
+      background: var(--primary);
       color: white;
-      background: var(--marsala);
-      font-family: Arial, sans-serif;
-      font-weight: 800;
     }
 
-    .about-grid,
-    .footer-grid {
-      display: grid;
-      gap: 46px;
+    .hero-image img {
+      border-radius: 32px;
+      box-shadow: var(--shadow);
     }
 
     .about-grid {
-      grid-template-columns: 1fr 0.8fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
       align-items: center;
     }
 
-    .footer-grid {
-      grid-template-columns: 1.5fr 1fr 1fr;
-      padding-bottom: 64px;
+    .card {
+      background: var(--white);
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: 0.3s;
     }
 
-    .quote-card {
-      padding: 44px;
-      background: var(--marsala);
+    .card:hover {
+      transform: translateY(-8px);
     }
 
-    .quote-card p {
-      color: white;
-      font-size: 1.5rem;
-    }
-
-    .cta-section {
-      padding: 120px 0;
-      background: linear-gradient(135deg, var(--marsala), var(--marsala-dark));
-    }
-
-    .cta-card {
-      max-width: 860px;
+    .timeline {
+      position: relative;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 64px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(var(--primary), var(--secondary));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      width: 50%;
+      padding: 30px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-content h3 {
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .projects-grid,
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card,
+    .blog-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+    }
+
+    .project-card:hover,
+    .blog-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-content,
+    .blog-content {
+      padding: 30px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(109, 143, 214, 0.12);
+      color: var(--primary);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .project-content h3,
+    .blog-content h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .project-content p,
+    .blog-content p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: #f3f4f6;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 40px;
+      padding: 80px 50px;
       text-align: center;
     }
 
-    .site-footer {
-      margin-top: 40px;
-      padding-top: 64px;
-      background: #321018;
-      color: #F9EEF1;
+    .cta h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 920px) {
-      .hero-grid,
-      .about-grid,
-      .footer-grid,
-      .reflection-grid,
-      .skills-grid,
-      .resources-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      opacity: 0.95;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
       }
 
-      .hero-grid {
-        gap: 48px;
+      .timeline::before {
+        left: 20px;
       }
 
-      .section,
-      .cta-section {
-        padding: 90px 0;
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 60px;
+        text-align: left !important;
+      }
+
+      .nav-links {
+        gap: 18px;
+        font-size: 0.9rem;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero {
-        padding: 72px 0 52px;
+    @media (max-width: 600px) {
+      .hero-text h1 {
+        font-size: 2.3rem;
       }
 
-      .section,
-      .cta-section {
-        padding: 72px 0;
-      }
-
-      .hero-card,
-      .reflection-card,
-      .skill-card,
-      .step-card,
-      .resource-card,
-      .project-card,
-      .cta-card,
-      .narrative-card {
-        padding: 26px;
-      }
-
-      .step-card {
-        grid-template-columns: 1fr;
+      .buttons {
+        flex-direction: column;
       }
 
       .btn {
         width: 100%;
+        text-align: center;
       }
 
-      .profile-photo {
-        width: 145px;
-        height: 145px;
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: none;
       }
     }
   </style>
-
 </head>
 <body>
 
-  <header class="site-header">
-    <nav class="navbar container">
-      <a href="#inicio" class="brand">
-        <span>☁</span>
-        <span>
-          <strong>Do Consultório à Nuvem</strong>
-          <small>Ana Karina</small>
-        </span>
-      </a>
+  <header>
+    <div class="container navbar">
+      <div class="logo">☁ Do Consultório à Nuvem</div>
 
-```
-  <ul class="nav-links">
-    <li><a href="#inicio">Início</a></li>
-    <li><a href="#transicao">Transição</a></li>
-    <li><a href="#caminho">Caminho</a></li>
-    <li><a href="#recursos">Recursos</a></li>
-  </ul>
-</nav>
-```
-
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#jornada">Jornada</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#blog">Artigos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="container hero-grid">
+  <section class="hero">
+    <div class="container hero-content">
 
-```
-    <div>
-      <span class="eyebrow">Transição de carreira • Cloud Computing • Recomeço</span>
+      <div class="hero-text fade-up">
+        <h1>
+          Do <span>Consultório</span><br>
+          à Nuvem
+        </h1>
 
-      <h1>Você não precisa apagar sua história para começar em tecnologia.</h1>
+        <p>
+          Uma jornada real de transição da odontologia para Cloud Computing e Inteligência Artificial.
+          Compartilhando estudos, desafios, certificações, projetos e recomeços.
+        </p>
 
-      <p>
-        Este blog é um espaço para mulheres que estão repensando a carreira e querem entrar em tecnologia com clareza, acolhimento e direção.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#transicao" class="btn btn-primary">Começar minha transição</a>
-        <a href="#recursos" class="btn btn-secondary">Ver recursos</a>
+        <div class="buttons">
+          <a href="#jornada" class="btn btn-primary">Minha Jornada</a>
+          <a href="#projetos" class="btn btn-secondary">Projetos</a>
+          <a href="#blog" class="btn btn-secondary">Artigos</a>
+        </div>
       </div>
 
-      <div class="hero-tags">
-        <span>Autoconhecimento</span>
-        <span>Linux</span>
-        <span>Cloud</span>
-        <span>AWS</span>
+      <div class="hero-image fade-up">
+        <img
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
+          alt="Mulher estudando tecnologia"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+
+      <h2 class="section-title fade-up">Uma nova carreira construída com coragem</h2>
+
+      <p class="section-subtitle fade-up">
+        Este blog nasceu para compartilhar uma transição de carreira real.
+        Entre estudos de Cloud, Python, AWS e Inteligência Artificial,
+        existe também uma história sobre recomeços, identidade e evolução.
+      </p>
+
+      <div class="about-grid">
+
+        <div class="card fade-up">
+          <h3>🌥 Transição para Cloud</h3>
+          <p>
+            Compartilhando estudos, laboratórios práticos, certificações e experiências na construção de uma nova carreira em tecnologia.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <h3>💻 Projetos Reais</h3>
+          <p>
+            Projetos em Python, AWS CLI, APIs públicas, automações e experimentos voltados para computação em nuvem.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <h3>✨ Uma jornada humana</h3>
+          <p>
+            Muito além da tecnologia: um espaço sobre coragem, mudança, aprendizado e construção de um novo caminho.
+          </p>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <aside class="hero-card">
-      <img src="ativos/minha-foto.jpg" alt="Foto de Ana Karina" class="profile-photo" />
+  <section id="jornada">
+    <div class="container">
 
-      <h2>Ana Karina</h2>
+      <h2 class="section-title fade-up">Minha Jornada em Cloud</h2>
 
-      <p>
-        Transformando dúvidas em passos possíveis e mostrando que recomeçar também pode ser uma forma de coragem.
+      <p class="section-subtitle fade-up">
+        Da odontologia à computação em nuvem: cada etapa representa aprendizado, coragem e reinvenção.
       </p>
-    </aside>
 
-  </div>
-</section>
-```
+      <div class="timeline">
 
-  </main>
+        <div class="timeline-item fade-up">
+          <div class="timeline-content">
+            <h3>Início da Transição</h3>
+            <p>
+              O momento em que comecei a estudar tecnologia e percebi que queria construir uma nova carreira.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-content">
+            <h3>Primeiros estudos em Python</h3>
+            <p>
+              Lógica de programação, automações, exercícios práticos e primeiros projetos.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-content">
+            <h3>AWS e Cloud Computing</h3>
+            <p>
+              Estudos em redes, EC2, IAM, VPC, troubleshooting e laboratórios usando AWS CLI.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-content">
+            <h3>OCI e Inteligência Artificial</h3>
+            <p>
+              Exploração de cloud multi-provider e IA generativa aplicada à nuvem.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="container">
+
+      <h2 class="section-title fade-up">Projetos</h2>
+
+      <p class="section-subtitle fade-up">
+        Pequenos projetos que representam aprendizado constante e construção de experiência prática.
+      </p>
+
+      <div class="projects-grid">
+
+        <div class="project-card fade-up">
+          <div class="project-content">
+            <span class="tag">Python</span>
+            <h3>Sistema de Lembrete de Medicamentos</h3>
+            <p>
+              Aplicação desenvolvida em Python para organização de horários e lembretes de medicação.
+            </p>
+
+            <div class="skills">
+              <span class="skill">Python</span>
+              <span class="skill">CLI</span>
+              <span class="skill">Lógica</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" class="btn btn-primary">GitHub</a>
+              <a href="#" class="btn btn-secondary">Ver Projeto</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-content">
+            <span class="tag">AWS</span>
+            <h3>Labs AWS CLI</h3>
+            <p>
+              Laboratórios envolvendo troubleshooting, VPC, grupos de segurança e análise de logs.
+            </p>
+
+            <div class="skills">
+              <span class="skill">AWS</span>
+              <span class="skill">CLI</span>
+              <span class="skill">Networking</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" class="btn btn-primary">GitHub</a>
+              <a href="#" class="btn btn-secondary">Ver Projeto</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-content">
+            <span class="tag">APIs</span>
+            <h3>Consumo de APIs Públicas</h3>
+            <p>
+              Exercícios usando ViaCEP, Random User e AwesomeAPI para integração de dados.
+            </p>
+
+            <div class="skills">
+              <span class="skill">Python</span>
+              <span class="skill">API</span>
+              <span class="skill">JSON</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" class="btn btn-primary">GitHub</a>
+              <a href="#" class="btn btn-secondary">Ver Projeto</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+
+      <h2 class="section-title fade-up">Artigos Recentes</h2>
+
+      <p class="section-subtitle fade-up">
+        Reflexões, estudos, aprendizados e experiências durante a construção de uma nova carreira em tecnologia.
+      </p>
+
+      <div class="blog-grid">
+
+        <div class="blog-card fade-up">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+            alt="Cloud Computing"
+          />
+
+          <div class="blog-content">
+            <span class="tag">Transição de Carreira</span>
+            <h3>Como comecei minha transição para Cloud</h3>
+            <p>
+              O início da mudança da odontologia para a tecnologia e os desafios emocionais desse processo.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+            alt="AWS"
+          />
+
+          <div class="blog-content">
+            <span class="tag">AWS</span>
+            <h3>O que aprendi estudando redes na AWS</h3>
+            <p>
+              VPC, subnets, security groups e troubleshooting explicados de forma prática.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <img
+            src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format&fit=crop"
+            alt="Mulheres na tecnologia"
+          />
+
+          <div class="blog-content">
+            <span class="tag">Mulheres na Tecnologia</span>
+            <h3>Recomeçar aos 30 também é coragem</h3>
+            <p>
+              Reflexões sobre mudança profissional, identidade e construção de uma nova versão de si mesma.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+
+      <div class="cta fade-up">
+        <h2>Vamos construir essa jornada juntos?</h2>
+
+        <p>
+          Conecte-se comigo para acompanhar estudos, projetos, experiências em Cloud Computing e Inteligência Artificial.
+        </p>
+
+        <div class="buttons" style="justify-content: center;">
+          <a href="#" class="btn btn-primary">LinkedIn</a>
+          <a href="#" class="btn btn-secondary" style="background:white; color:#6d8fd6;">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 • Do Consultório à Nuvem • Construindo uma nova carreira com coragem ☁
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
+```
