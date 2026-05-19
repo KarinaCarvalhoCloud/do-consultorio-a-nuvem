@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Do Consultório à Nuvem: blog para mulheres em transição de carreira para tecnologia e cloud computing." />
+  <meta name="description" content="Do Consultório à Nuvem: jornada guiada para mulheres em transição de carreira para tecnologia e cloud computing." />
   <title>Do Consultório à Nuvem | Transição de Carreira para Cloud</title>
 
   <style>
@@ -40,6 +40,11 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .container {
@@ -96,10 +101,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 18px;
       list-style: none;
       font-family: Arial, sans-serif;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .nav-links a {
@@ -173,10 +178,7 @@
       margin-bottom: 10px;
     }
 
-    .hero p,
-    .section-heading p,
-    .about-section p,
-    .cta-card p {
+    p {
       color: var(--muted);
       font-size: 1.08rem;
     }
@@ -255,17 +257,20 @@
       text-align: center;
     }
 
-    .profile-circle {
-      width: 112px;
-      height: 112px;
-      margin: 0 auto 24px;
-      display: grid;
-      place-items: center;
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
       border-radius: 50%;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--marsala), #A84A5F);
-      font-size: 2rem;
-      font-weight: 700;
+      display: block;
+      margin: 0 auto 25px;
+      border: 4px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px rgba(123, 44, 59, 0.25);
+      transition: transform 0.35s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.04);
     }
 
     .section {
@@ -277,22 +282,30 @@
     }
 
     .section-heading {
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 42px;
     }
 
-    .cards-grid {
+    .narrative-card {
+      max-width: 920px;
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .reflection-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
-    .cards-grid.three {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      min-height: 220px;
+    .reflection-card,
+    .skill-card,
+    .step-card,
+    .resource-card,
+    .project-card {
       padding: 28px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -301,42 +314,23 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    .card:hover,
-    .feature-card:hover,
-    .event-card:hover {
+    .reflection-card:hover,
+    .skill-card:hover,
+    .step-card:hover,
+    .resource-card:hover,
+    .project-card:hover {
       transform: translateY(-6px);
       border-color: rgba(123, 44, 59, 0.35);
       box-shadow: var(--shadow);
     }
 
-    .card p,
-    .feature-card p,
-    .event-card p {
-      color: var(--muted);
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .feature-card {
-      display: flex;
-      gap: 20px;
-      padding: 26px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--white);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .feature-card span {
-      flex: 0 0 48px;
-      width: 48px;
-      height: 48px;
-      display: grid;
+    .reflection-card span,
+    .skill-card span {
+      display: inline-grid;
       place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 16px;
       border-radius: 50%;
       color: var(--white);
       background: var(--marsala);
@@ -344,30 +338,99 @@
       font-weight: 700;
     }
 
-    .project-card a,
-    .event-card a {
-      display: inline-block;
-      margin-top: 18px;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .journey {
+      display: grid;
+      gap: 22px;
+    }
+
+    .step-card {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .step-card ul {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      list-style: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .step-card li {
+      position: relative;
+      padding-left: 26px;
+      color: var(--muted);
+    }
+
+    .step-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
       color: var(--marsala);
+      font-weight: 800;
+    }
+
+    .resources-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .resource-card {
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .resource-logo {
+      height: 58px;
+      max-width: 150px;
+      object-fit: contain;
+      margin-bottom: 22px;
+    }
+
+    .resource-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 18px;
+      color: var(--white);
+      background: var(--marsala);
       font-family: Arial, sans-serif;
       font-weight: 700;
     }
 
-    .events-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .event-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 24px 28px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--white);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .resource-card a,
+    .project-card a {
+      display: inline-block;
+      margin-top: auto;
+      color: var(--marsala);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
     }
 
     .about-grid {
@@ -375,6 +438,10 @@
       grid-template-columns: 1fr 0.8fr;
       gap: 46px;
       align-items: center;
+    }
+
+    .about-section p + p {
+      margin-top: 14px;
     }
 
     .quote-card {
@@ -476,13 +543,11 @@
         grid-template-columns: 1fr;
       }
 
-      .cards-grid,
-      .cards-grid.three {
+      .reflection-grid,
+      .skills-grid,
+      .resources-grid,
+      .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .feature-list {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -500,22 +565,26 @@
         padding: 64px 0;
       }
 
-      .cards-grid,
-      .cards-grid.three {
+      .reflection-grid,
+      .skills-grid,
+      .resources-grid,
+      .projects-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-card,
-      .card,
-      .feature-card,
-      .event-card,
-      .cta-card {
+      .reflection-card,
+      .skill-card,
+      .step-card,
+      .resource-card,
+      .project-card,
+      .cta-card,
+      .narrative-card {
         padding: 24px;
       }
 
-      .event-card {
-        align-items: flex-start;
-        flex-direction: column;
+      .step-card {
+        grid-template-columns: 1fr;
       }
 
       .btn {
@@ -547,8 +616,8 @@
         </span>
       </a>
 
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" />
-      <label for="menu-toggle" class="menu-button">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-button" aria-label="Abrir menu">
         <span></span>
         <span></span>
         <span></span>
@@ -556,12 +625,12 @@
 
       <ul class="nav-links">
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#pilares">Pilares da Transição</a></li>
-        <li><a href="#trilhas">Trilhas & Recursos</a></li>
-        <li><a href="#projetos">Projetos Inspiradores</a></li>
-        <li><a href="#eventos">Eventos & Comunidade</a></li>
+        <li><a href="#transicao">Transição</a></li>
+        <li><a href="#reflexao">Checklist inicial</a></li>
+        <li><a href="#caminho">Caminho</a></li>
+        <li><a href="#recursos">Recursos</a></li>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato" class="nav-cta">Contato</a></li>
+        <li><a href="checklist.html" class="nav-cta">Checklist</a></li>
       </ul>
     </nav>
   </header>
@@ -569,175 +638,350 @@
   <main>
     <section id="inicio" class="hero">
       <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="eyebrow">Transição de carreira • Cloud Computing • Mulheres na tecnologia</span>
-          <h1>Do consultório à nuvem: sua jornada de sucesso em Cloud.</h1>
+        <div>
+          <span class="eyebrow">Transição de carreira • Cloud Computing • Recomeço com direção</span>
+
+          <h1>Você não precisa apagar sua história para começar em tecnologia.</h1>
+
           <p>
-            Um espaço acolhedor e profissional para mulheres que desejam transformar
-            sua experiência anterior em força para construir uma nova carreira em tecnologia.
+            Este blog é um caminho guiado para mulheres que estão repensando a carreira,
+            querem entender a transição para tecnologia e desejam dar os primeiros passos
+            em cloud computing com acolhimento, clareza e prática.
           </p>
 
           <div class="hero-actions">
-            <a href="#trilhas" class="btn btn-primary">Comece sua trilha</a>
-            <a href="#sobre" class="btn btn-secondary">Conheça minha história</a>
+            <a href="#transicao" class="btn btn-primary">Começar minha transição</a>
+            <a href="checklist.html" class="btn btn-secondary">Responder checklist</a>
           </div>
 
           <div class="hero-tags">
-            <span>Iniciação Tech</span>
-            <span>AWS</span>
-            <span>Networking</span>
-            <span>Mentoria</span>
+            <span>Autoconhecimento</span>
+            <span>Fundamentos Tech</span>
+            <span>Linux</span>
+            <span>Cloud</span>
           </div>
         </div>
 
         <aside class="hero-card">
-          <div class="profile-circle">AK</div>
+          <img
+            src="ativos/avatar-ana-karina.jpeg"
+            alt="Foto de Ana Karina"
+            class="profile-photo"
+          />
+
           <h2>Ana Karina</h2>
+
           <p>
-            Compartilhando caminhos, ferramentas e aprendizados reais para quem está
-            migrando para tecnologia com coragem, método e propósito.
+            Um espaço para transformar dúvidas em passos possíveis,
+            estudos em portfólio e experiência anterior em diferencial.
           </p>
         </aside>
       </div>
     </section>
 
-    <section id="pilares" class="section">
+    <section id="transicao" class="section">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Base da jornada</span>
-          <h2>Pilares da Transição</h2>
-          <p>Organize sua mudança de carreira com clareza, consistência e visão de futuro.</p>
+          <span class="eyebrow">Primeiro entendimento</span>
+          <h2>O que é uma transição de carreira?</h2>
         </div>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Autoconhecimento</h3>
-            <p>Reconheça suas habilidades transferíveis e transforme sua trajetória anterior em diferencial.</p>
+        <div class="narrative-card">
+          <p>
+            Transição de carreira não é simplesmente abandonar uma profissão e começar outra do zero.
+            É um processo de reorganizar sua história, identificar habilidades que você já tem,
+            aprender novos fundamentos e construir, aos poucos, uma nova identidade profissional.
+          </p>
+
+          <br />
+
+          <p>
+            Na tecnologia, especialmente em cloud computing, muitas mulheres chegam com medo de não
+            pertencer. Mas experiência com pessoas, organização, comunicação, cuidado, análise,
+            rotina, processos e responsabilidade também são competências valiosas.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#reflexao" class="btn btn-primary">Entender meu motivo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflexao" class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Checklist inicial</span>
+          <h2>Antes de escolher cursos, pergunte: por que eu quero mudar?</h2>
+          <p>
+            A transição fica mais forte quando nasce de clareza, não apenas de pressa.
+            Reflita sobre estas perguntas antes de montar sua trilha.
+          </p>
+        </div>
+
+        <div class="reflection-grid">
+          <article class="reflection-card">
+            <span>1</span>
+            <h3>O que me trouxe até aqui?</h3>
+            <p>Estou buscando crescimento, liberdade, realização, estabilidade, curiosidade ou uma nova identidade profissional?</p>
           </article>
 
-          <article class="card">
-            <h3>Fundamentos Tech</h3>
-            <p>Construa uma base sólida em lógica, redes, sistemas operacionais e cloud computing.</p>
+          <article class="reflection-card">
+            <span>2</span>
+            <h3>O que quero deixar para trás?</h3>
+            <p>Quais rotinas, ambientes ou limitações da carreira atual já não fazem sentido para mim?</p>
           </article>
 
-          <article class="card">
-            <h3>Portfólio Prático</h3>
-            <p>Crie projetos simples, documentados e alinhados ao que o mercado espera de iniciantes.</p>
+          <article class="reflection-card">
+            <span>3</span>
+            <h3>O que eu quero construir?</h3>
+            <p>Que tipo de vida, rotina, aprendizado e oportunidade eu imagino ao entrar em tecnologia?</p>
           </article>
 
-          <article class="card">
-            <h3>Comunidade</h3>
-            <p>Aprenda com outras mulheres, participe de eventos e fortaleça sua rede profissional.</p>
+          <article class="reflection-card">
+            <span>4</span>
+            <h3>Quanto tempo real eu tenho?</h3>
+            <p>Minha jornada precisa respeitar minha vida atual. Consistência pequena é melhor do que excesso impossível.</p>
+          </article>
+        </div>
+
+        <div class="hero-actions">
+          <a href="checklist.html" class="btn btn-primary">Abrir checklist completo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Você já traz valor</span>
+          <h2>O que sua carreira anterior pode te entregar?</h2>
+          <p>
+            A tecnologia não precisa apagar quem você foi. Ela pode ampliar o que você já sabe fazer bem.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <span>✓</span>
+            <h3>Comunicação</h3>
+            <p>Explicar, ouvir, orientar e traduzir problemas são habilidades importantes em times técnicos.</p>
+          </article>
+
+          <article class="skill-card">
+            <span>✓</span>
+            <h3>Organização</h3>
+            <p>Planejamento, rotina e atenção a detalhes ajudam muito em estudos, documentação e projetos.</p>
+          </article>
+
+          <article class="skill-card">
+            <span>✓</span>
+            <h3>Cuidado com pessoas</h3>
+            <p>Empatia e responsabilidade fortalecem suporte, atendimento, liderança e colaboração.</p>
+          </article>
+
+          <article class="skill-card">
+            <span>✓</span>
+            <h3>Resolução de problemas</h3>
+            <p>Observar sintomas, investigar causas e buscar soluções também faz parte do pensamento técnico.</p>
+          </article>
+
+          <article class="skill-card">
+            <span>✓</span>
+            <h3>Processos</h3>
+            <p>Quem entende rotina, fluxo e melhoria contínua consegue se adaptar bem a ambientes de tecnologia.</p>
+          </article>
+
+          <article class="skill-card">
+            <span>✓</span>
+            <h3>Aprendizado constante</h3>
+            <p>Transição exige curiosidade, paciência e disposição para praticar um pouco todos os dias.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="trilhas" class="section section-soft">
+    <section id="caminho" class="section section-soft">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Estudo com direção</span>
-          <h2>Trilhas & Recursos</h2>
-          <p>Conteúdos essenciais para sair do zero e avançar com segurança na nuvem.</p>
+          <span class="eyebrow">Agora sim: o caminho</span>
+          <h2>Uma sequência possível para entrar em cloud</h2>
+          <p>
+            Em vez de estudar tudo ao mesmo tempo, siga uma ordem simples:
+            entender, praticar, documentar e se conectar.
+          </p>
         </div>
 
-        <div class="feature-list">
-          <article class="feature-card">
-            <span>01</span>
+        <div class="journey">
+          <article class="step-card">
+            <div class="step-number">01</div>
             <div>
-              <h3>Iniciação Tech</h3>
-              <p>Fundamentos de TI, lógica de programação e primeiros passos na área.</p>
+              <h3>Mentalidade e planejamento</h3>
+              <p>Organize sua rotina e entenda que transição é processo, não corrida.</p>
+              <ul>
+                <li>Defina seu motivo</li>
+                <li>Escolha horários reais de estudo</li>
+                <li>Monte um plano semanal simples</li>
+              </ul>
             </div>
           </article>
 
-          <article class="feature-card">
-            <span>02</span>
+          <article class="step-card">
+            <div class="step-number">02</div>
             <div>
-              <h3>AWS Cloud</h3>
-              <p>Conceitos de EC2, S3, IAM, VPC e boas práticas para ambientes em nuvem.</p>
+              <h3>Fundamentos de tecnologia</h3>
+              <p>Antes da nuvem, entenda o básico: redes, internet, sistemas, servidores e segurança.</p>
+              <ul>
+                <li>Conceitos de TI</li>
+                <li>Noções de redes</li>
+                <li>Vocabulário técnico essencial</li>
+              </ul>
             </div>
           </article>
 
-          <article class="feature-card">
-            <span>03</span>
+          <article class="step-card">
+            <div class="step-number">03</div>
             <div>
               <h3>Linux & Shell</h3>
-              <p>Comandos essenciais, terminal e administração básica para rotinas técnicas.</p>
+              <p>O terminal é uma ponte importante para cloud, DevOps e infraestrutura.</p>
+              <ul>
+                <li>Comandos básicos</li>
+                <li>Arquivos e permissões</li>
+                <li>Prática com terminal</li>
+              </ul>
             </div>
           </article>
 
-          <article class="feature-card">
-            <span>04</span>
+          <article class="step-card">
+            <div class="step-number">04</div>
             <div>
-              <h3>Infraestrutura como Código</h3>
-              <p>Introdução a Terraform, CloudFormation e automação de infraestrutura.</p>
+              <h3>Cloud Computing</h3>
+              <p>Aprenda os serviços principais e os conceitos que aparecem em AWS, Azure e Google Cloud.</p>
+              <ul>
+                <li>Compute, storage e redes</li>
+                <li>Identidade e segurança</li>
+                <li>Modelo de responsabilidade compartilhada</li>
+              </ul>
             </div>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">05</div>
+            <div>
+              <h3>Projetos e portfólio</h3>
+              <p>Mostre sua evolução com pequenos projetos documentados.</p>
+              <ul>
+                <li>GitHub organizado</li>
+                <li>README explicando aprendizados</li>
+                <li>Projetos simples publicados</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">06</div>
+            <div>
+              <h3>Comunidade e empregabilidade</h3>
+              <p>Aprender junto, compartilhar e se conectar também faz parte da transição.</p>
+              <ul>
+                <li>Comunidades de mulheres em tech</li>
+                <li>LinkedIn ativo</li>
+                <li>Currículo com habilidades transferíveis</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-actions">
+          <a href="cursos.html" class="btn btn-primary">Ver trilha de cursos</a>
+          <a href="checklist.html" class="btn btn-secondary">Acompanhar checklist</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Recursos recomendados</span>
+          <h2>Por onde começar a estudar?</h2>
+          <p>
+            Uma curadoria inicial para quem quer estudar com direção, sem se perder no excesso de informação.
+          </p>
+        </div>
+
+        <div class="resources-grid">
+          <article class="resource-card">
+            <img src="ativos/logotipo-aws.png" alt="Logo AWS" class="resource-logo" />
+            <h3>AWS Educate</h3>
+            <p>Programa gratuito da AWS para iniciantes em Cloud Computing.</p>
+            <a href="https://aws.amazon.com/education/awseducate/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <img src="ativos/Logo-Escola-da-nuvem.png" alt="Logo Escola da Nuvem" class="resource-logo" />
+            <h3>Escola da Nuvem</h3>
+            <p>Capacitação gratuita em nuvem, certificação e empregabilidade.</p>
+            <a href="https://escoladanuvem.org" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <div class="resource-icon">LT</div>
+            <h3>Linux Tips</h3>
+            <p>Conteúdos sobre Linux, DevOps, containers e cloud.</p>
+            <a href="https://linuxtips.io" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <img src="ativos/logo-cloudelas.png" alt="Logo Cloudelas" class="resource-logo" />
+            <h3>Cloudelas</h3>
+            <p>Comunidade para mulheres em cloud computing.</p>
+            <a href="https://www.linkedin.com/company/cloudelas/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <img src="ativos/logo-azure.jpeg" alt="Logo Microsoft Azure" class="resource-logo" />
+            <h3>Microsoft Learn</h3>
+            <p>Trilhas oficiais para Azure, dados, segurança e IA.</p>
+            <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card">
+            <img src="ativos/logo-gcp.jpeg" alt="Logo Google Cloud" class="resource-logo" />
+            <h3>Google Cloud Skills Boost</h3>
+            <p>Laboratórios práticos para aprender Google Cloud.</p>
+            <a href="https://www.cloudskillsboost.google/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projetos" class="section">
+    <section id="projetos" class="section section-soft">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Prática que inspira</span>
-          <h2>Projetos Inspiradores</h2>
-          <p>Ideias para transformar estudos em evidências reais de aprendizado.</p>
+          <span class="eyebrow">Transforme estudo em evidência</span>
+          <h2>Projetos simples para começar</h2>
+          <p>
+            Projetos pequenos e bem documentados valem mais do que esperar meses para mostrar algo perfeito.
+          </p>
         </div>
 
-        <div class="cards-grid three">
-          <article class="card project-card">
-            <h3>Site estático na nuvem</h3>
-            <p>Publique uma página pessoal usando GitHub Pages e documente sua evolução.</p>
-            <a href="#contato">Ver ideia →</a>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Site no GitHub Pages</h3>
+            <p>Crie uma página simples sobre sua transição e publique online.</p>
+            <a href="cursos.html">Ver trilha →</a>
           </article>
 
-          <article class="card project-card">
-            <h3>Checklist de estudos</h3>
-            <p>Monte um guia visual com etapas para iniciar em cloud e compartilhar com outras mulheres.</p>
-            <a href="#contato">Ver ideia →</a>
+          <article class="project-card">
+            <h3>README de estudos</h3>
+            <p>Documente comandos Linux, conceitos de cloud e aprendizados semanais.</p>
+            <a href="checklist.html">Ver checklist →</a>
           </article>
 
-          <article class="card project-card">
-            <h3>Laboratório AWS</h3>
-            <p>Crie um pequeno laboratório com S3, IAM e boas práticas de segurança inicial.</p>
-            <a href="#contato">Ver ideia →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="eventos" class="section section-soft">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Networking e pertencimento</span>
-          <h2>Eventos & Comunidade</h2>
-          <p>Encontros, conferências e iniciativas para aprender, conectar e crescer.</p>
-        </div>
-
-        <div class="events-list">
-          <article class="event-card">
-            <div>
-              <strong>MVP Conf</strong>
-              <p>Comunidade Microsoft, cloud, carreira e tecnologia.</p>
-            </div>
-            <a href="#">Detalhes →</a>
-          </article>
-
-          <article class="event-card">
-            <div>
-              <strong>Mulheres em IA</strong>
-              <p>Protagonismo feminino, dados, IA generativa e inovação.</p>
-            </div>
-            <a href="#">Detalhes →</a>
-          </article>
-
-          <article class="event-card">
-            <div>
-              <strong>DevOpsDays</strong>
-              <p>Cultura DevOps, colaboração, automação e práticas modernas.</p>
-            </div>
-            <a href="#">Detalhes →</a>
+          <article class="project-card">
+            <h3>Laboratório Cloud</h3>
+            <p>Monte um laboratório simples com storage, identidade e boas práticas.</p>
+            <a href="index.html#recursos">Ver recursos →</a>
           </article>
         </div>
       </div>
@@ -748,14 +992,15 @@
         <div>
           <span class="eyebrow">Sobre</span>
           <h2>Uma jornada real, humana e possível.</h2>
+
           <p>
             Sou Ana Karina e criei o Do Consultório à Nuvem para compartilhar minha
-            transição de carreira para Cloud Computing. Aqui você encontra orientação,
-            inspiração e recursos práticos para dar seus primeiros passos.
+            transição de carreira para Cloud Computing.
           </p>
+
           <p>
-            A proposta é mostrar que uma carreira em tecnologia pode ser construída
-            com estratégia, consistência e acolhimento.
+            Este espaço nasceu para apoiar mulheres que querem mudar de área, mas precisam
+            de clareza, acolhimento, recursos confiáveis e uma sequência possível para começar.
           </p>
         </div>
 
@@ -770,13 +1015,15 @@
 
     <section id="contato" class="cta-section">
       <div class="container cta-card">
-        <span class="eyebrow">Pronta para a nuvem?</span>
-        <h2>Receba conteúdos, checklist e dicas para sua transição.</h2>
-        <p>Comece com passos simples, objetivos e possíveis para sua realidade.</p>
+        <span class="eyebrow">Comece pelo próximo passo</span>
+        <h2>A transição fica mais leve quando vira caminho.</h2>
+        <p>
+          Responda ao checklist, escolha uma trilha e avance com consistência.
+        </p>
 
         <div class="hero-actions center">
-          <a href="#" class="btn btn-primary">Baixar checklist</a>
-          <a href="https://www.linkedin.com" class="btn btn-secondary">Conectar no LinkedIn</a>
+          <a href="checklist.html" class="btn btn-primary">Responder checklist</a>
+          <a href="cursos.html" class="btn btn-secondary">Ver cursos gratuitos</a>
         </div>
       </div>
     </section>
@@ -792,16 +1039,17 @@
       <div>
         <h3>Navegação</h3>
         <a href="#inicio">Início</a>
-        <a href="#trilhas">Trilhas & Recursos</a>
-        <a href="#eventos">Eventos & Comunidade</a>
-        <a href="#contato">Contato</a>
+        <a href="#transicao">Transição</a>
+        <a href="#caminho">Caminho</a>
+        <a href="#recursos">Recursos</a>
       </div>
 
       <div>
-        <h3>Conecte-se</h3>
-        <a href="https://www.linkedin.com">LinkedIn</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Checklist</a>
+        <h3>Conteúdos</h3>
+        <a href="checklist.html">Checklist</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
       </div>
     </div>
 
