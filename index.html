@@ -290,7 +290,7 @@
     .skill-card,
     .step-card,
     .resource-card,
-    .project-card {
+    .visual-card {
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.86);
@@ -334,6 +334,106 @@
       margin-bottom: 46px;
     }
 
+    .image-text-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .visual-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 430px;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(191, 167, 232, 0.25), transparent 30%),
+        linear-gradient(135deg, #f7fbff, #ffffff);
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(109, 143, 179, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(109, 143, 179, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    .code-window {
+      position: relative;
+      z-index: 1;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #1f3044;
+      box-shadow: 0 24px 60px rgba(31, 48, 68, 0.22);
+      transform: rotate(-2deg);
+    }
+
+    .window-bar {
+      display: flex;
+      gap: 8px;
+      padding: 14px 16px;
+      background: #2b4059;
+    }
+
+    .window-bar span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #c8d8ea;
+    }
+
+    .code-lines {
+      padding: 24px;
+      font-family: "Courier New", monospace;
+      font-size: 0.92rem;
+      color: #d7e8ff;
+    }
+
+    .code-lines p {
+      color: #d7e8ff;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .code-lines .blue {
+      color: #8ab9e6;
+    }
+
+    .code-lines .purple {
+      color: #bfa7e8;
+    }
+
+    .code-lines .gold {
+      color: #c8a96a;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      right: 24px;
+      bottom: 28px;
+      width: 210px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .floating-card p {
+      font-size: 0.9rem;
+    }
+
     .narrative-card {
       max-width: 940px;
       padding: 42px;
@@ -343,7 +443,7 @@
 
     .reflection-grid,
     .resources-grid,
-    .projects-grid {
+    .visual-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
@@ -363,17 +463,25 @@
     .skill-card,
     .step-card,
     .resource-card,
-    .project-card {
+    .visual-mini-card {
       padding: 30px;
       box-shadow: 0 12px 34px rgba(70, 105, 140, 0.09);
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .visual-mini-card {
+      min-height: 260px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--white);
+      overflow: hidden;
     }
 
     .reflection-card:hover,
     .skill-card:hover,
     .step-card:hover,
     .resource-card:hover,
-    .project-card:hover {
+    .visual-mini-card:hover {
       transform: translateY(-7px);
       border-color: rgba(109, 143, 179, 0.46);
       box-shadow: var(--shadow);
@@ -391,6 +499,37 @@
       color: var(--white);
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       font-weight: 800;
+    }
+
+    .visual-illustration {
+      height: 130px;
+      margin: -30px -30px 24px;
+      background:
+        radial-gradient(circle at 25% 35%, rgba(191, 167, 232, 0.52), transparent 24%),
+        radial-gradient(circle at 75% 35%, rgba(109, 143, 179, 0.38), transparent 24%),
+        linear-gradient(135deg, var(--soft-blue), var(--secondary-soft));
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-illustration span {
+      width: 90px;
+      height: 58px;
+      border-radius: 14px;
+      background: #1f3044;
+      position: relative;
+      box-shadow: 0 18px 35px rgba(31, 48, 68, 0.18);
+    }
+
+    .visual-illustration span::before {
+      content: "</>";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #d7e8ff;
+      font-weight: 900;
+      font-family: "Courier New", monospace;
     }
 
     .journey {
@@ -439,8 +578,7 @@
       font-weight: 900;
     }
 
-    .resource-card,
-    .project-card {
+    .resource-card {
       min-height: 285px;
       display: flex;
       flex-direction: column;
@@ -455,26 +593,9 @@
       filter: saturate(0.95);
     }
 
-    .resource-card a,
-    .project-card a {
+    .resource-card a {
       margin-top: auto;
       color: var(--primary-dark);
-      font-weight: 800;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0 22px;
-    }
-
-    .tech-tags span {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--soft-blue);
-      color: var(--primary-dark);
-      font-size: 0.78rem;
       font-weight: 800;
     }
 
@@ -599,15 +720,20 @@
 
       .hero-grid,
       .about-grid,
-      .footer-grid {
+      .footer-grid,
+      .image-text-grid {
         grid-template-columns: 1fr;
       }
 
       .reflection-grid,
       .skills-grid,
       .resources-grid,
-      .projects-grid {
+      .visual-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .visual-card {
+        min-height: 360px;
       }
     }
 
@@ -628,7 +754,7 @@
       .reflection-grid,
       .skills-grid,
       .resources-grid,
-      .projects-grid {
+      .visual-grid {
         grid-template-columns: 1fr;
       }
 
@@ -637,7 +763,7 @@
       .skill-card,
       .step-card,
       .resource-card,
-      .project-card,
+      .visual-mini-card,
       .cta-card,
       .narrative-card {
         padding: 24px;
@@ -653,6 +779,18 @@
 
       .brand strong {
         font-size: 0.92rem;
+      }
+
+      .floating-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 18px;
+      }
+
+      .code-window {
+        transform: none;
       }
     }
 
@@ -692,9 +830,9 @@
         <li><a href="#inicio">Início</a></li>
         <li><a href="#transicao">Transição</a></li>
         <li><a href="#reflexao">Checklist</a></li>
-        <li><a href="#caminho">Caminho</a></li>
+        <li><a href="#caminho">Jornada</a></li>
         <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
         <li><a href="checklist.html" class="nav-cta">Começar</a></li>
       </ul>
     </nav>
@@ -715,8 +853,8 @@
 
           <div class="hero-actions">
             <a href="#transicao" class="btn btn-primary">Minha Jornada</a>
-            <a href="#projetos" class="btn btn-secondary">Projetos</a>
             <a href="cursos.html" class="btn btn-secondary">Artigos e trilhas</a>
+            <a href="checklist.html" class="btn btn-secondary">Checklist</a>
           </div>
 
           <div class="hero-tags">
@@ -745,13 +883,35 @@
     </section>
 
     <section id="transicao" class="section">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Primeiro entendimento</span>
-          <h2>Transição de carreira não é começar do zero.</h2>
+      <div class="container image-text-grid">
+        <div class="visual-card reveal" aria-label="Ilustração visual de código e cloud computing">
+          <div class="code-window">
+            <div class="window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="code-lines">
+              <p><span class="purple">class</span> TransicaoCarreira:</p>
+              <p>&nbsp;&nbsp;<span class="blue">origem</span> = "odontologia"</p>
+              <p>&nbsp;&nbsp;<span class="blue">destino</span> = "cloud computing"</p>
+              <p>&nbsp;&nbsp;<span class="gold">skills</span> = ["AWS", "Python", "IA"]</p>
+              <p>&nbsp;&nbsp;<span class="purple">def</span> recomeçar():</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;return "um passo por vez ☁"</p>
+            </div>
+          </div>
+
+          <div class="floating-card">
+            <strong>Cloud Mindset</strong>
+            <p>Aprender, praticar, documentar e evoluir.</p>
+          </div>
         </div>
 
-        <div class="narrative-card reveal">
+        <div class="reveal">
+          <span class="eyebrow">Primeiro entendimento</span>
+          <h2>Transição de carreira não é começar do zero.</h2>
+
           <p>
             Transição é reorganizar sua história, reconhecer habilidades transferíveis,
             aprender novos fundamentos e construir uma nova identidade profissional aos poucos.
@@ -866,11 +1026,44 @@
       </div>
     </section>
 
-    <section id="caminho" class="section section-soft">
+    <section id="visual-tech" class="section section-soft">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Tecnologia com propósito</span>
+          <h2>Cloud, código e aprendizado contínuo.</h2>
+          <p>
+            A jornada técnica ganha força quando deixa de ser abstrata e começa a aparecer em pequenos hábitos:
+            estudar, testar, documentar e compartilhar.
+          </p>
+        </div>
+
+        <div class="visual-grid">
+          <article class="visual-mini-card reveal">
+            <div class="visual-illustration"><span></span></div>
+            <h3>Código</h3>
+            <p>Python, lógica e pequenos scripts para treinar pensamento computacional.</p>
+          </article>
+
+          <article class="visual-mini-card reveal">
+            <div class="visual-illustration"><span></span></div>
+            <h3>Cloud</h3>
+            <p>Serviços, redes, identidade e boas práticas para entender ambientes modernos.</p>
+          </article>
+
+          <article class="visual-mini-card reveal">
+            <div class="visual-illustration"><span></span></div>
+            <h3>IA</h3>
+            <p>Inteligência artificial aplicada com responsabilidade, curiosidade e visão prática.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="caminho" class="section">
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">Minha jornada em Cloud</span>
-          <h2>Um caminho possível: da decisão aos projetos.</h2>
+          <h2>Um caminho possível: da decisão aos estudos.</h2>
           <p>
             Uma timeline simples para mostrar evolução, estudos, desafios e próximos passos.
           </p>
@@ -894,7 +1087,7 @@
             <div class="step-number">02</div>
             <div>
               <h3>Python e lógica</h3>
-              <p>Construir pensamento lógico e primeiros projetos práticos.</p>
+              <p>Construir pensamento lógico e praticar fundamentos de programação.</p>
               <ul>
                 <li>Exercícios Python</li>
                 <li>APIs públicas</li>
@@ -932,7 +1125,7 @@
           <article class="step-card reveal">
             <div class="step-number">05</div>
             <div>
-              <h3>Voluntariado e comunidade</h3>
+              <h3>Comunidade e aprendizado</h3>
               <p>Aprender junto, compartilhar conhecimento e fortalecer presença em tecnologia.</p>
               <ul>
                 <li>Mulheres na tecnologia</li>
@@ -946,86 +1139,6 @@
         <div class="hero-actions">
           <a href="cursos.html" class="btn btn-primary">Ver trilha de cursos</a>
           <a href="checklist.html" class="btn btn-secondary">Acompanhar checklist</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="projetos" class="section">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Portfólio técnico</span>
-          <h2>Projetos que mostram evolução prática.</h2>
-          <p>
-            Pequenos projetos bem documentados comunicam aprendizado, consistência e capacidade de construir.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project-card reveal">
-            <h3>Lembrete de medicamentos</h3>
-            <p>Sistema em Python para organização de horários e lembretes de medicação.</p>
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>Lógica</span>
-              <span>Automação</span>
-            </div>
-            <a href="#">Ver projeto →</a>
-          </article>
-
-          <article class="project-card reveal">
-            <h3>Labs AWS CLI</h3>
-            <p>Práticas com linha de comando para criação, consulta e organização de recursos AWS.</p>
-            <div class="tech-tags">
-              <span>AWS</span>
-              <span>CLI</span>
-              <span>Cloud</span>
-            </div>
-            <a href="#">Ver projeto →</a>
-          </article>
-
-          <article class="project-card reveal">
-            <h3>Exercícios Python</h3>
-            <p>Repositório com exercícios de lógica, funções, listas, dicionários e manipulação de dados.</p>
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>GitHub</span>
-              <span>Estudos</span>
-            </div>
-            <a href="#">Ver projeto →</a>
-          </article>
-
-          <article class="project-card reveal">
-            <h3>APIs públicas</h3>
-            <p>Consumo de APIs para praticar requisições, tratamento de dados e organização de respostas.</p>
-            <div class="tech-tags">
-              <span>API</span>
-              <span>JSON</span>
-              <span>Python</span>
-            </div>
-            <a href="#">Ver projeto →</a>
-          </article>
-
-          <article class="project-card reveal">
-            <h3>Projetos Cloud</h3>
-            <p>Estudos práticos com armazenamento, identidade, redes e publicação de aplicações simples.</p>
-            <div class="tech-tags">
-              <span>Cloud</span>
-              <span>AWS</span>
-              <span>Arquitetura</span>
-            </div>
-            <a href="#">Ver projeto →</a>
-          </article>
-
-          <article class="project-card reveal">
-            <h3>Redes AWS</h3>
-            <p>Estudos sobre VPC, subnets, grupos de segurança e fundamentos de conectividade.</p>
-            <div class="tech-tags">
-              <span>VPC</span>
-              <span>Redes</span>
-              <span>AWS</span>
-            </div>
-            <a href="#">Ver projeto →</a>
-          </article>
         </div>
       </div>
     </section>
@@ -1116,13 +1229,13 @@
         <span class="eyebrow">Conecte-se</span>
         <h2>Vamos construir pontes entre carreira, nuvem e futuro.</h2>
         <p>
-          Me acompanhe no LinkedIn, veja meus projetos no GitHub e volte sempre que precisar de inspiração para continuar.
+          Me acompanhe no LinkedIn, veja minhas trilhas e volte sempre que precisar de inspiração para continuar.
         </p>
 
         <div class="hero-actions center">
           <a href="checklist.html" class="btn btn-primary">Responder checklist</a>
           <a href="cursos.html" class="btn btn-secondary">Ver cursos</a>
-          <a href="#projetos" class="btn btn-secondary">Ver projetos</a>
+          <a href="#recursos" class="btn btn-secondary">Ver recursos</a>
         </div>
       </div>
     </section>
@@ -1139,8 +1252,8 @@
         <h3>Navegação</h3>
         <a href="#inicio">Início</a>
         <a href="#caminho">Jornada</a>
-        <a href="#projetos">Projetos</a>
         <a href="#recursos">Recursos</a>
+        <a href="#sobre">Sobre</a>
       </div>
 
       <div>
