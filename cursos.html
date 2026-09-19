@@ -7,14 +7,14 @@
 
   <style>
     :root {
-      --marsala: #7B2C3B;
-      --marsala-dark: #5F1F2D;
+      --marsala: #953748;
+      --marsala-dark: #6E2A38;
       --marsala-soft: #F8EEF1;
       --white: #FFFFFF;
       --text: #2D2225;
       --muted: #6F5D62;
       --border: #E9D8DD;
-      --shadow: 0 18px 45px rgba(123, 44, 59, 0.12);
+      --shadow: 0 18px 45px rgba(149, 55, 72, 0.12);
       --radius: 24px;
       --container: 1120px;
     }
@@ -119,8 +119,8 @@
     .hero {
       padding: 90px 0 70px;
       background:
-        radial-gradient(circle at top right, #f7e2e8 0, transparent 34%),
-        linear-gradient(135deg, #fff 0%, #fff7f9 100%);
+        radial-gradient(circle at top right, #F3E4E8 0, transparent 34%),
+        linear-gradient(135deg, #fff 0%, #FBF6F7 100%);
     }
 
     .hero-grid {
@@ -261,13 +261,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--white);
-      box-shadow: 0 10px 28px rgba(123, 44, 59, 0.07);
+      box-shadow: 0 10px 28px rgba(149, 55, 72, 0.07);
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
     .course-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(123, 44, 59, 0.35);
+      border-color: rgba(149, 55, 72, 0.35);
       box-shadow: var(--shadow);
     }
 
@@ -293,6 +293,24 @@
       color: var(--marsala);
       font-family: Arial, sans-serif;
       font-weight: 700;
+    }
+
+    .course-card-soon {
+      border-style: dashed;
+      background: var(--marsala-soft);
+    }
+
+    .tag-soon {
+      color: var(--white) !important;
+      background: var(--marsala) !important;
+    }
+
+    .course-soon-label {
+      margin-top: auto;
+      color: var(--marsala-dark);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-style: italic;
     }
 
     .path-list {
@@ -603,6 +621,32 @@
 
           <article class="course-card">
             <div class="course-meta">
+              <span>AWS</span>
+              <span>Certificações</span>
+            </div>
+            <h3>AWS Skill Builder</h3>
+            <p>
+              Plataforma oficial da AWS com cursos gratuitos e pagos, laboratórios
+              práticos e trilhas de estudo para se preparar para certificações.
+            </p>
+            <a href="https://skillbuilder.aws/" target="_blank" rel="noopener noreferrer">Acessar plataforma →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
+              <span>AWS</span>
+              <span>Gamificado</span>
+            </div>
+            <h3>AWS Cloud Quest</h3>
+            <p>
+              Experiência gamificada da AWS: você constrói uma cidade na nuvem e
+              aprende conceitos práticos de computação em nuvem completando missões.
+            </p>
+            <a href="https://aws.amazon.com/training/digital/aws-cloud-quest/" target="_blank" rel="noopener noreferrer">Acessar plataforma →</a>
+          </article>
+
+          <article class="course-card">
+            <div class="course-meta">
               <span>Cloud</span>
               <span>Empregabilidade</span>
             </div>
@@ -677,6 +721,20 @@
               desenvolvimento profissional e oportunidades para mulheres.
             </p>
             <a href="https://www.womenincloud.com" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="course-card course-card-soon">
+            <div class="course-meta">
+              <span>Nuvem em Quadrinhos</span>
+              <span class="tag-soon">Em breve</span>
+            </div>
+            <h3>Meu curso: Nuvem em Quadrinhos</h3>
+            <p>
+              Meu próprio projeto: um site em formato de quadrinhos para aprender
+              conceitos de Cloud Computing de um jeito visual, leve e acessível
+              para quem está começando do zero.
+            </p>
+            <span class="course-soon-label">Em desenvolvimento — volte em breve</span>
           </article>
         </div>
       </div>
