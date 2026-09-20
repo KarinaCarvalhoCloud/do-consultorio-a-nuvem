@@ -13,18 +13,18 @@
 
   <style>
     :root {
-      --primary: #953748;
-      --primary-dark: #6E2A38;
-      --secondary: #AA6C78;
-      --secondary-soft: #F8EEF1;
+      --primary: #6D8FB3;
+      --primary-dark: #3F6388;
+      --secondary: #BFA7E8;
+      --secondary-soft: #F3EEFF;
       --gold: #C8A96A;
       --white: #FFFFFF;
-      --cloud: #FBF6F7;
-      --soft-blue: #F3E4E8;
-      --text: #2D2225;
-      --muted: #6F5D62;
-      --border: #E9D8DD;
-      --shadow: 0 22px 60px rgba(110, 42, 56, 0.14);
+      --cloud: #F7FBFF;
+      --soft-blue: #EAF5FF;
+      --text: #243244;
+      --muted: #687586;
+      --border: #DDEAF5;
+      --shadow: 0 22px 60px rgba(70, 105, 140, 0.14);
       --radius: 26px;
       --container: 1120px;
     }
@@ -130,7 +130,7 @@
       border-radius: 999px;
       color: var(--white) !important;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      box-shadow: 0 12px 30px rgba(149, 55, 72, 0.25);
+      box-shadow: 0 12px 30px rgba(109, 143, 179, 0.25);
     }
 
     .menu-toggle,
@@ -142,9 +142,9 @@
       position: relative;
       padding: 104px 0 88px;
       background:
-        radial-gradient(circle at 85% 12%, rgba(170, 108, 120, 0.35), transparent 28%),
-        radial-gradient(circle at 8% 18%, rgba(199, 126, 141, 0.28), transparent 34%),
-        linear-gradient(135deg, #FFFFFF 0%, #FBF6F7 55%, #F8EEF1 100%);
+        radial-gradient(circle at 85% 12%, rgba(191, 167, 232, 0.35), transparent 28%),
+        radial-gradient(circle at 8% 18%, rgba(138, 185, 230, 0.28), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #f7fbff 55%, #f3eeff 100%);
       overflow: hidden;
     }
 
@@ -256,7 +256,7 @@
     .btn-primary {
       color: var(--white);
       background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      box-shadow: 0 16px 34px rgba(110, 42, 56, 0.26);
+      box-shadow: 0 16px 34px rgba(63, 99, 136, 0.26);
     }
 
     .btn-secondary {
@@ -312,7 +312,7 @@
       display: block;
       margin: 0 auto 26px;
       border: 6px solid var(--white);
-      box-shadow: 0 16px 38px rgba(110, 42, 56, 0.24);
+      box-shadow: 0 16px 38px rgba(70, 105, 140, 0.24);
       transition: transform 0.35s ease;
     }
 
@@ -326,7 +326,7 @@
 
     .section-soft {
       background:
-        radial-gradient(circle at top left, rgba(170, 108, 120, 0.16), transparent 32%),
+        radial-gradient(circle at top left, rgba(191, 167, 232, 0.16), transparent 32%),
         var(--cloud);
     }
 
@@ -348,8 +348,8 @@
       min-height: 430px;
       padding: 28px;
       background:
-        radial-gradient(circle at 20% 20%, rgba(170, 108, 120, 0.25), transparent 30%),
-        linear-gradient(135deg, #FBF6F7, #FFFFFF);
+        radial-gradient(circle at 20% 20%, rgba(191, 167, 232, 0.25), transparent 30%),
+        linear-gradient(135deg, #f7fbff, #ffffff);
     }
 
     .visual-card::before {
@@ -357,8 +357,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(149, 55, 72, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(149, 55, 72, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(109, 143, 179, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(109, 143, 179, 0.08) 1px, transparent 1px);
       background-size: 28px 28px;
       mask-image: linear-gradient(to bottom, black, transparent);
     }
@@ -368,8 +368,8 @@
       z-index: 1;
       border-radius: 22px;
       overflow: hidden;
-      background: #321018;
-      box-shadow: 0 24px 60px rgba(50, 16, 24, 0.22);
+      background: #1f3044;
+      box-shadow: 0 24px 60px rgba(31, 48, 68, 0.22);
       transform: rotate(-2deg);
     }
 
@@ -377,39 +377,39 @@
       display: flex;
       gap: 8px;
       padding: 14px 16px;
-      background: #4A1620;
+      background: #2b4059;
     }
 
     .window-bar span {
       width: 11px;
       height: 11px;
       border-radius: 50%;
-      background: #C79AA0;
+      background: #c8d8ea;
     }
 
     .code-lines {
       padding: 24px;
       font-family: "Courier New", monospace;
       font-size: 0.92rem;
-      color: #F9EEF1;
+      color: #d7e8ff;
     }
 
     .code-lines p {
-      color: #F9EEF1;
+      color: #d7e8ff;
       font-size: 0.9rem;
       margin-bottom: 10px;
     }
 
     .code-lines .blue {
-      color: #C77E8D;
+      color: #8ab9e6;
     }
 
     .code-lines .purple {
-      color: #AA6C78;
+      color: #bfa7e8;
     }
 
     .code-lines .gold {
-      color: #C8A96A;
+      color: #c8a96a;
     }
 
     .floating-card {
@@ -439,7 +439,7 @@
       max-width: 940px;
       padding: 42px;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(251,246,247,0.92));
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,251,255,0.92));
     }
 
     .reflection-grid,
@@ -466,7 +466,7 @@
     .resource-card,
     .visual-mini-card {
       padding: 30px;
-      box-shadow: 0 12px 34px rgba(110, 42, 56, 0.09);
+      box-shadow: 0 12px 34px rgba(70, 105, 140, 0.09);
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
@@ -484,7 +484,7 @@
     .resource-card:hover,
     .visual-mini-card:hover {
       transform: translateY(-7px);
-      border-color: rgba(149, 55, 72, 0.46);
+      border-color: rgba(109, 143, 179, 0.46);
       box-shadow: var(--shadow);
     }
 
@@ -506,8 +506,8 @@
       height: 130px;
       margin: -30px -30px 24px;
       background:
-        radial-gradient(circle at 25% 35%, rgba(170, 108, 120, 0.52), transparent 24%),
-        radial-gradient(circle at 75% 35%, rgba(149, 55, 72, 0.38), transparent 24%),
+        radial-gradient(circle at 25% 35%, rgba(191, 167, 232, 0.52), transparent 24%),
+        radial-gradient(circle at 75% 35%, rgba(109, 143, 179, 0.38), transparent 24%),
         linear-gradient(135deg, var(--soft-blue), var(--secondary-soft));
       display: grid;
       place-items: center;
@@ -517,9 +517,9 @@
       width: 90px;
       height: 58px;
       border-radius: 14px;
-      background: #321018;
+      background: #1f3044;
       position: relative;
-      box-shadow: 0 18px 35px rgba(50, 16, 24, 0.18);
+      box-shadow: 0 18px 35px rgba(31, 48, 68, 0.18);
     }
 
     .visual-illustration span::before {
@@ -528,7 +528,7 @@
       inset: 0;
       display: grid;
       place-items: center;
-      color: #F9EEF1;
+      color: #d7e8ff;
       font-weight: 900;
       font-family: "Courier New", monospace;
     }
@@ -555,7 +555,7 @@
       color: var(--white);
       background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
       font-weight: 900;
-      box-shadow: 0 12px 28px rgba(149, 55, 72, 0.24);
+      box-shadow: 0 12px 28px rgba(109, 143, 179, 0.24);
     }
 
     .step-card ul {
@@ -640,8 +640,8 @@
 
     .site-footer {
       padding-top: 66px;
-      color: #F9EEF1;
-      background: #321018;
+      color: #EEF6FF;
+      background: #1F3044;
     }
 
     .footer-grid {
@@ -659,7 +659,7 @@
 
     .site-footer p,
     .site-footer a {
-      color: #E7C9D0;
+      color: #CAD8E8;
     }
 
     .site-footer a {
@@ -829,11 +829,8 @@
 
       <ul class="nav-links">
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#transicao">Transição</a></li>
-        <li><a href="#reflexao">Checklist</a></li>
-        <li><a href="#caminho">Jornada</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="sobre.html">Minha História</a></li>
+        <li><a href="cursos.html">Cursos e Recursos</a></li>
         <li><a href="checklist.html" class="nav-cta">Começar</a></li>
       </ul>
     </nav>
@@ -1143,6 +1140,20 @@
           </article>
 
           <article class="resource-card reveal">
+            <img src="assets/logotipo-aws.png" alt="Logo AWS" class="resource-logo" />
+            <h3>AWS Skill Builder</h3>
+            <p>Cursos gratuitos e pagos, laboratórios práticos e trilhas para certificações AWS.</p>
+            <a href="https://skillbuilder.aws/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card reveal">
+            <img src="assets/logotipo-aws.png" alt="Logo AWS" class="resource-logo" />
+            <h3>AWS Cloud Quest</h3>
+            <p>Experiência gamificada para aprender cloud construindo uma cidade e completando missões.</p>
+            <a href="https://aws.amazon.com/training/digital/aws-cloud-quest/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
+          </article>
+
+          <article class="resource-card reveal">
             <img src="assets/Logo-Escola-da-nuvem.png" alt="Logo Escola da Nuvem" class="resource-logo" />
             <h3>Escola da Nuvem</h3>
             <p>Capacitação gratuita em nuvem, certificação e empregabilidade.</p>
@@ -1178,6 +1189,10 @@
             <a href="https://www.cloudskillsboost.google/" target="_blank" rel="noopener noreferrer">Conhecer →</a>
           </article>
         </div>
+
+        <div class="hero-actions" style="margin-top: 36px;">
+          <a href="cursos.html" class="btn btn-primary">Ver todos os cursos e recursos →</a>
+        </div>
       </div>
     </section>
 
@@ -1202,6 +1217,9 @@
           <p>
             “Recomeçar não é abandonar quem você foi. É usar sua história como base para construir quem você está se tornando.”
           </p>
+          <div class="hero-actions" style="margin-top: 20px;">
+            <a href="sobre.html" class="btn btn-secondary">Leia minha história completa →</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1248,6 +1266,14 @@
 
       </a>
 
+      <a
+      href="mentoria.html"
+      class="btn btn-secondary">
+
+    Quero contratar mentoria individual
+
+      </a>
+
     </div>
 
 
@@ -1279,17 +1305,15 @@
       <div>
         <h3>Navegação</h3>
         <a href="#inicio">Início</a>
-        <a href="#caminho">Jornada</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#sobre">Sobre</a>
+        <a href="sobre.html">Minha História</a>
+        <a href="cursos.html">Cursos e Recursos</a>
+        <a href="checklist.html">Checklist</a>
       </div>
 
       <div>
-        <h3>Conteúdos</h3>
-        <a href="checklist.html">Checklist</a>
-        <a href="cursos.html">Cursos</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="#contato">Contato</a>
+        <h3>Contato</h3>
+        <a href="#contato">LinkedIn e contato</a>
+        <a href="mentoria.html">Mentoria individual</a>
       </div>
     </div>
 
