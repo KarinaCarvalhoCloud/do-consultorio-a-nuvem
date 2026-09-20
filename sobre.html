@@ -1,156 +1,445 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim | Do Consultório à Nuvem</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <meta name="description" content="Conheça a história de Ana Karina, de cirurgiã-dentista a profissional de Cloud Computing, e como ela construiu sua nova carreira.">
-    <meta name="author" content="Ana Karina">
-    <meta property="og:title" content="Minha Jornada: De Cirurgiã-Dentista a Cloud">
-    <meta property="og:description" content="Conheça a história de Ana Karina, de cirurgiã-dentista a profissional de Cloud Computing, e como ela construiu sua nova carreira.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/sobre.html">
-    <meta property="og:image" content="URL_DA_SUA_IMAGEM_DE_DESTAQUE_AQUI"> 
-    <meta property="og:locale" content="pt_BR">
-    <style>
-        /* ==================== 1. VARIÁVEIS DE CORES (Marsala) ==================== */
-        :root {
-            --cor-marsala-principal: #953748;
-            --cor-marsala-claro: #AA6C78;
-            --cor-fundo: #FBF6F7;
-            --cor-texto-principal: #2D2225;
-            --cor-fundo-card: #ffffff;
-            --cor-borda: #E9D8DD;
-            --cor-secundaria: #6F5D62;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--cor-texto-principal); background-color: var(--cor-fundo); }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        h1 { font-weight: 700; font-size: 2.5rem; }
-        h2 { font-weight: 600; font-size: 1.8rem; margin-bottom: 20px; }
-        h3 { font-weight: 600; font-size: 1.2rem; }
+<meta
+  name="description"
+  content="Conheça a história de Ana Karina: de cirurgiã-dentista a profissional de Cloud Computing, e como ela construiu uma nova carreira em tecnologia."
+/>
+<meta name="author" content="Ana Karina" />
+<meta property="og:title" content="Minha História: De Cirurgiã-Dentista a Cloud Computing" />
+<meta property="og:description" content="A jornada completa de Ana Karina do consultório à nuvem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karinacarvalhocloud.github.io/do-consultorio-a-nuvem/sobre.html" />
+<meta property="og:locale" content="pt_BR" />
 
-        /* CABEÇALHO/NAVBAR (CÓDIGO REPETIDO PARA CONSISTÊNCIA) */
-        .header { background: var(--cor-fundo-card); padding: 1rem 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 100; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .perfil { display: flex; align-items: center; }
-        .perfil-avatar { /* Define o círculo */
-            background-color: var(--cor-marsala-principal);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            overflow: hidden; /* Corta a imagem no formato circular */
-            margin-right: 15px; 
-            display: flex; /* Para centralizar o conteúdo, se for texto */
-            justify-content: center;
-            align-items: center;
-        }
-        .perfil-avatar img { /* Garante que a imagem preencha o círculo */
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .perfil-texto h3 { margin: 0; font-size: 1rem; font-weight: 600; }
-        .perfil-texto p { margin: 0; font-size: 0.85rem; color: var(--cor-secundaria); }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li a { color: var(--cor-texto-principal); text-decoration: none; font-weight: 500; margin-left: 25px; transition: color 0.2s; }
-        .nav-links li a:hover { color: var(--cor-marsala-principal); }
-        
-        /* LAYOUT ESPECÍFICO DA PÁGINA SOBRE */
-        .page-content { max-width: 800px; margin: 40px auto; padding: 40px; background-color: var(--cor-fundo-card); border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
-        .page-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
-        .page-content ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
-        .page-content li { padding-left: 1.5rem; position: relative; margin-bottom: 10px; }
-        .page-content li::before { content: '✓'; color: var(--cor-marsala-principal); font-weight: bold; position: absolute; left: 0; }
-        .profile-image { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 5px solid var(--cor-marsala-claro); }
-        .text-highlight { font-weight: 600; color: var(--cor-marsala-principal); }
-        
-        /* RODAPÉ (FOOTER) - CÓDIGO REPETIDO */
-        .footer { background-color: var(--cor-texto-principal); color: white; padding: 40px 0 20px 0; margin-top: 50px; text-align: center; }
-        .footer-cta h3 { color: white; margin-bottom: 10px; }
-        .footer-cta p { color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
-        .footer-links a { color: var(--cor-marsala-claro); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
-        .footer-links a:hover { color: var(--cor-marsala-principal); }
-        .copyright { margin-top: 20px; padding-top: 15px; border-top: 1px solid #444; font-size: 0.85rem; color: #888; }
-        
-        /* RESPONSIVIDADE (mínima para esta página) */
-        @media (max-width: 768px) { .page-content { padding: 20px; margin: 20px; } }
-    </style>
+<title>Minha História | Do Consultório à Nuvem</title>
+
+<style>
+  :root {
+    --primary: #6D8FB3;
+    --primary-dark: #3F6388;
+    --secondary: #BFA7E8;
+    --secondary-soft: #F3EEFF;
+    --gold: #C8A96A;
+    --white: #FFFFFF;
+    --cloud: #F7FBFF;
+    --soft-blue: #EAF5FF;
+    --text: #243244;
+    --muted: #687586;
+    --border: #DDEAF5;
+    --shadow: 0 22px 60px rgba(70, 105, 140, 0.14);
+    --radius: 26px;
+    --container: 1120px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    width: min(100% - 32px, var(--container));
+    margin-inline: auto;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .brand { display: flex; align-items: center; gap: 12px; }
+
+  .brand-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--white);
+    box-shadow: var(--shadow);
+  }
+
+  .brand strong { display: block; font-size: 1rem; color: var(--primary-dark); letter-spacing: -0.02em; }
+  .brand small { display: block; font-size: 0.78rem; color: var(--muted); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .nav-links a { color: var(--muted); transition: color 0.25s ease; }
+  .nav-links a:hover { color: var(--primary-dark); }
+
+  .nav-cta {
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 12px 30px rgba(109, 143, 179, 0.25);
+  }
+
+  h1, h2, h3 { line-height: 1.15; color: var(--text); letter-spacing: -0.03em; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 20px; }
+  h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-top: 46px; margin-bottom: 16px; }
+  p { color: var(--muted); font-size: 1.06rem; margin-bottom: 18px; }
+
+  .hero-bio {
+    padding: 80px 0 60px;
+    background:
+      radial-gradient(circle at 85% 12%, rgba(191, 167, 232, 0.28), transparent 30%),
+      linear-gradient(135deg, #ffffff 0%, #f7fbff 60%, #f3eeff 100%);
+  }
+
+  .hero-bio-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 6px solid var(--white);
+    box-shadow: 0 16px 38px rgba(70, 105, 140, 0.24);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    color: var(--primary-dark);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .specialization-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .specialization-tags span {
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: var(--secondary-soft);
+    border: 1px solid var(--border);
+  }
+
+  .article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 70px 0;
+  }
+
+  .tip-box {
+    padding: 20px 24px;
+    margin: 28px 0;
+    border-left: 4px solid var(--gold);
+    border-radius: 14px;
+    background: var(--secondary-soft);
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+
+  .pillars-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    margin: 20px 0 30px;
+  }
+
+  .pillars-list li {
+    position: relative;
+    padding: 14px 20px 14px 46px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--cloud);
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .pillars-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 18px;
+    color: var(--primary-dark);
+    font-weight: 900;
+  }
+
+  .mission-card {
+    margin-top: 40px;
+    padding: 32px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+    color: var(--white);
+  }
+
+  .mission-card p { color: var(--white); font-size: 1.15rem; margin-bottom: 0; }
+
+  .cta-section {
+    padding: 70px 0 90px;
+    background: var(--cloud);
+  }
+
+  .cta-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 44px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 800;
+    transition: transform 0.25s ease;
+  }
+
+  .btn:hover { transform: translateY(-3px); }
+
+  .btn-primary {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    box-shadow: 0 16px 34px rgba(63, 99, 136, 0.26);
+  }
+
+  .btn-secondary {
+    color: var(--primary-dark);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--border);
+  }
+
+  .site-footer {
+    padding-top: 66px;
+    color: #EEF6FF;
+    background: #1F3044;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 36px;
+    padding-bottom: 46px;
+  }
+
+  .site-footer h2, .site-footer h3 { color: var(--white); margin-bottom: 14px; }
+  .site-footer p, .site-footer a { color: #CAD8E8; }
+  .site-footer a { display: block; margin-bottom: 8px; }
+  .site-footer a:hover { color: var(--white); }
+
+  .footer-bottom {
+    padding: 22px 16px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 820px) {
+    .hero-bio-grid { grid-template-columns: 1fr; text-align: center; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="perfil">
-                    <div class="perfil-avatar">
-                        <img src="assets/avatar-ana-karina.jpeg" alt="Foto de perfil de Ana Karina" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-                    </div>
-                    <div class="perfil-texto">
-                        <h3>Do Consultório à Nuvem</h3>
-                        <p>Ana Karina — transição de carreira para mulheres</p>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="index.html#trilhas">Trilhas</a></li>
-                    <li><a href="recursos-cloud.html">Recursos Cloud</a></li> <li><a href="index.html#contato">Contato</a></li>
-                </ul>
-            </nav>
+
+<header class="site-header">
+  <nav class="navbar container" aria-label="Menu principal">
+    <a href="index.html#inicio" class="brand" aria-label="Do Consultório à Nuvem">
+      <img src="assets/avatar-ana-karina.jpeg" alt="Avatar Ana Karina" class="brand-avatar">
+      <span>
+        <strong>Do Consultório à Nuvem</strong>
+        <small>Ana Karina</small>
+      </span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Minha História</a></li>
+      <li><a href="cursos.html">Cursos e Recursos</a></li>
+      <li><a href="checklist.html" class="nav-cta">Começar</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero-bio">
+    <div class="container hero-bio-grid">
+      <img src="assets/minha-foto.jpeg" alt="Foto de Ana Karina" class="profile-photo" />
+      <div>
+        <span class="eyebrow">Minha história</span>
+        <h1>De Cirurgiã-Dentista a Cloud Computing</h1>
+        <p>
+          Se você chegou até aqui, provavelmente está na mesma encruzilhada que eu estive: amar sua
+          profissão, mas sentir que há um desafio maior esperando na tecnologia. Esta é a minha história
+          de como troquei o foco na precisão clínica pela precisão dos códigos em ambientes de Cloud
+          Computing.
+        </p>
+        <div class="specialization-tags">
+          <span>Segurança em Cloud</span>
+          <span>Solutions Architect</span>
+          <span>FinOps</span>
+          <span>Infraestrutura como Código</span>
         </div>
-    </header>
-
-    <div class="container">
-        <div class="page-content">
-            
-            <img src="assets/minha-foto.jpg" alt="Foto de Perfil Profissional - Ana Karina" class="profile-image">
-            
-            <h1>Minha Jornada: De Cirurgiã-Dentista a Cloud</h1>
-            
-            <p>Olá! Eu sou Ana Karina, uma profissional de Cloud Computing que fez a transição do consultório à tecnologia. Por anos, minha dedicação foi à **cirurgia-dentista**, uma carreira que exige precisão e foco. No entanto, o desejo por algo mais, com desafios em escala global e a inovação constante da tecnologia, me fez buscar o universo da Nuvem.</p>
-            
-            <h2>O Ponto de Virada: Escola e Certificação</h2>
-            
-            <p>Minha transição começou de forma estratégica e focada: entrei na **Escola da Nuvem** para adquirir o conhecimento fundamental e, rapidamente, dediquei-me à primeira certificação da AWS. Essa conquista foi o divisor de águas, me dando a confiança e o vocabulário técnico para avançar. A partir daí, conheci e me aprofundei em outros cursos, me aperfeiçoando em arquitetura, segurança e nas ferramentas que uso hoje.</p>
-
-            <h2>Minhas Paixões e Foco Técnico na Nuvem</h2>
-            
-            <p>Como profissional de Cloud Computing, minhas paixões se concentram em construir infraestruturas que não são apenas robustas, mas também eficientes e seguras. Minha expertise me permite criar soluções que aliam performance e custo-benefício, com um olhar atento para a segurança desde a arquitetura inicial.</p>
-            
-            <ul>
-                <li>**Amazon Web Services (AWS):** Construindo e gerenciando infraestrutura resiliente e escalável.</li>
-                <li>**Infraestrutura como Código (IaC):** Utilizando Terraform para automatizar a criação de ambientes.</li>
-                <li>**Segurança Cloud:** Garantindo que os ambientes estejam sempre em conformidade e protegidos.</li>
-            </ul>
-
-            <h2>Minha Missão</h2>
-
-            <p>A "Do Consultório à Nuvem" nasceu para ajudar outras mulheres que, como eu, sentem o chamado para uma nova carreira. <span class="text-highlight">Quero mostrar que a transição é possível e que sua experiência anterior é sua maior vantagem.</span> Minha missão é compartilhar o conhecimento, as estratégias e o caminho prático para que você também construa uma carreira sólida em Cloud Computing com segurança e confiança.</p>
-
-        </div>
+      </div>
     </div>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-cta">
-                <h3>Pronta para a Nuvem?</h3>
-                <p>Receba meu checklist e dicas de carreira diretamente no seu e-mail.</p>
-                <a href="checklist.html" class="btn-principal" style="background-color: var(--cor-marsala-claro); border-radius: 5px;">Baixar Checklist Agora</a>
-            </div>
+  </section>
 
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">LinkedIn</a>
-                <a href="sobre.html">Sobre Mim</a>
-                <a href="index.html#contato">Newsletter</a>
-            </div>
+  <article class="article container">
+    <h2>De Pinças e Foco: A Carreira na Odontologia</h2>
+    <p>
+      Por muitos anos, fui cirurgiã-dentista. A rotina exigia foco extremo, organização de processos
+      (agendamentos, esterilização, fluxo de atendimento) e uma gestão de crises silenciosa. É uma
+      carreira de muito contato humano, mas com pouco espaço para a escala e a inovação que eu buscava.
+      O desejo de construir algo que pudesse impactar milhares de pessoas, em vez de uma por uma, começou
+      a crescer.
+    </p>
 
-            <p class="copyright">&copy; 2024 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <h2>O Ponto de Virada: Escola da Nuvem e a Primeira Certificação</h2>
+    <p>
+      Eu sabia que não podia simplesmente "pular" para a Nuvem. Minha transição foi planejada. O primeiro
+      passo foi o mais importante: adquirir o vocabulário e o mindset lógico. Foi quando entrei na
+      <strong>Escola da Nuvem</strong>, que me deu uma visão clara do ecossistema AWS e os fundamentos
+      essenciais. O segundo passo crucial foi a minha primeira certificação AWS, que validou meu esforço
+      e me deu a confiança e o vocabulário técnico para ser levada a sério no LinkedIn e avançar. A partir
+      daí, me aprofundei em arquitetura, segurança e nas ferramentas que uso hoje.
+    </p>
+
+    <div class="tip-box">
+      Dica: não comece pelo mais difícil. Domine a lógica e os fundamentos de TI antes de se aprofundar em
+      serviços de Cloud. Isso reduz a frustração e acelera o aprendizado a longo prazo.
+    </div>
+
+    <h2>Minhas Especializações Técnicas</h2>
+    <p>
+      Com a base pronta, me aprofundei em áreas específicas de Cloud Computing, sempre com o mesmo
+      cuidado técnico que eu levava para dentro do consultório. Hoje atuo com foco em:
+    </p>
+    <ul class="pillars-list">
+      <li>
+        Segurança em Cloud: hardening de contas AWS, gestão de identidades e acesso (IAM), criptografia
+        (KMS), detecção de ameaças e aplicação do pilar de Segurança do AWS Well-Architected Framework
+        em arquiteturas reais.
+      </li>
+      <li>
+        Solutions Architect: desenho de arquiteturas resilientes, escaláveis e de alta performance na
+        AWS — redes (VPC), alta disponibilidade multi-AZ, balanceamento de carga e estratégias de
+        disaster recovery.
+      </li>
+      <li>
+        FinOps (Cloud Financial Operations): otimização de custo em nuvem, análise de gastos com Cost
+        Explorer e CUR, Savings Plans, Reserved Instances e eliminação de desperdício, sem abrir mão de
+        performance ou resiliência.
+      </li>
+      <li>
+        Infraestrutura como Código (IaC): uso de Terraform para criar ambientes replicáveis, auditáveis e
+        versionados, aplicando a mesma precisão da cirurgia ao código.
+      </li>
+    </ul>
+    <p>
+      Se você se identifica com essa jornada, saiba que sua bagagem anterior é seu maior trunfo. A
+      transição é um caminho de aprendizado contínuo, mas é perfeitamente possível e extremamente
+      gratificante.
+    </p>
+
+    <div class="mission-card">
+      <p>
+        A "Do Consultório à Nuvem" nasceu para ajudar outras mulheres que, como eu, sentem o chamado para
+        uma nova carreira. Quero mostrar que a transição é possível e que sua experiência anterior é sua
+        maior vantagem — e compartilhar o conhecimento e o caminho prático para construir uma carreira
+        sólida em Cloud Computing, com segurança e confiança.
+      </p>
+    </div>
+  </article>
+
+  <section class="cta-section">
+    <div class="container cta-card">
+      <span class="eyebrow">Próximos passos na sua jornada</span>
+      <h2>Por onde continuar a partir daqui</h2>
+      <p>Se você está iniciando a sua transição, recomendo fortemente começar por aqui:</p>
+      <div class="hero-actions">
+        <a href="cursos.html" class="btn btn-primary">Ver cursos e recursos gratuitos</a>
+        <a href="checklist.html" class="btn btn-secondary">Baixar checklist da transição</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h2>Do Consultório à Nuvem</h2>
+      <p>Transição de carreira, Cloud Computing, AWS, IA e construção de marca pessoal em tecnologia.</p>
+    </div>
+
+    <div>
+      <h3>Navegação</h3>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Minha História</a>
+      <a href="cursos.html">Cursos e Recursos</a>
+      <a href="checklist.html">Checklist</a>
+    </div>
+
+    <div>
+      <h3>Contato</h3>
+      <a href="index.html#contato">LinkedIn e contato</a>
+      <a href="mentoria.html">Mentoria individual</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Do Consultório à Nuvem | Ana Karina. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
 </body>
 </html>
